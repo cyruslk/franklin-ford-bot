@@ -59,3 +59,12 @@ During our first brainstorming session, a number of interesting ideas came up. I
     - Chrome extensions could also operate only for a specific website or for lists of websites. 
 - As I mentioned earlier, creating an online game? There's some interesting online textual games, like [Burnt Matches](https://www.pippinbarr.com/2016/11/29/burnt-matches/) done by Pippin Barr - [more info here](https://killscreen.com/articles/pippin-barrs-new-game-brings-concrete-poetry-life/).
 
+------
+
+Now going back to the root files of the project that Juliette and Dominique shared me. I'ld like now to spend some time on:
+
+- [ ] Investigate this idea of remediation, something that also interest me for my thesis' subject on analog transmitting protocols and language flow inside the network. I'll most specifically read the PDF file located in the `/digital journalism` directory: `@franklinfordbot: remediating Franklin Ford`.
+- [ ] Go through Ford's "intelligence triangle" and investigate its types of publications in relation to the design ideas we had during our meeting.
+- [ ] Go through the collected texts and PDF files located in the `/Textes primaires "clean"`  directory.
+- [ ] Go through the ORC
+
