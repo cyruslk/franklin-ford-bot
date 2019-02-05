@@ -64,7 +64,18 @@ During our first brainstorming session, a number of interesting ideas came up. I
 Now going back to the root files of the project that Juliette and Dominique shared me. I'ld like now to spend some time on:
 
 - [ ] Investigate this idea of remediation, something that also interest me for my thesis' subject on analog transmitting protocols and language flow inside the network. I'll most specifically read the PDF file located in the `/digital journalism` directory: `@franklinfordbot: remediating Franklin Ford`.
+
 - [ ] Go through Ford's "intelligence triangle" and investigate its types of publications in relation to the design ideas we had during our meeting.
+
 - [ ] Go through the collected texts and PDF files located in the `/Textes primaires "clean"`  directory.
-- [ ] Go through the ORC
+
+  - [ ] Investigate how these files are being parsed by the selected OCR toolkit ([tesseract-ocr](https://github.com/tesseract-ocr)? ImageMagick?)
+
+- [ ] Reverse the Python scripts located in the `code` directory. 
+
+  ------
+
+  Technical details that need to be decided:
+
+  - [ ] What will be the programming stack? `Node.js `or `Python`?
 
