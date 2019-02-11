@@ -4,7 +4,7 @@ I'm officially starting to work on this project with Dominique and Juliette. I'm
 
 ------
 
-This project is directly embeded into a `research through design`  approach, so the idea is to use a body of 'wickedly' suitable methods along the project, such as this digital diary format (Coming from Barr, Khaled and Lessard's MDMA proposition), as well as case studies of other projects involving language and code. Along the project, I'll also quickly prototype ideas and explore through code forms how language could be manipulated and rendered using code. 
+This project is directly embeded into a `research through design`  approach, so the idea is to use a body of 'wickedly' suitable methods along the project, such as this digital diary format (Coming from Barr, Khaled and Lessard's MDMA proposition), as well as case studies of other projects involving language and code. Along the project, I'll also quickly prototype ideas and explore through code forms how language could be manipulated and rendered using code.
 
 Ideally, these informal logs will provide us interesting insights about what was intended behind the project's (final) forms. These logs will therefore help us to track and analyze the trajectories taken (or aborted) along the project.
 
@@ -16,11 +16,11 @@ Let's kickoff the research by interesting projects coming from artists, research
 
    1. [ReRites](http://glia.ca/rerites/). This project is amazing. It's basically a neural networks (aka artificial intelligence) trained on a contemporary poetry corpus that recreates poetry.
 
-      What I like with this project is the idea of artificial agency, making its own decisions based on a human input. 
+      What I like with this project is the idea of artificial agency, making its own decisions based on a human input.
 
 2. Alyson Parish has inspiring projects:
 
-   1. [semantic_similarity_chatbot](https://gist.github.com/aparrish/114dd7018134c5da80bae0a101866581) is a chatbot that mimics someone's writing style "—a famous author, a historical figure, or even the student's own e-mails or messaging logs.". 
+   1. [semantic_similarity_chatbot](https://gist.github.com/aparrish/114dd7018134c5da80bae0a101866581) is a chatbot that mimics someone's writing style "—a famous author, a historical figure, or even the student's own e-mails or messaging logs.".
    2. She's also playing a lot with [compression](https://www.youtube.com/watch?v=meovx9OqWJc) to create new form of textual poetic approaches and translations. This is quite interesting and there's parrallels we could create with the OCR program we're using to translate images to text (based on certain compression parameters). More on that soon.
    3. Finally, Parrish is working with this idea of [semantic space](http://opentranscripts.org/transcript/semantic-space-literal-robots/), which is also quite interesting because it gives a way to approch textual entities (such as the ones we have for the project) as spaces with their own maps and dynamics. With this technique, words (or sentences) could be associated based on a variety of parameters inputed by users. (Key)words could be then filtered based on specific options and new kinds of dynamic associations could be created. For now, it's quite abstract but we'll have some time to experiment with this.
 
@@ -34,10 +34,10 @@ Let's kickoff the research by interesting projects coming from artists, research
 
 On top of the bots that we're going to create, there's also a website that will be used as the main host for these things to be shown and explained publically. However, more than a simple website, it could be interested to approach this website not only as a container but as a Platform, as an experience where we'll show these bots dynamically. Drawing on this idea of experience, the website could change based on the user's input or others parameters such as:
 
-- The user's GPS coordinates 
+- The user's GPS coordinates
 - The date and time
 - The user's numbers of visits on the website.
-- The user's IP address 
+- The user's IP address
 - ...
 
 The main website could redirect to subdomains where different parts of the project will be hosted? The website could take the form of a textual game with specific narratives depending on the user's input?
@@ -56,7 +56,7 @@ During our first brainstorming session, a number of interesting ideas came up. I
 - Creating a chrome extension?
   - I don't think we talked about this when we met but it's something I had in mind recently. I don't really envision this as a main asset of the project but as a fun exploration on its own. The idea is to give the user of this plugin (that you install on your browser) an updated version of all the webpages he will visit.
     - With chrome extensions, specific (or all) words, images, videos, advertisments (and so on) could be changed. All kinds of contents could be also added inside the webpage. [This one](https://chrome.google.com/webstore/detail/santa-to-satan/oggeichdlekdakedbibaihfehgdckdfk), for an example, is replacing the word `santa` by the word `satan`. You get the idea ;-)
-    - Chrome extensions could also operate only for a specific website or for lists of websites. 
+    - Chrome extensions could also operate only for a specific website or for lists of websites.
 - Creating a cryptocurrency? Interacting with an existing cryptocurrency?
 - As I mentioned earlier, creating an online game? There's some interesting online textual games, like [Burnt Matches](https://www.pippinbarr.com/2016/11/29/burnt-matches/) done by Pippin Barr - [more info here](https://killscreen.com/articles/pippin-barrs-new-game-brings-concrete-poetry-life/).
 
@@ -72,7 +72,7 @@ Now going back to the root files of the project that Juliette and Dominique shar
 
   - [ ] Investigate how these files are being parsed by the selected OCR toolkit ([tesseract-ocr](https://github.com/tesseract-ocr)? ImageMagick?)
 
-- [ ] Reverse the Python scripts located in the `code` directory. 
+- [ ] Reverse the Python scripts located in the `code` directory.
 
   ------
 
@@ -80,3 +80,6 @@ Now going back to the root files of the project that Juliette and Dominique shar
 
   - [ ] What will be the programming stack? `Node.js `or `Python`?
 
+# 2019.02.11
+
+Hello there.
