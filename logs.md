@@ -282,7 +282,7 @@ Before going back to the working points I listed last week, I'ld like to map her
   const pickedSentence = "The time has come when it will pay to act on the reality underlying the the existing newspaper structure."
   ```
 
-  - This first small program is to convert the text into a chain of keywords. I guess it's a strategy to embed the bot inside broader audience and publics ;-) 
+  - This first small program will  convert the text into a chain of keywords. I guess it's a strategy to embed the bot inside broader audience and publics ;-) 
 
   ```
   function allKeyWords(string){
