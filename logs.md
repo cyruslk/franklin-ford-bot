@@ -308,12 +308,14 @@ Before going back to the working points I listed last week, I'ld like to map her
     const stringToArray = string.split(" ");
     var item = stringToArray[Math.floor(Math.random()*stringToArray.length)];
     stringToArray.map((ele, index) => {
-      arrayToString.push(`${ele}`)
         if(ele === item){
           arrayToString.push(`#${ele}`)
+        }else{
+          arrayToString.push(`${ele}`)
         }
     })
     return arrayToString.join(" ")
+  }
   ```
 
   This will return:
@@ -325,13 +327,13 @@ Before going back to the working points I listed last week, I'ld like to map her
   or -
 
   ```
-  The time has come when it will pay to act on the reality underlying #underlying the the existing newspaper #newspaper structure.
+  The time has come when it will pay to act on the reality underlying #underlying the the existing #newspaper structure.
   ```
 
   - Finally, a third variation could be explored: using a second parameter to the function to control the numbers of keywords within the sentence that'll be Tweeted.
 
   ```
-  function randomKeyWord(string, selectedNumber){
+  function randomKeyWordSelected(string, selectedNumber){
     const arrayToString =[];
     const selectedStrings = [];
     const stringToArray = string.split(" ");
@@ -342,9 +344,10 @@ Before going back to the working points I listed last week, I'ld like to map her
     };
   
     stringToArray.map((ele, index) => {
-      arrayToString.push(`${ele}`)
         if(selectedStrings.indexOf(ele) > -1){
           arrayToString.push(`#${ele}`)
+        }else{
+          arrayToString.push(`${ele}`)
         }
     })
     return arrayToString.join(" ")
