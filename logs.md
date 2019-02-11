@@ -87,3 +87,35 @@ Alright - I spent almost 30 minutes trying to figure out something with `git` - 
 ------
 
 For commenting, the best would be to proceed with `github-issues`.  I'm adding here a step by step of what this github feature could enable us to do.
+
+Firstm you'll have to create a github account. This is quite straightforward. Then, you could either start my repository or save it as a bookmark. When you access the repository, there's a bunch of buttons located right after the repo's title. You need to click on issues. Once you click on it:
+
+
+1. You click on the green button titled: `New Issues`. 
+
+
+   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_errors_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.15.28.png)
+
+2. There, you can type your comment. You can format code as well as the text located in the `logs.md` file. 
+
+
+   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_errors_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.16.43.png)
+    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_errors_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.17.07.png) 
+
+3. Before you publish the `issue`, you can preview your code.
+
+    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_errors_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.17.49.png) 
+
+4. Once this `issue` is published, I can reply.
+
+    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_errors_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.18.10.png)
+    
+
+5. Finally, if the `issue` need to be closed (the feature is finished or we need to move forward with other things), I can close the thread. I don't think this will be necessary though.
+
+     ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_errors_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.21.png)
+   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_errors_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.42.png)  
+
+
+------
+
