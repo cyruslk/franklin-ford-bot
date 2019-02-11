@@ -177,6 +177,37 @@ Before going back to the working points I listed last week, I'ld like to map her
    - Post to`random` subreddits.
 
 
+------
 
 
 
+- [x] Go through Ford's "intelligence triangle" and investigate its types of publications in relation to the design ideas we had during our meeting.
+
+  ```
+  "reading Ford is a jumping-off point for experimentations and theoretical developments that speak to contemporary media problems. In that regard, @franklinfordbot is an experiment, a remediation of Franklin Ford."
+  ```
+
+   This comes from the [project's webpage](https://www.franklinford.org/). What is interesting here is the idea of exploring media and media studies concepts such as remediation through the design of the bot. From the project's documentation, the idea of remediation seems quite central. Other than that, this project also seems to gravitate toward a body of `critical` and `speculative` design/engineering practices and theoritical frameworks. These concepts are not linked to `ford` nor his `intelligence triange` but could be helpful to frame (and reframe) the project: 
+
+  - Critical Making
+
+    - Coming from Garnet Hertz, critical making is the: "combination of critical thinking with hands-on making,
+      a kind of pedagogical practice that uses material
+      engagements with technologies to open up and extend
+      critical social reflection." ([Hetz](https://journals.uvic.ca/index.php/ctheory/article/view/15123/6206), 2015). This could be specifically suited when we'll work with the raspberry-pi.
+
+  - Media-archeology
+
+    - From Jussi Parikka, Media archeology is a "way to investigate the new media cultures through insights from past new media, often with an emphasis on the forgotten, the quirky, the non-obvious apparatuses, practices and inventions." ([Parikka](https://pages.uoregon.edu/koopman/courses_readings/colt607/parikka_what-is-media-archaeology.pdf), 2012).
+
+  - Critical/Tactical Design/engineering
+
+    - This is closely related to Hertz's idea of critical making. The idea is to use design/engineering to foster a debate, to enact from the user of the critical object object a critical discourse on things (social medias, language...)
+
+      From [Dunne & Raby](http://www.dunneandraby.co.uk/content/bydandr/13/0) that coin this term, "Critical Design uses speculative design proposals to challenge narrow assumptions, preconceptions and givens about the role products play in everyday life. (...)"
+
+  ------
+
+  Going back to the idea of remediation.
+
+  Remediation, coming from JD Bolter, R Grusin, is the idea that (new) medias always remediate older ones. In the context of the project, this concept is quite interesting because it gives us a lot of space to explore Ford's ideas in the light of other contexts where social-medias like Twitter belong.
