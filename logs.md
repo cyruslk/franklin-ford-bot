@@ -119,3 +119,64 @@ Firstm you'll have to create a github account. This is quite straightforward. Th
 
 ------
 
+This is the bot: https://twitter.com/franklinfordbot/
+
+- When does it Tweet? What's his frequency?
+  - The bot last tweeted on January, 21st. Before that it was tweting almost every day. Seems quite unstable - is it on purpose?
+- When does the bot replies to its own posts?
+  - I see that sometimes the bot is replying its own posts and sometimes no. This seems quite unstable too. Is there a computational procedure behind this? `Random()` maybe?
+- When does the bot knows what to pick and publish?
+  - I'll revers the code soon and this will help me to figure out these things.
+- Why is the bot splitting its comments in two sections (separated by `1/2` and `2/2`)?
+  - Is there a computational logic/procedure behind this? Is it meaningful to Ford? 
+
+Feel free to answer these using `GitHub-issues`. 
+
+------
+
+
+Before going back to the working points I listed last week, I'ld like to map here a list of playgrounds (+ what they're affording to the project) as well as technical ressources we could use to experiment ideas:
+
+- Playgrounds for (social) textual bots:
+
+  - Twitter? - since we have their API keys; and we have the master keys for the running bot + another set of keys for testing purposes.
+
+  - Reddit 
+  - [Mastodon](https://joinmastodon.org/) - since we have the keys for Twitter and there's more users for now, let's go with Twitter.
+
+- Playgrounds for (conversational) bots:
+
+  - Mesenger bots:
+    - made with Python or Node.js
+      - [This NLP framework](https://dialogflow.com/) could be interesting to investigate
+  - Telegram bot? - If we're able to have mesenger credentials, let's go with Mesenger then.
+
+- In addition the posts performed by the bot and embeded inside the website, we can setup on the website a conversational bot too. Users will be able to have a chat session where and therefore *converse* with the bot.
+
+
+------
+
+1. On Twitter, one way to disseminate content from a general audience to a specific one would be to use keywords.
+
+   ```
+   Keyword targeting allows you to reach Twitter users based on keywords in their search queries, recent Tweets, and Tweets they recently engaged with. Because you can reach people for whom your message will be most relevant and top of mind, this targeting option puts you in a better position to drive engagements and as well as conversions.
+   ```
+
+   Interesting fact: I don't think there's a maximum of keywords allowed. 
+
+   On their [/campaing-targeting]( https://business.twitter.com/en/help/campaign-setup/campaign-targeting.html) page, there's other ways to target audiences. We can use all these features through their API (aka, use these features in the code). In addition to `#` targeting, the obvious targets we could play with would be  `gender`, `language`, `GPS coordinates`, `usernames` and `interests`. However, there's a bunch of other interesting/obscure targets such as the `devices` or `os` or if the user is using a `wifi` of not. On top of using these separatly, we could also pair them and use them in relation to what the bot will parse (length of words, position of words in the sentence and any other weird system we could come with...).
+
+2. On Reddit, the relationship between broad audience and specific audience is quite different.
+
+   You need to post to a `subreddit` - or multipe `subreddits` at the same time. You can also:
+
+   - Upvote/Downvote
+   - Comment on other posts
+   - Add images, links, texts
+   - Add hashtags and keywords 
+   - Post to`random` subreddits.
+
+
+
+
+
