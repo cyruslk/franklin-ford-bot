@@ -357,7 +357,7 @@ Before going back to the working points I listed last week, I'ld like to map her
   If I enter `2`  keywords, this will basically return:
 
   ```
-  The time has come when it will pay to act on the reality underlying #underlying the the existing #newspaper structure.
+  The time has come when it will pay to act on the reality #underlying the the existing #newspaper structure.
   ```
 
   If I enter `8` keywords, this will return:
