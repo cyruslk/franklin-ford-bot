@@ -181,7 +181,7 @@ Before going back to the working points I listed last week, I'ld like to map her
 
 
 
-- [x] Go through Ford's "intelligence triangle" and investigate its types of publications in relation to the design ideas we had during our meeting.
+- Go through Ford's "intelligence triangle" and investigate its types of publications in relation to the design ideas we had during our meeting.
 
   ```
   "reading Ford is a jumping-off point for experimentations and theoretical developments that speak to contemporary media problems. In that regard, @franklinfordbot is an experiment, a remediation of Franklin Ford."
@@ -196,10 +196,6 @@ Before going back to the working points I listed last week, I'ld like to map her
       engagements with technologies to open up and extend
       critical social reflection." ([Hetz](https://journals.uvic.ca/index.php/ctheory/article/view/15123/6206), 2015). This could be specifically suited when we'll work with the raspberry-pi.
 
-  - Media-archeology
-
-    - From Jussi Parikka, Media archeology is a "way to investigate the new media cultures through insights from past new media, often with an emphasis on the forgotten, the quirky, the non-obvious apparatuses, practices and inventions." ([Parikka](https://pages.uoregon.edu/koopman/courses_readings/colt607/parikka_what-is-media-archaeology.pdf), 2012).
-
   - Critical/Tactical Design/engineering
 
     - This is closely related to Hertz's idea of critical making. The idea is to use design/engineering to foster a debate, to enact from the user of the critical object object a critical discourse on things (social medias, language...)
@@ -210,4 +206,62 @@ Before going back to the working points I listed last week, I'ld like to map her
 
   Going back to the idea of remediation.
 
-  Remediation, coming from JD Bolter, R Grusin, is the idea that (new) medias always remediate older ones. In the context of the project, this concept is quite interesting because it gives us a lot of space to explore Ford's ideas in the light of other contexts where social-medias like Twitter belong.
+  Remediation, coming from JD Bolter, R Grusin, is the idea that (new) medias always remediate older ones. In the context of the project, this concept is quite interesting because it gives us a lot of space to explore Ford's ideas in the light of the internet and other digital contexts where social-medias like Twitter belong.
+
+  Narrowing down to Twitter and other social-media Platforms, `remediating ford ` within these contexts means therefore, from my perspective, to `re-contextualise ` Ford's theories inside these Platforms; and what these [Platforms' APIs](https://en.wikipedia.org/wiki/Application_programming_interface) are affording (and eluding).
+
+  This is also closely related to Katherine Hayles' idea of [Media-Specific Analysis](http://www.cws.illinois.edu/IPRHDigitalLiteracies/Hayles.pdf) and her thoughts concerning frictions between natural language and code; printed text and digital text:
+
+  1. Electronic Hypertexts Are Dynamic Images
+  2. Electronic Hypertexts Include Both Analogue Resemblance and Digital Coding
+  3. Electronic Hypertexts Are Generated through Fragmentation and Recombination
+  4. Electronic Hypertexts Have Depth and Operate in Three Dimensions
+  5. Electronic Hypertexts Are Bilingual, Written in Code as Well as Language
+  6. Electronic Hypertexts Are Mutable and Transformable
+  7. Electronic Hypertexts Are Spaces to Navigate
+  8. Electronic Hypertexts Are Written and Read in Distributed Cognitive Environments
+  9. Electronic Hypertexts Initiate and Demand Cyborg Reading Practices
+
+  These remarks could serve as interesting starting points to explore how Hyperlinks and web-environments could remediate ford. 
+
+  ------
+
+    ![](https://static1.squarespace.com/static/58d5343cb8a79b3b68b52265/t/58d56bd31b631bd2a7f6f532/1490381813613/newsoffice2.jpg?format=1000w) 
+
+  I'm reading the *@franklinfordbot: remediating Franklin Ford*'s article now. 
+
+  ```
+  "Saying that Ford's program for the future of the news was grandiose would be an understatement. In its most concrete guise, it takes shape as a centralized news system that involves a triple distribution of facts (what Ford calls the "intelligence triangle") thanks to three types of publications: general-interest newspapers, "class interest" newspapers that cater for the needs of specific professional communities, and an information bureau that sells customized facts to individuals. Ford went into many details in describing the nitty gritty of the system, complete with a list of geographic locations, names for the newspapers, and a business model (Ford 1893). In a letter to his friend and Columbia University Librarian James H. Canfield sent on February 11, 1907, Ford even enclosed further details, including a list of potential subscribers and a plan for incorporations."
+  ```
+
+  Ford's centralized news system triangulates therefore between three main axis:
+
+  1. "General-interest" - intended for a general audience
+  2. "Class interest" - targetting specific communities
+  3. Customized - targetting specific individuals  
+
+  ```
+  
+  "The overarching principle that sustains the model is what Ford calls the "movement of intelligence", that is, the adequate flow of information through society (which Ford evokes in terms of the "social organism"). Each "physical fact" is to be delivered to the appropriate audience thanks to the appropriate medium, at the appropriate time. The movement of intelligence may seem like a simple proposition to balance the informational supply and demand, by delivering just the right amount of facts to the right people (...)"
+  ```
+
+  What I also find very interesting with Ford is the notions of `flow of information`,  of `time-based media` and of `information network`. This is what makes `remediating Franklin Ford` on Twitter an exciting idea - because this Platform is an ecosystem of time-based publications "flowing" inside the network, sorted by keywords and threads.
+
+  ------
+
+  From the intersections between Ford's "intelligence triangle" x our brainstorming ideas:
+
+  - Exploring how Ford could be remediated through a social bot
+
+  Using the Twitter/Reddit API:
+
+  1. "General-interest"
+     1. Publishing the picken sentence on the main account?
+     2. Pairing random keywords to the picken sentence to disseminate the bot accross Twitter - without any specific direction?
+  2. "Class interest"
+     1. Using specific keywords related to the picken sentence? 
+     2. In addition to words, performing a Google query related to the picken words/sentence and return the first link? Could also work with 
+  3. "Customized"
+     1. Sending DM to users based on relationships between their tweets and the bots ones?
+     2. Following specific users?
+     3. Replying, liking or retweeting specific users' tweets?
