@@ -82,4 +82,8 @@ Now going back to the root files of the project that Juliette and Dominique shar
 
 # 2019.02.11
 
-Hello there.
+Alright - I spent almost 30 minutes trying to figure out something with `git` - my files were not properly pushing. Anyway, fixed now. 
+
+------
+
+For commenting, the best would be to proceed with `github-issues`.  I'm adding here a step by step of what this github feature could enable us to do.
