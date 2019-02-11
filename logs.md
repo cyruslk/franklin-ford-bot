@@ -202,6 +202,10 @@ Before going back to the working points I listed last week, I'ld like to map her
 
       From [Dunne & Raby](http://www.dunneandraby.co.uk/content/bydandr/13/0) that coin this term, "Critical Design uses speculative design proposals to challenge narrow assumptions, preconceptions and givens about the role products play in everyday life. (...)"
 
+  - Oulipo 
+
+    - I feel also that - since we're playing with language an exploring in an open-ended format - this artistic and poetic movement could be explored. 
+
   ------
 
   Going back to the idea of remediation.
@@ -265,3 +269,7 @@ Before going back to the working points I listed last week, I'ld like to map her
      1. Sending DM to users based on relationships between their tweets and the bots ones?
      2. Following specific users?
      3. Replying, liking or retweeting specific users' tweets?
+
+  ------
+
+  This leads me to code - and embodied (through code) explorations. For now I'll work with placeholder text, assuming that the OCR part is done and the text is received from the OCR  software to the server. I'll then reverse engineer the bot's source code and probably create a playground version of the project with the unused Twitter keys Juliette gave me.
