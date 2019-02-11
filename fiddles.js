@@ -10,7 +10,7 @@ function allKeyWords(string){
   })
   return arrayToString.join(" ")
 }
-// console.log(allKeyWords(pickedSentence));
+console.log(allKeyWords(pickedSentence));
 
 
 // Only one word become a keyword
@@ -41,7 +41,7 @@ function randomKeyWord(string, selectedNumber){
     var item = stringToArray[Math.floor(Math.random()*stringToArray.length)];
     selectedStrings.push(item)
   };
-  
+
   stringToArray.map((ele, index) => {
     arrayToString.push(`${ele}`)
       if(selectedStrings.indexOf(ele) > -1){
@@ -51,4 +51,4 @@ function randomKeyWord(string, selectedNumber){
   return arrayToString.join(" ")
 }
 
-console.log(randomKeyWord(pickedSentence, 2));
+console.log(randomKeyWord(pickedSentence, 8));

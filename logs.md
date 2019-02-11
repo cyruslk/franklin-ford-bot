@@ -272,4 +272,95 @@ Before going back to the working points I listed last week, I'ld like to map her
 
   ------
 
-  This leads me to code - and embodied (through code) explorations. For now I'll work with placeholder text, assuming that the OCR part is done and the text is received from the OCR  software to the server. I'll then reverse engineer the bot's source code and probably create a playground version of the project with the unused Twitter keys Juliette gave me.
+  This leads me to code - and embodied (through code) explorations. For now I'll work with placeholder text, assuming that the OCR part is done and the text is received from the OCR  software to the server - and about to be pushed on Twitter. I'll then work with the unused keys Juliette gave me.
+
+  For now, these explorations take quite an oulipean (!) turn. 
+
+  Let's say we have this sentence, return from the OCR to the server:
+
+  ```
+  const pickedSentence = "The time has come when it will pay to act on the reality underlying the the existing newspaper structure."
+  ```
+
+  - This first small program is to convert the text into a chain of keywords. I guess it's a strategy to embed the bot inside broader audience and publics ;-) 
+
+  ```
+  function allKeyWords(string){
+    const arrayToString =[];
+    string.split(" ").map((ele, index) => {
+      arrayToString.push(`#${ele}`)
+    })
+    return arrayToString.join(" ")
+  }
+  ```
+
+  This will therefore return: 
+
+  ```
+  #The #time #has #come #when #it #will #pay #to #act #on #the #reality #underlying #the #the #existing #newspaper #structure.
+  ```
+
+  - An alternative would be to randomly pick only one word transfered in keyword:
+
+  ```
+  function randomKeyWord(string){
+    const arrayToString =[];
+    const stringToArray = string.split(" ");
+    var item = stringToArray[Math.floor(Math.random()*stringToArray.length)];
+    stringToArray.map((ele, index) => {
+      arrayToString.push(`${ele}`)
+        if(ele === item){
+          arrayToString.push(`#${ele}`)
+        }
+    })
+    return arrayToString.join(" ")
+  ```
+
+  This will return:
+
+  ```
+  The time has come when it will pay to act on the #reality underlying the the existing newspaper structure.
+  ```
+
+  or -
+
+  ```
+  The time has come when it will pay to act on the reality underlying #underlying the the existing newspaper #newspaper structure.
+  ```
+
+  - Finally, a third variation could be explored: using a second parameter to the function to control the numbers of keywords within the sentence that'll be Tweeted.
+
+  ```
+  function randomKeyWord(string, selectedNumber){
+    const arrayToString =[];
+    const selectedStrings = [];
+    const stringToArray = string.split(" ");
+  
+    for(var i=0; i<selectedNumber; i++){
+      var item = stringToArray[Math.floor(Math.random()*stringToArray.length)];
+      selectedStrings.push(item)
+    };
+  
+    stringToArray.map((ele, index) => {
+      arrayToString.push(`${ele}`)
+        if(selectedStrings.indexOf(ele) > -1){
+          arrayToString.push(`#${ele}`)
+        }
+    })
+    return arrayToString.join(" ")
+  }
+  ```
+
+  If I enter `2`  keywords, this will basically return:
+
+  ```
+  The time has come when it will pay to act on the reality underlying #underlying the the existing #newspaper structure.
+  ```
+
+  If I enter `8` keywords, this will return:
+
+  ```
+  #The time #has come #when #it will pay to act on #the reality underlying the #existing #newspaper #structure.
+  ```
+
+
