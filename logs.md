@@ -369,23 +369,53 @@ Before going back to the working points I listed last week, I'ld like to map her
 
 The plan of today is to:
 
-- [ ] Set up our 'behind the scenes' bot with the credentials Juliette gave me
-- [ ] Investigate what can be done using ` tensorflow.js` 
+- [x] Set up our 'behind the scenes' bot with the credentials Juliette gave me
+- [x] Investigate what can be done using ` tensorflow.js` 
 - [ ] Investigate how `pytorch` can be used with web-dev app.
 - [ ] Go back to my last fiddles - investigate what can be done using reddit.
 - [ ] The triangle meme?
-- [ ] Intersections between the project and machine learning/machine vision at large?
-  - [ ] Using ML5?
-    - [ ] Posnet
-    - [ ] Text-generation model?
-    - [ ] Pose-net?
-
-
+- [x] Ford bot x machine learning?
+- [x] Ford bot x machine vision?
+  - [x] Using ML5?
+    - [x] Posnet
+    - [x] Text-generation model?
 
 Usefull links of today:
 
 - [https://medium.com/@piotr.skalski92/my-first-tensorflow-js-project-b481bdad17fb](https://medium.com/@piotr.skalski92/my-first-tensorflow-js-project-b481bdad17fb)
 - https://dev.to/ixartz/live-digit-recognition-with-tensorflowjs-and-react-12i1
+- https://www.youtube.com/watch?v=Qt3ZABW5lD0&t=3s
 
+------
+
+As a quick way to prototype ideas, an interesting 'way-to-do' would be to use the `ml5` library, which is basically a tensorflow wrapper. `ml5` is interesting because a) it runs on the browser and b) it's very high level - meaning than the only keepen code is what is needed from the program to run. In case we wan't to mess a bit more (hack?) with the hidden code, tensorflow.js would be more suitable - but for now, let's use `ml5` as a way to quickly embody ideas into code.
+
+ Here's the ML5 official website: https://ml5js.org/
+
+Interesting ideas we could explore using a machine learning library such as `ml5`:
+
+## Ford bot x machine learning
+
+- [x] Text-generation model?
+
+This is quite interesting. The idea would be to basically train our own model (based on the writings of Ford) to create new sorts of linguistic forms. Here's the `ml5` tutorial: https://ml5js.org/docs/training-lstm. So based on some inputs entered by the website's user, 'artificial' text coming form the neural network (trained on the writings of Ford) will be displayed. Simple interaction: the user change a set of buttons -> 'artificial' text appear.
+
+-> These inputted parameters could be also defined by the machine, randomly or  not.
+
+[Here](https://raw.githubusercontent.com/ml5js/ml5-data-and-models/master/datasets/text/jkrowling_HP/harrypotter.txt), this is what one of the `ml5` default models looks like, trained on the writings of Harry Potter. The first step would be therefore to concatenate all the writings of fords located in the working repository into one single .txt file.
+
+- [x] Interactive Text Generation LSTM
+
+```
+In this interactive demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained Ernest Hemingway model." Changing length changes the number of characters in the resulting predicted text. 
+```
+
+This would definetely add something more interactive to the project. The idea with this is to have an autocomplete field where the user types some words and the machine completes the sentence based on the model (aka - the writings of Ford).
+
+## Ford bot x machine vision
+
+- [x] Posnet 
+
+  It's been a while i'm thinking of exploring the intersections between personal data and games/playful experiences. In addition to the use of data coming from the browser (such a all [these](https://codepen.io/run-time/pen/XJNXWV) or other [user events](http://clickclickclick.click)), I'm very keen to explore `in real time` data coming from images and cameras. I'm therefore very interested by using biometrics in the context of artisitic/applied research projects.
 
 
