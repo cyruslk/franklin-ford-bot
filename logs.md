@@ -419,3 +419,6 @@ This would definetely add something more interactive to the project. The idea wi
   It's been a while i'm thinking of exploring the intersections between personal data and games/playful experiences. In addition to the use of data coming from the browser (such a all [these](https://codepen.io/run-time/pen/XJNXWV) or other [user events](http://clickclickclick.click)), I'm very keen to explore `in real time` data coming from images and cameras. I'm therefore very interested by using biometrics in the context of artisitic/applied research projects.
 
 
+  A promising path is to explore `face recognition, face tracking, or posnet` scripts in the browser. Face tracking does something like this:
+
+    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2013.23.26.png)  
