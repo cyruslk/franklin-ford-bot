@@ -100,7 +100,7 @@ Firstm you'll have to create a github account. This is quite straightforward. Th
 
 
    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.16.43.png)
-    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.17.07.png) 
+​    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.17.07.png) 
 
 3. Before you publish the `issue`, you can preview your code.
 
@@ -109,13 +109,11 @@ Firstm you'll have to create a github account. This is quite straightforward. Th
 4. Once this `issue` is published, I can reply.
 
     ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.18.10.png)
-    
 
 5. Finally, if the `issue` need to be closed (the feature is finished or we need to move forward with other things), I can close the thread. I don't think this will be necessary though.
 
      ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.21.png)
-   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.42.png)  
-
+      ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.42.png)  
 
 ------
 
@@ -153,7 +151,6 @@ Before going back to the working points I listed last week, I'ld like to map her
 
 - In addition the posts performed by the bot and embeded inside the website, we can setup on the website a conversational bot too. Users will be able to have a chat session where and therefore *converse* with the bot.
 
-
 ------
 
 1. On Twitter, one way to disseminate content from a general audience to a specific one would be to use keywords.
@@ -175,7 +172,6 @@ Before going back to the working points I listed last week, I'ld like to map her
    - Add images, links, texts
    - Add hashtags and keywords 
    - Post to`random` subreddits.
-
 
 ------
 
@@ -365,5 +361,31 @@ Before going back to the working points I listed last week, I'ld like to map her
   ```
   #The time #has come #when #it will pay to act on #the reality underlying the #existing #newspaper #structure.
   ```
+
+
+
+# 2019.02.18
+
+
+The plan of today is to:
+
+- [ ] Set up our 'behind the scenes' bot with the credentials Juliette gave me
+- [ ] Investigate what can be done using ` tensorflow.js` 
+- [ ] Investigate how `pytorch` can be used with web-dev app.
+- [ ] Go back to my last fiddles - investigate what can be done using reddit.
+- [ ] The triangle meme?
+- [ ] Intersections between the project and machine learning/machine vision at large?
+  - [ ] Using ML5?
+    - [ ] Posnet
+    - [ ] Text-generation model?
+    - [ ] Pose-net?
+
+
+
+Usefull links of today:
+
+- [https://medium.com/@piotr.skalski92/my-first-tensorflow-js-project-b481bdad17fb](https://medium.com/@piotr.skalski92/my-first-tensorflow-js-project-b481bdad17fb)
+- https://dev.to/ixartz/live-digit-recognition-with-tensorflowjs-and-react-12i1
+
 
 
