@@ -431,11 +431,12 @@ Ok. I've just finished this first `language x face tracking` prototype. I guess 
 
 Ford, through his `intelligence tiangle`, posits that data should be both distributed globally and within smaller contexts and scopes. On top of his triangle, there's the idea to target data to specific individuals. I was therefore thinking of ways to `remediate` this idea of targetting individuals how individuals are targetted nowadays -- what it means to be an individual digitally.
 
-These thoughts consequently led me to explore 'privacy data' and other - so called! - personal data such as biometrics and fingerprints as starting points to explore Ford's third (and last) fold of its triangle. And instead of a dull way to target individuals without really taking in consideration their 'data', I decided to use for this prototype `face-tracking` related data to generate unique responses from the bot. In other words, the bot return different data based on the interpreted facial features of this user.
+These thoughts consequently led me to explore 'privacy data' and other - so called! - personal data such as biometrics and fingerprints as starting points to explore Ford's third (and last) fold of its triangle. And instead of a dull way to target individuals without really taking in consideration their 'data', I decided to use for this prototype `face-tracking` related data to generate unique responses from the bot. In other words, the bot return different data based on the interpreted facial features of this user (such as posnet).
+
+
 
 I'll push the code online and to a staging URL soon, so that it could be demo'd during talks (it only works with chrome for now), in the meantime here's step by step the idea. [Here's also a video of the prototype in action](https://vimeo.com/318124629). It's one of many prototypes I plan to do tho. Let's call this one the `face-tracking ford generator`.
 
-1. When the user connect to this prototype, the webcam triggers
-     ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2013.23.26.png)
-2. 
+1. When the user connect to this prototype, the webcam triggers.   
+2. The user sees itself in the webcam and can take a snapshot of this 
 
