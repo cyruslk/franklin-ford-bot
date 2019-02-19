@@ -437,13 +437,31 @@ These thoughts consequently led me to explore 'privacy data' and other - so call
 
 I'll push the code online and to a staging URL soon, so that it could be demo'd during talks (it only works in chrome for now), in the meantime here's step by step the idea. [Here's also a video of the prototype in action](https://vimeo.com/318124629). It's one of many prototypes I plan to do tho. Let's call this one the `face-tracking ford generator`.
 
-1. When the user connect to this prototype, the webcam triggers.   
+- When the user connect to this prototype, the webcam triggers with a button to take a snapshot. The app is linked to a Ford OCR'ed text.
 
-2. The user sees itself in the webcam and can take a snapshot of his/her face via the webcam. Shortly after, a face-tracking algorithm (tensorflow.js) is running through the image and creating an outline of the user's facial features.
-    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.56.44.png)
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.10.20.png)
 
-3.  All the `x` and `y` coordinates from the face are retrieved. These are the coordinates that correspond to the outline of the face within the image.
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.08.36.png)
+  
 
-    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.59.23.png) 
+-  The user sees itself in the webcam and can take a snapshot of his/her face via the webcam. Shortly after, a face-tracking algorithm (tensorflow.js) is running through the image and creating an outline of the user's facial features. 
 
-4. These coordinates are rounded. 
+   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.56.44.png)
+
+
+
+- All the `x` and `y` coordinates (aka, data) from the face are retrieved. These are the coordinates that correspond to the outline of the face within the image. 
+
+ ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.59.23.png)
+ 
+
+- These coordinates are rounded. Finally, each coordinate is paired with words coming from the stored Ford OCR'ed text (for now, using index: if the `x coordinate` is, let's say, `12`, it will be paired with the word placed at position `12` in the OCR'ed string -- same with `y`)
+
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2020.37.48.png)
+ 
+
+- Every time a new pose (from the same user of other users) will be snapshotted, the list of numbers (and therefore the list of words) will be different.
+
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2020.37.46.png) 
