@@ -448,7 +448,7 @@ I'll push the code online and to a staging URL soon, so that it could be demo'd 
 -  The user sees itself in the webcam and can take a snapshot of his/her face via the webcam. Shortly after, a face-tracking algorithm (tensorflow.js) is running through the image and creating an outline of the user's facial features. 
 
    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.56.44.png)
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.27.04.png)
+    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.27.04.png)
 
 
 
@@ -466,3 +466,9 @@ I'll push the code online and to a staging URL soon, so that it could be demo'd 
 
 
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2020.37.46.png) 
+
+
+
+# 2019.03.27
+
+Slowly (but surely) coming back to the project now. I have no choice to put it on hold for a few weeks but I'll have plenty of time to catch now. In preparation of our next meeting, I'll start to reply to the commments/notes Juliette added in the repo.
