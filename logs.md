@@ -471,4 +471,24 @@ I'll push the code online and to a staging URL soon, so that it could be demo'd 
 
 # 2019.03.27
 
-Slowly (but surely) coming back to the project now. I have no choice to put it on hold for a few weeks but I'll have plenty of time to catch now. In preparation of our next meeting, I'll start to reply to the commments/notes Juliette added in the repo.
+Slowly (but surely) coming back to the project now. I had no choice to put it on hold for a few weeks but I'll have plenty of time to catch up now. In preparation of our next meeting, I'll start to reply to the commments/notes Juliette added in the repo.
+
+------
+
+Ok, just replied to our [Github issues](https://github.com/cyruslk/franklin-ford-bot/issues). I'll now work on a quick prototype for a Chrome extension I'll made with JavaScript.
+
+------
+
+Oh, also -- before that I wanted to come back to an idea I had during my last working session: what I called **the Triangle meme**. I guess this idea is a bit *hors-propos* with Ford and his triangle of intelligence concept; or at least it's a very absurd remediation/response to it. A bit like [starter pack memes](https://www.google.com/search?biw=1600&bih=876&tbm=isch&sa=1&ei=npqbXOqJCIG0ggfE1YaQAg&q=starter+pack+memes&oq=starter+pack+memes&gs_l=img.3..0j0i30l9.112539.113958..114111...0.0..0.209.609.5j0j1......1....1..gws-wiz-img.......0i67.O7IXFIVUUIM), the idea would be to assign each side of the Ford's triangle to a word/suggestion randomly picken. Behind that, there's also the idea of making a bootleg of this triangle of intelligence concept; use it as a base for a non-sense meme. 
+
+Technical procedure:
+
+1 - Write (with the [Jimp API](https://github.com/oliver-moran/jimp)) three (randomly selected) words on a blank canvas of Ford's intelligence triange.
+
+ 2 - Same process every x minutes/hours/days
+
+3 - Uploading these to an archive (could be on a third party like mastodon, could be on our website).
+
+
+
+ 
