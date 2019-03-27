@@ -487,7 +487,21 @@ Technical procedure:
 
  2 - Same process every x minutes/hours/days
 
-3 - Uploading these to an archive (could be on a third party like mastodon, could be on our website).
+3 - Uploading these to an archive (could be on a third party like mastodon or Twitter, could be on our website).
+
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/ford_meme.jpg>) 
+
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/2_ford_meme.jpg>) 
+
+------
+
+Going back to `chrome extensions` now. I created a folder called `code` and a subfolder called `chrome_extensions`. These bits of code will serve as prototypes to showcase ideas and explore what can be done. I might wrap up these inside the chrome extension boilerplate so that you guys could test them in your browser; in the meantime you can just copy paste the code I wrote inside the browser's console to see how the code works.  
+
+1. **replacing_words_by_others**: this is basically a program that replaces specific words by others inside the same webpage. In this case, we would assign words to others; and when the browser finds a specific word, this word gets replaced by the one we selected.
+
+   Here, *Ford* is replaced by *Franklin Ford*; *Canada* is replaced by *USA* and *Triangle* by *The intelligence triangle*. You get the idea ;-)
+
+2. 
 
 
 
