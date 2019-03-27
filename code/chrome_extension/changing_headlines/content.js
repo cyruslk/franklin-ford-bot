@@ -1,44 +1,13 @@
-// quick and dirty prototype: replacing a word by another; words by others
-// Probably not suited for parsing big chunks of data
+const sentencesFromFord = [
+  "There was no original bent in me to solve the so-called social question; in fact it never occurred to me, per se.",
+  "The settlement day in the world's affairs comes in with the organized movement of the whole intelligence or fact.",
+  "Ye shall know the truth and the truth will make you free.",
+  "Edward Atkinson gave most striking illustration of the volume of news that must at once result from full inquiry into the food question.",
+  "It is perceived that we have only to act upon the principle in order to get not simply more news in quantity, but new news in quality.",
+  "There must come in the daily newspaper Grain and other like publications.",
+  "The price-making fact is the centre of interest."
+]
 
-var elements = document.getElementsByTagName('*');
-
-for (var i = 0; i < elements.length; i++) {
-    var element = elements[i];
-    for (var j = 0; j < element.childNodes.length; j++) {
-        var node = element.childNodes[j];
-        if (node.nodeType === 3 &&
-            node.parentElement.tagName.toLowerCase() != "script" &&
-            node.parentElement.tagName.toLowerCase() != "style") {
-              var text = node.textContent;
-              var replacedText = text.replace("Ford", "Franklin Ford");
-              if (replacedText !== text) {
-                  element.replaceChild(document.createTextNode(replacedText), node);
-              }
-        }
-    }
-    for (var j = 0; j < element.childNodes.length; j++) {
-        var node = element.childNodes[j];
-        if (node.nodeType === 3 &&
-            node.parentElement.tagName.toLowerCase() != "script" &&
-            node.parentElement.tagName.toLowerCase() != "style") {
-            var text = node.textContent;
-            var replacedText = text.replace("Canada", "USA");
-            if (replacedText !== text) {
-                element.replaceChild(document.createTextNode(replacedText), node);
-            }
-        }
-    }
-    for (var j = 0; j < element.childNodes.length; j++) {
-        var node = element.childNodes[j];
-        if (node.nodeType === 3 &&
-            node.parentElement.tagName.toLowerCase() != "script" &&
-            node.parentElement.tagName.toLowerCase() != "style") {
-            var text = node.textContent;
-            var replacedText = text.replace("triangle", "the intelligence triangle");
-            if (replacedText !== text) {
-                element.replaceChild(document.createTextNode(replacedText), node);
-            }
-        }
-    }
-}
+document.querySelectorAll('h2').forEach(function(element) {
+    element.innerText = sentencesFromFord[Math.floor(Math.random()*sentencesFromFord.length)];
+});

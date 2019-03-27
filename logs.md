@@ -501,7 +501,10 @@ Going back to `chrome extensions` now. I created a folder called `code` and a su
 
    Here, *Ford* is replaced by *Franklin Ford*; *Canada* is replaced by *USA* and *Triangle* by *The intelligence triangle*. You get the idea ;-)
 
-2. 
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.52.34.png>) 
+
+2. **changing_headlines**: this is a program that replaces all the headlines of a news website (e.g: *The New York Times* here) with sentences randomly picken from our Ford's Database (I picked a few of them from the Twitter's bot). 
+
 
 
 
