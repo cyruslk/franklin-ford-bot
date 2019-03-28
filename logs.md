@@ -521,6 +521,4 @@ Going back to `chrome extensions` now. I created a folder called `code` and a su
 
    ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.47.png>) 
 
-3. **targetting_specific_websites** 
-
-   More on this soon.
+3. **targetting_specific_websites**: here, the idea would be target specific websites and inject content in their webpages. e.g: if the user goes to www.duckduckgo.com, content A from Ford appears; if he goes to www.nytimes.com, content B from Ford apprears - and so on; we define the websites the code will *listen* to and the code does the rest.
