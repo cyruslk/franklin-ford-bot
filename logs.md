@@ -1,4 +1,4 @@
-2019.02.01+ 2019.02.04
+# 2019.02.01+ 2019.02.04
 
 I'm officially starting to work on this project with Dominique and Juliette. I'm downloading the `Ford` folder so that I'll be able to work with its content locally without using the shared folder hosted on Dropbox. Our last meeting with Juliette was super interesting and we had a bunch of promising ideas to kickoff the project. Before starting to code or design with something in mind, I'ld like therefore to take some time to map out what's being done these days at the intersection between `language x archive x programming`. I'll also take some time to sum up our first brainstorming session later.
 
@@ -521,4 +521,35 @@ Going back to `chrome extensions` now. I created a folder called `code` and a su
 
    ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.47.png>) 
 
-3. **targetting_specific_websites**: here, the idea would be target specific websites and inject content in their webpages. e.g: if the user goes to www.duckduckgo.com, content A from Ford appears; if he goes to www.nytimes.com, content B from Ford apprears - and so on; we define the websites the code will *listen* to and the code does the rest.
+3. **targetting_specific_websites**: here, the idea would be target specific websites and inject content in their webpages. e.g: if the user goes to www.duckduckgo.com, content A from Ford appears; if he goes to www.nytimes.com, content B from Ford apprears - and so on; we define the websites the code will *listen* to and the code does the rest. 
+
+
+# 2019.03.28
+
+TODO in preparation of our meeting:
+
+- [ ] Review all these logs; feedbacks? Concerns? Ideas I should/could push forward?
+- [ ] Form? sections of the website? Archive of small project? Show the logs? Reorganise the page's content?
+- [ ] Timeline? Subdomains?
+- [ ] What to do with the Raspberry Pi?
+- [ ] Further into AI: additional ressources? Work with Python | JavaScript? Both 
+  - [ ] $ for UDEMY courses/small one-day bootcamps in Montréal (such as [this one](https://www.facebook.com/events/376485803102017/426585394758724/?notif_t=admin_plan_mall_activity&notif_id=1553784279409013))
+
+
+------
+
+
+
+3. **targetting_specific_websites**: The idea behind this is to target websites/channels that relates to different audiences from Ford's triangle. Here, www.duckduckgo.com is outputting content that relates to `social` audiences and www.nytimes.com is outputting content that relates to `special` audiences.  For now, it's just some placeholder to show so that you can get the idea.
+
+   ------
+
+   Here's the technical procedure behind the code.
+
+   - There's two databases of content: one for `social`, one for `special` related channels.
+   - If the visitor goes to a webpage labelled `social`, stuffs from the `social` database gets randomly outputted on the webpage.
+   - If the visitor goes to a webpage labelled `special`, stuffs from the `special` database gets randomly outputted on the webpage.
+
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.25.38.png>) 
+
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.30.14.png>) 
