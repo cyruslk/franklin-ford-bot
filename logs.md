@@ -513,7 +513,7 @@ Going back to `chrome extensions` now. I created a folder called `code` and a su
 
    Behind the scenes...
 
-   ------
+------
 
    ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.32.02.png>)
 
@@ -533,8 +533,7 @@ TODO in preparation of our meeting:
 - [ ] Timeline? Subdomains?
 - [ ] What to do with the Raspberry Pi?
 - [ ] Further into AI: additional ressources? Work with Python | JavaScript? Both 
-  - [ ] $ for UDEMY courses/small one-day bootcamps in Montréal (such as [this one](https://www.facebook.com/events/376485803102017/426585394758724/?notif_t=admin_plan_mall_activity&notif_id=1553784279409013))
-
+  - [ ] $ for UDEMY courses/small one-day bootcamps in Montréal (such as [this one](https://www.facebook.com/events/376485803102017/426585394758724/?notif_t=admin_plan_mall_activity&notif_id=1553784279409013) or [this one](https://www.facebook.com/events/348446835715690/404099940150379/?notif_t=admin_plan_mall_activity&notif_id=1553873366198486)).
 
 ------
 
@@ -553,3 +552,8 @@ TODO in preparation of our meeting:
 ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.25.38.png>) 
 
 ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.30.14.png>) 
+
+------
+
+Also, chrome extensions could be wired with `node.js` server to allow real time data events.
+This means that, indeed, instead of having fixed data we can't manage (^like in this case), the data outputted on these targetted websites could come from the Twitter Bot or any other endpoint.
