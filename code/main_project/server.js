@@ -11,7 +11,11 @@ const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
 
 axios.get(spreadsheetURL)
   .then(function (response) {
-    console.log(response.data.feed.entry);
+    // console.log(response.data.feed.entry);
+    // Then here, get a random element of the data.
+    // Once a random element will be picked, run the OCR and go pick a random string.
+    // Then, Tweet it
+    // Then, send it to the Client? Using Socket? Using a simple server setup
   })
   .catch(function (error) {
     console.log(error);
