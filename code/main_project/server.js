@@ -5,16 +5,15 @@ const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 var fs = require('fs');
 const axios = require("axios");
+var config = require('./config.js');
 
+const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
 
-let data;
-
-axios.get('http://api.open-notify.org/iss-now.json')
+axios.get(spreadsheetURL)
   .then(function (response) {
-    data = response;
+    console.log(response.data.feed.entry);
   })
   .catch(function (error) {
-    // handle error
     console.log(error);
   })
 
