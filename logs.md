@@ -557,3 +557,21 @@ TODO in preparation of our meeting:
 
 Also, chrome extensions could be wired with `node.js` server to allow real time data events.
 This means that, indeed, instead of having fixed data we can't manage (^like in this case), the data outputted on these targetted websites could come from the Twitter Bot or any other endpoint.
+
+
+
+# 2019.04.04
+
+TODO of today — and the following days:
+
+Going back to our last (very productive) meeting:
+
+- [ ] Fetch stuffs from a `google-spread-sheet`
+- [ ] Find a way to get all the metadata attached inside the `google-spread-sheet`
+- [ ] store these data in inside a server; link it to bots; set up the bots;
+- [ ] operate the bots
+- [ ] Send the data coming from the bot to the website's client.
+- [ ] Create a kind of a map where data from Ford's bots will be placed and organised.
+
+------
+
