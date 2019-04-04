@@ -575,3 +575,5 @@ Going back to our last (very productive) meeting:
 
 ------
 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/IMG_2967.JPG>) 
+
