@@ -35,9 +35,9 @@ function runTheBot(){
           let stringsArray = data.toString('utf8').split(".");
           let randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
 
-          // console.log(randomString);
-          // console.log(pickenFile);
-          // console.log(randomItemFormatted);
+          console.log(randomString);
+          console.log(pickenFile);
+          console.log(randomItemFormatted);
 
         }
       })
