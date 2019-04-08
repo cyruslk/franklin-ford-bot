@@ -670,3 +670,19 @@ Now that this is done, here's a bunch of questions I need to clarify with you gu
     
         }
       })
+------
+
+Just added a few questions inside our `issues` thread. Adding them here too.
+
+**Q: How do we want to pick a specific subreddit?**
+
+How do we target the reddit list of subreddits and select a thread where our fragment will be posted? For now I see two techniques we could explore:
+
+1. Go through the picken sentence, map through all the words -- and for all of the words, see if there's a match with one of the subreddit's name/title. If the bot returns `The gathering of advertising to a given trade paper must increase just 1/2`, the sentence could be posted both inside [r/thegathering](https://www.reddit.com/r/thegathering/), [r/advertising](https://www.reddit.com/r/advertising/) and others. Recursion and propagation mode.
+2. Go through the picken sentence, run a Watson script to interpret the sentence ([Tone Analyzer, Natural Language Understanding...](https://cloud.ibm.com/developer/watson/documentation))and see if its interpretation is matching with one of the subreddit's name/title. More tricky, less brutal; since the sentence might be quasi-gibberish, watson might have difficulties finding a meaning.
+
+**Q: Do we use the same sentence from Twitter to Reddit?**
+
+I guess we do use the same sentence but we compute it differently but just want to make sure with you. I guess using the same sentence is more interesting because then we have both a platform where this sentence is outputted without any targeting (Twitter, no #), then we have the propagation of this same sentence on Reddit; something we could easily use for for visualisation (I'll start thinking about this soon!) inside the bot's website.
+
+I'll also wire-up our bot with Reddit soon. Cheers!
