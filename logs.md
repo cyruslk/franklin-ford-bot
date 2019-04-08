@@ -620,3 +620,33 @@ Going back to the code of last week - Something I realised is that we're running
 3 - Then, do the computation
 ```
 
+------
+
+I'm about to push some code soon; in the meantime, here's what have been done on my end:
+
+1. I created a `google-spread-sheet` that will be used as the main database for the project. [Here's the link to the sheet.](https://docs.google.com/spreadsheets/d/1nSYEF7r33NUQ4aRQQgI1GiGqxFZOKpuj2yhmyyqTMf8/edit#gid=0) I'll also put this link (as well as other important ones) at the top of this log. Anyway, created this sheet; with placeholder data to focus on the logic.
+
+2. On the server-side (`server.js`), all the content of this sheet is fetched and stored in a variable. Then a random cell is chosen by the bot and all the data from this cell is stored. Therefore:
+
+   1. Each cell is a different text the bot could parse and use.
+   2. Each cell has the same number of columns. These columns are the metadata related to the text the bot could parse.
+
+3. Once this random cell (aka text) is stored, all the metadate from this text is formatted as an object `{}`, following a set of key and values propoerties. 
+
+4. Then a file path is dynamically rendered to access the actual text (located on someone's harddrive — on the raspberry-pi's storage?) renferenced in the randomly selected cell.
+
+5. The bot then reads the content of the file and splits the intire file into an array of sentences using the .split(".") method. A random string is then selected.
+
+6. [The local scope still has access to its global scope](https://www.w3schools.com/js/js_scope.asp), so the bot is able to retreive the metadata of the text, stored earlier.
+
+   Running a bunch of `console.log()` to retreive the `randomString`, the `pickenFile` and the `randomItemFormatted`, here's what the bot outputs in the console.
+
+   ```
+   On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même
+   -----
+   text_file_doc_2
+   -----
+   { date: '17/12/1913', physicalLocation: '440 Fourth Avenue, New York', note: "Accoring to the letterhead, the President is John W. Campbell. Il s'agit d'un vaste réseau, avec des membres dans 300 villes américaines",homeOfficeTravel: '' }
+   ```
+
+    
