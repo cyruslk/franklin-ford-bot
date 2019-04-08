@@ -4,7 +4,7 @@ const http = require('http').Server(app);
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 var fs = require('fs');
-const textFiles = './textFiles/';
+const textFiles = 'textFiles';
 const axios = require("axios");
 var config = require('./config.js');
 

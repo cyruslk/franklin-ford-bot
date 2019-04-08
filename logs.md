@@ -577,3 +577,46 @@ Going back to our last (very productive) meeting:
 
 ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/IMG_2967.JPG>) 
 
+For now, here's how I plan the computation's logic:
+
+```
+const express = require('express');
+const app = express();
+const http = require('http').Server(app);
+const port = process.env.PORT || 5000;
+const bodyParser = require('body-parser');
+var fs = require('fs');
+const axios = require("axios");
+var config = require('./config.js');
+
+const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
+
+axios.get(spreadsheetURL)
+  .then(function (response) {
+    // console.log(response.data.feed.entry);
+    // Then here, get a random element of the data.
+    // Once a random element will be picked, run the OCR and go pick a random string.
+    // Then, Tweet it
+    // Then, send it to the Client? Using Socket? Using a simple server setup
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+
+app.listen(port, () => {
+  console.log('listening on port ' + port)
+});
+```
+
+
+
+# 2019.04.08
+
+Going back to the code of last week - Something I realised is that we're running the OCR every time we're performing a fetch from the URL. This is a lot of computation and we should be able to:
+
+```
+1 - Run the OCR one -- for all the texts
+2 - Pick a random string using the split(".") operator inside a .txt file.
+3 - Then, do the computation
+```
+
