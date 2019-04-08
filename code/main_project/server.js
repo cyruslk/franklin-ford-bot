@@ -34,10 +34,14 @@ function runTheBot(){
         }else{
           let stringsArray = data.toString('utf8').split(".");
           let randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
+          // here, twit to the archiving bot; # or no?
 
-          console.log(randomString);
-          console.log(pickenFile);
-          console.log(randomItemFormatted);
+          // here, post on reddit? how to target?
+          // Go through all the subreddits and see if one matches with a word from the string?
+          // Use a NL/ml-thingy (such as watson?) to figure out the meaning of the string, then:
+          // Go through all the subreddits and see if one matches with a word from the watson prediction?
+
+          // once it's posted, send it to the client
 
         }
       })

@@ -649,4 +649,24 @@ I'm about to push some code soon; in the meantime, here's what have been done on
    { date: '17/12/1913', physicalLocation: '440 Fourth Avenue, New York', note: "Accoring to the letterhead, the President is John W. Campbell. Il s'agit d'un vaste réseau, avec des membres dans 300 villes américaines",homeOfficeTravel: '' }
    ```
 
+------
+
+Now that this is done, here's a bunch of questions I need to clarify with you guys. I'll post these questions in the `GitHub-issues` thread as well.
+
+      fs.readFile(filePath, function read(err, data) {
+        if(err){
+          console.log("show the err here", err);
+        }else{
+          let stringsArray = data.toString('utf8').split(".");
+          let randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
     
+          // here, twit to the archiving bot; # or no?
+          // here, post on reddit? how to target?
+          // Go through all the subreddits and see if one matches with a word from the string?
+          // Use a NL/ml-thingy (such as watson?) to figure out the meaning of the string, then:
+          // Go through all the subreddits; matches with a word from the watson prediction?
+    
+          // once it's posted, send it to the client
+    
+        }
+      })
