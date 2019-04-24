@@ -686,3 +686,14 @@ How do we target the reddit list of subreddits and select a thread where our fra
 I guess we do use the same sentence but we compute it differently but just want to make sure with you. I guess using the same sentence is more interesting because then we have both a platform where this sentence is outputted without any targeting (Twitter, no #), then we have the propagation of this same sentence on Reddit; something we could easily use for for visualisation (I'll start thinking about this soon!) inside the bot's website.
 
 I'll also wire-up our bot with Reddit soon. Cheers!
+
+
+
+# 2019.04.24
+
+
+Today = 
+
+1. wire up both the Twitter + Reddit bot
+2. Make these bots run through my local files
+3. Go back to Juliette's notes on my issues
