@@ -3,13 +3,42 @@ const app = express();
 const http = require('http').Server(app);
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
-var fs = require('fs');
+const fs = require('fs');
+var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
+const Snoowrap = require('snoowrap');
+const Snoostorm = require('snoostorm');
 const axios = require("axios");
 var config = require('./config.js');
-
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
 
-function runTheBot(){
+
+// ibm thing
+var nlu = new NaturalLanguageUnderstandingV1({
+    url: config.watson_app_url,
+    version: '2018-04-05',
+    iam_apikey: config.iam_apikey,
+    iam_url: "https://iam.bluemix.net/identity/token"
+});
+
+// reddit thing
+const r = new Snoowrap({
+    userAgent: 'franklin_ford',
+    clientId: config.reddit_client_id,
+    clientSecret: config.reddit_client_secret,
+    username: config.reddit_username,
+    password: config.reddit_password
+});
+const client = new Snoostorm(r);
+
+const streamOpts = {
+    subreddit: 'all',
+    results: 1
+};
+
+const comments = client.CommentStream(streamOpts);
+
+
+ runTheBot = () => {
   axios.get(spreadsheetURL)
     .then(function (response) {
 
@@ -33,14 +62,50 @@ function runTheBot(){
           console.log("show the err here", err);
         }else{
           let stringsArray = data.toString('utf8').split(".");
-          let randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
-          // here, twit to the archiving bot; # or no?
 
+          returnSpecificString = () => {
+            const randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
+            if(randomString.length < 40){
+              return returnSpecificString()
+            }else{
+              return randomString;
+            }
+          }
+
+          let selectedString = returnSpecificString();
+
+          nlu.analyze(
+            {
+              html: selectedString,
+              features: {
+                concepts: {},
+                keywords: {}
+              }
+            },
+            function(err, response) {
+              if (err) {
+                console.log('error:', err);
+              } else {
+                const IBMredictionKeywords = response.concepts.map((ele, index) => {
+                  return ele.text;
+                });
+                console.log(
+                  selectedString,
+                  IBMredictionKeywords
+                );
+              }
+            }
+          );
+
+
+
+          // here, twit to the archiving bot; # or no?
+          //
           // here, post on reddit? how to target?
           // Go through all the subreddits and see if one matches with a word from the string?
           // Use a NL/ml-thingy (such as watson?) to figure out the meaning of the string, then:
           // Go through all the subreddits and see if one matches with a word from the watson prediction?
-
+          //
           // once it's posted, send it to the client
 
         }
