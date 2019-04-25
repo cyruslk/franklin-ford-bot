@@ -692,8 +692,24 @@ I'll also wire-up our bot with Reddit soon. Cheers!
 # 2019.04.24
 
 
-Today = 
+LIST OF TODAY
 
-1. wire up both the Twitter + Reddit bot
-2. Make these bots run through my local files
-3. Go back to Juliette's notes on my issues
+- [ ] wire up both the Twitter + Reddit bot
+- [x] Make these bots run through my local files
+- [x] Go back to Juliette's notes on my issues
+  - [x] implement the NLP of Watson?
+    - [x] natural-language-understanding
+- [ ] From the code to the bot = make a timer to run the bot at a certain pace.
+- [x] Sometimes, the bot returns empty strings : make a validator to rerun the bot if the string.length < 4 - to be decided.
+  - [ ] What to do with Twitter's length? When the word > the max. length defined by T?
+- [ ] Wire the backend to the front-end using [React.js](https://reactjs.org) and [surge.sh](https://surge.sh/).
+  - [ ] Also, we probably need a database.
+
+------
+
+Asking for a IBM Watson Account now.  Since I'm working with Node.js, might use [this wrapper](https://github.com/watson-developer-cloud/node-sdk).
+Adding this for reference:
+
+1. http://watson-developer-cloud.github.io/node-sdk/ltv3/
+2. https://blog.syntonic.io/2017/07/07/reddit-bot-nodejs-example/
+
