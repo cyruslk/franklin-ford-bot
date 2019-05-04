@@ -1,3 +1,12 @@
+# IMPORTANT LINKS
+
+- THE PROJECT'S PROCESS: ⏬ - <https://github.com/cyruslk/franklin-ford-bot/blob/master/logs.md>
+- THE PROJECT'S 'ISSUES' -  <https://github.com/cyruslk/franklin-ford-bot/issues>
+- THE PROJECT'S TWITTER ACCOUNT - <https://twitter.com/franklinfordbot/>
+- THE PROJECT'S WEBSITE: <https://www.franklinford.org/>
+- THE PROJECT'S WORK IN PROGRESS GOOGLESHEET: http://bit.ly/2DNfTEF
+- THE PROJECT'S NATURAL LANGUAGE PROCESSING LIBRARY: http://bit.ly/2WtmWKg
+
 # 2019.02.01+ 2019.02.04
 
 I'm officially starting to work on this project with Dominique and Juliette. I'm downloading the `Ford` folder so that I'll be able to work with its content locally without using the shared folder hosted on Dropbox. Our last meeting with Juliette was super interesting and we had a bunch of promising ideas to kickoff the project. Before starting to code or design with something in mind, I'ld like therefore to take some time to map out what's being done these days at the intersection between `language x archive x programming`. I'll also take some time to sum up our first brainstorming session later.
@@ -694,16 +703,16 @@ I'll also wire-up our bot with Reddit soon. Cheers!
 
 LIST OF TODAY
 
-- [ ] wire up both the Twitter + Reddit bot
+- [x] wire up both the Twitter + Reddit bot
 - [x] Make these bots run through my local files
 - [x] Go back to Juliette's notes on my issues
   - [x] implement the NLP of Watson?
     - [x] natural-language-understanding
 - [ ] From the code to the bot = make a timer to run the bot at a certain pace.
 - [x] Sometimes, the bot returns empty strings : make a validator to rerun the bot if the string.length < 4 - to be decided.
-  - [ ] What to do with Twitter's length? When the word > the max. length defined by T?
+  - [x] What to do with Twitter's length? When the word > the max. length defined by T?
 - [ ] Wire the backend to the front-end using [React.js](https://reactjs.org) and [surge.sh](https://surge.sh/).
-  - [ ] Also, we probably need a database.
+  - [x] Also, we probably need a database.
 
 ------
 
@@ -713,3 +722,23 @@ Adding this for reference:
 1. http://watson-developer-cloud.github.io/node-sdk/ltv3/
 2. https://blog.syntonic.io/2017/07/07/reddit-bot-nodejs-example/
 
+# 2019.05.04
+
+What is done:
+
+- [x] Getting from the google spread sheet
+- [x] Randomly getting one cell from this spread sheet
+- [x] Accessing the .txt file attached to this cell*
+- [x] Getting a random sentence from this .txt file
+  - [x] Running the process again if the sentence is less than 40 characters long
+- [x] Extracting keywords from this sentence using the Watson  natural-language-understanding services.
+- [x] Tweeting the sentence
+
+What needs to be done:
+
+- [ ] Once the all thing is tweeted, post on reddit
+- [ ] Then, store everything (TBD) inside the database
+  - [ ] TBD = metadata from the posts (coming from the spreadsheet) etc...
+- [ ] Send all the content of the db to the front-end (= the website).
+- [ ] Display the content (TBD)
+  - [ ] Use pixels coordinates to play with the x,y coordinates of the page > the metadata? 

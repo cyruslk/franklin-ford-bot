@@ -4,6 +4,7 @@ const http = require('http').Server(app);
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const fs = require('fs');
+var Twit = require('twit')
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
 const Snoowrap = require('snoowrap');
 const Snoostorm = require('snoostorm');
@@ -21,21 +22,32 @@ var nlu = new NaturalLanguageUnderstandingV1({
 });
 
 // reddit thing
-const r = new Snoowrap({
-    userAgent: 'franklin_ford',
-    clientId: config.reddit_client_id,
-    clientSecret: config.reddit_client_secret,
-    username: config.reddit_username,
-    password: config.reddit_password
-});
-const client = new Snoostorm(r);
+// const r = new Snoowrap({
+//     userAgent: 'franklin_ford',
+//     clientId: config.reddit_client_id,
+//     clientSecret: config.reddit_client_secret,
+//     username: config.reddit_username,
+//     password: config.reddit_password
+// });
+// const client = new Snoostorm(r);
+//
+// const streamOpts = {
+//     subreddit: 'all',
+//     results: 1
+// };
+//
+// const comments = client.CommentStream(streamOpts);
 
-const streamOpts = {
-    subreddit: 'all',
-    results: 1
-};
+// tweet thing
+var T = new Twit({
+  consumer_key:         config.twitter_consumer_key,
+  consumer_secret:      config.twitter_consumer_secret,
+  access_token:         config.twitter_access_token,
+  access_token_secret:  config.twitter_access_token_secret,
+  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
+  strictSSL:            true,     // optional - requires SSL certificates to be valid.
+})
 
-const comments = client.CommentStream(streamOpts);
 
 
  runTheBot = () => {
@@ -82,32 +94,24 @@ const comments = client.CommentStream(streamOpts);
                 keywords: {}
               }
             },
-            function(err, response) {
+            (err, response) => {
               if (err) {
                 console.log('error:', err);
               } else {
-                const IBMredictionKeywords = response.concepts.map((ele, index) => {
+                const IBMPredictions = response.concepts.map((ele, index) => {
                   return ele.text;
                 });
                 console.log(
                   selectedString,
-                  IBMredictionKeywords
+                  IBMPredictions
                 );
+                // tweeting here
+                T.post('statuses/update', { status: selectedString }, function(err, data, response) {
+                    console.log(data)
+                })
               }
             }
           );
-
-
-
-          // here, twit to the archiving bot; # or no?
-          //
-          // here, post on reddit? how to target?
-          // Go through all the subreddits and see if one matches with a word from the string?
-          // Use a NL/ml-thingy (such as watson?) to figure out the meaning of the string, then:
-          // Go through all the subreddits and see if one matches with a word from the watson prediction?
-          //
-          // once it's posted, send it to the client
-
         }
       })
 
