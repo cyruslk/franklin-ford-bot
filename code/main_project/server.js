@@ -6,14 +6,16 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 var Twit = require('twit')
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
+const axios = require("axios");
+const { CommentStream } = require("snoostorm");
 const Snoowrap = require('snoowrap');
 const Snoostorm = require('snoostorm');
-const axios = require("axios");
 var config = require('./config.js');
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
 
+var url = "mongodb://localhost:27017";
+var MongoClient = require('mongodb').MongoClient;
 
-// ibm thing
 var nlu = new NaturalLanguageUnderstandingV1({
     url: config.watson_app_url,
     version: '2018-04-05',
@@ -21,34 +23,22 @@ var nlu = new NaturalLanguageUnderstandingV1({
     iam_url: "https://iam.bluemix.net/identity/token"
 });
 
-// reddit thing
-// const r = new Snoowrap({
-//     userAgent: 'franklin_ford',
-//     clientId: config.reddit_client_id,
-//     clientSecret: config.reddit_client_secret,
-//     username: config.reddit_username,
-//     password: config.reddit_password
-// });
-// const client = new Snoostorm(r);
-//
-// const streamOpts = {
-//     subreddit: 'all',
-//     results: 1
-// };
-//
-// const comments = client.CommentStream(streamOpts);
+const r = new Snoowrap({
+    userAgent: 'franklin_ford',
+    clientId: config.reddit_client_id,
+    clientSecret: config.reddit_client_secret,
+    username: config.reddit_username,
+    password: config.reddit_password
+});
 
-// tweet thing
+// const stream = new CommentStream(r, { subreddit: "all", results: 25 });
+
 var T = new Twit({
   consumer_key:         config.twitter_consumer_key,
   consumer_secret:      config.twitter_consumer_secret,
   access_token:         config.twitter_access_token,
   access_token_secret:  config.twitter_access_token_secret,
-  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
-  strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
-
-
 
  runTheBot = () => {
   axios.get(spreadsheetURL)
@@ -74,7 +64,6 @@ var T = new Twit({
           console.log("show the err here", err);
         }else{
           let stringsArray = data.toString('utf8').split(".");
-
           returnSpecificString = () => {
             const randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
             if(randomString.length < 40){
@@ -83,9 +72,7 @@ var T = new Twit({
               return randomString;
             }
           }
-
           let selectedString = returnSpecificString();
-
           nlu.analyze(
             {
               html: selectedString,
@@ -105,10 +92,13 @@ var T = new Twit({
                   selectedString,
                   IBMPredictions
                 );
-                // tweeting here
-                T.post('statuses/update', { status: selectedString }, function(err, data, response) {
-                    console.log(data)
-                })
+                // T.post('statuses/update', { status: selectedString }, function(err, data, response) {
+                //     console.log(data)
+                //     // comment on reddit here
+                // })
+                // stream.on("item", comment => {
+                //     console.log(comment)
+                // })
               }
             }
           );
