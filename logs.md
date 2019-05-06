@@ -737,8 +737,16 @@ What is done:
 What needs to be done:
 
 - [ ] Once the all thing is tweeted, post on reddit
+  - [ ] How to select the subreddit(s) where this will be performed?
 - [ ] Then, store everything (TBD) inside the database
   - [ ] TBD = metadata from the posts (coming from the spreadsheet) etc...
+  - [ ] What should be sent to the db?
 - [ ] Send all the content of the db to the front-end (= the website).
 - [ ] Display the content (TBD)
   - [ ] Use pixels coordinates to play with the x,y coordinates of the page > the metadata? 
+
+
+
+# 2019.05.06
+
+The framework I was using to connect to `reddit` is buggy, so I'm using this one instead now: <https://github.com/JuicyPasta/reddit-snooper> — did a bunch of tests and it seems to work fine. 
