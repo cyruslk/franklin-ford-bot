@@ -7,9 +7,7 @@ const fs = require('fs');
 var Twit = require('twit')
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
 const axios = require("axios");
-const { CommentStream } = require("snoostorm");
-const Snoowrap = require('snoowrap');
-const Snoostorm = require('snoostorm');
+var Snooper = require('reddit-snooper')
 var config = require('./config.js');
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
 
@@ -23,15 +21,18 @@ var nlu = new NaturalLanguageUnderstandingV1({
     iam_url: "https://iam.bluemix.net/identity/token"
 });
 
-const r = new Snoowrap({
-    userAgent: 'franklin_ford',
-    clientId: config.reddit_client_id,
-    clientSecret: config.reddit_client_secret,
+snooper = new Snooper(
+{
     username: config.reddit_username,
-    password: config.reddit_password
-});
+    password: config.reddit_password,
+    app_id: config.reddit_client_id,
+    api_secret: config.reddit_client_secret,
+    user_agent: 'franklin_ford',
+    automatic_retries: true,
+    api_requests_per_minute: 60 
+}
+)
 
-// const stream = new CommentStream(r, { subreddit: "all", results: 25 });
 
 var T = new Twit({
   consumer_key:         config.twitter_consumer_key,
@@ -92,13 +93,13 @@ var T = new Twit({
                   selectedString,
                   IBMPredictions
                 );
-                // T.post('statuses/update', { status: selectedString }, function(err, data, response) {
-                //     console.log(data)
-                //     // comment on reddit here
-                // })
-                // stream.on("item", comment => {
-                //     console.log(comment)
-                // })
+
+                // reddit thing
+                snooper.watcher.getPostWatcher("all")
+                  .on('post', function(post) {
+                      console.log('post was posted by: ' + post.data.author)
+                  })
+                  .on('error', console.error)
               }
             }
           );
