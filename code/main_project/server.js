@@ -29,7 +29,7 @@ snooper = new Snooper(
     api_secret: config.reddit_client_secret,
     user_agent: 'franklin_ford',
     automatic_retries: true,
-    api_requests_per_minute: 60 
+    api_requests_per_minute: 60
 }
 )
 
@@ -113,7 +113,7 @@ var T = new Twit({
     })
 
   app.listen(port, () => {
-    console.log('listening on port ' + port)
+    console.log('listening on port:' + port)
   });
 }
 
