@@ -1,0 +1,36 @@
+.main_data_section{
+  margin-top: 5vw;
+}
+
+.entries_cell{
+  width: 30%;
+  padding: 1vw;
+  border-radius: 20px;
+}
+
+.entries_cell h1{
+  font-size: 1vw;
+  margin: 0;
+  font-family: serif;
+}
+
+.chat_section{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1vw;
+  padding: 2vw;
+}
+
+.chat_section h1{
+  font-size: 1vw;
+  margin: 0;
+  font-family: serif;
+}
+
+.filter_section{
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 1vw;
+}
