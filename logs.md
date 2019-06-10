@@ -696,8 +696,6 @@ I guess we do use the same sentence but we compute it differently but just want 
 
 I'll also wire-up our bot with Reddit soon. Cheers!
 
-
-
 # 2019.04.24
 
 
@@ -711,7 +709,7 @@ LIST OF TODAY
 - [ ] From the code to the bot = make a timer to run the bot at a certain pace.
 - [x] Sometimes, the bot returns empty strings : make a validator to rerun the bot if the string.length < 4 - to be decided.
   - [x] What to do with Twitter's length? When the word > the max. length defined by T?
-- [ ] Wire the backend to the front-end using [React.js](https://reactjs.org) and [surge.sh](https://surge.sh/).
+- [x] Wire the backend to the front-end using [React.js](https://reactjs.org) and [surge.sh](https://surge.sh/).
   - [x] Also, we probably need a database.
 
 ------
@@ -736,13 +734,73 @@ What is done:
 
 What needs to be done:
 
-- [ ] Once the all thing is tweeted, post on reddit
-- [ ] Then, store everything (TBD) inside the database
-  - [ ] TBD = metadata from the posts (coming from the spreadsheet) etc...
-- [ ] Send all the content of the db to the front-end (= the website).
-- [ ] Display the content (TBD)
+- [x] Once the all thing is tweeted, post on reddit
+- [x] Then, store everything (TBD) inside the database
+  - [x] TBD = metadata from the posts (coming from the spreadsheet) etc...
+- [x] Send all the content of the db to the front-end (= the website).
+- [x] Display the content (TBD)
   - [ ] Use pixels coordinates to play with the x,y coordinates of the page > the metadata? 
 
 # 2019.05.06
 
 The framework I was using to connect to `reddit` is buggy, so I'm using this one instead now: <https://github.com/JuicyPasta/reddit-snooper> — did a bunch of tests and it seems to work fine.
+
+# 2019.06.09
+
+Ok. I've move forward with the `reddit` part and I've refactored my code a bit.
+
+------
+
+Here's how the reddit part is operating:
+
+1. A text is randomly selected.
+
+2. This text is sent to the IBM NLP service.
+
+   1. Once this NLP service is done, the `performTheSubredditSearch` is called.
+      This function takes the first guess of the IBM NLP as its input and accesses the reddit `get` search endpoint. Let's say the guess is the term `science`, [this is what the endpoint is returning](https://www.reddit.com/search.json?q=science). 
+
+      Note: you need to have a Json parser chrome extension to visualize correcly the data. [Here's one](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=fr). 
+
+   2. This returns a collection of posts that matches with this specific keyword. Inside this list, the program is then randomly chosing an element, and extracting its `subreddit`.
+
+      - [ ] To be decided: Do we go with the random approach?
+      - [ ] Do we use data from this step? = data from the post used to extract the subr
+
+   3. The random subreddit is being sent to the `performTheRedditPost` function. This function triggers the post to reddit.
+
+      - [ ] To be decided: what do we post on `reddit`? 
+        Same content? Text with more context?
+        Do we post the metadata related to the source of the information -> the spreadsheet?
+
+   4. Once this post is created on reddit, the `getTheInfoFromTheRedditPost` function is called.
+      This function connects to the list of all the posts performed by the bot and retrieves the data related to the post that was created previously. The endpoint [to get this data can be accessed here](https://www.reddit.com/user/franklin_ford/overview.json).  
+
+      - [ ] Apart from the url of the post, what do we keep? The date when the post was created maybe? 
+
+------
+
+Once all these steps are done, the program stores everything to the database. This is where I refactored my code so that the database can also store all types of data coming from the various steps of the program.
+
+------
+
+Now, I'm facing two technical challenge I need to investigate. 
+
+- When I run the IBM program on the .txt version of the texts, I don't have any output returned. However, with [the online verision that IBM is proposing](https://natural-language-understanding-demo.ng.bluemix.net/), I've been able to get responses with the same text. It's the same `node` package used, so there's probably a technical detail or argument I forgot to implement.  I'm in contact with folks from the company in order to see what's going on. In the meantime, I'm working with *understandable* placeholder text.
+  - [ ] Worst case scenario: alternative to IBM?
+  - [ ] Alternative to the NLP service?
+- I need to handle:
+  - The interval of the bot: at what time will it run?
+  - The program crashes that could occur. I'll make a list of them so that I can investigate how to fix them in due time. In the meantime:
+    - [ ] `error: Error: NO_SELFS,that subreddit doesn't allow text posts,sr`
+      Case: the program targets a subreddit where it's not allowed to post text contents.
+
+------
+
+Other than these two ^ issues, here's what i'll work on on the following work sessions:
+
+- [ ] Refactor a bit the database on the server. Host the database with a proxy.
+- [ ] How do we switch with https://www.franklinford.org/?
+- [ ] On the *'personal interaction'* with Ford: 
+  - [ ] Ford Autocomplete?
+  - [ ] Ford Chatbot?

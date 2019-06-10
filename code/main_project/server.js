@@ -1,38 +1,54 @@
 const express = require('express');
+const snoowrap = require('snoowrap');
 const app = express();
-const http = require('http').Server(app);
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const fs = require('fs');
 var Twit = require('twit')
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
 const axios = require("axios");
-var Snooper = require('reddit-snooper')
 var config = require('./config.js');
+
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
+const redditProfileEndPoint = `https://www.reddit.com/user/${config.reddit_user_agent}/overview.json`;
 
-var url = "mongodb://localhost:27017";
-var MongoClient = require('mongodb').MongoClient;
+const {MongoClient} = require("mongodb");
+const connectionURL = config.mongoConnectionURL;
+const databaseName = config.mongoDatabaseName;
 
-var nlu = new NaturalLanguageUnderstandingV1({
-    url: config.watson_app_url,
-    version: '2018-04-05',
-    iam_apikey: config.iam_apikey,
-    iam_url: "https://iam.bluemix.net/identity/token"
+
+app.use(express.static(__dirname + '/public'));
+app.all('*', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
 });
 
-snooper = new Snooper(
-{
-    username: config.reddit_username,
-    password: config.reddit_password,
-    app_id: config.reddit_client_id,
-    api_secret: config.reddit_client_secret,
-    user_agent: 'franklin_ford',
-    automatic_retries: true,
-    api_requests_per_minute: 60
-}
-)
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
+app.use(bodyParser.json());
+
+
+var nlu = new NaturalLanguageUnderstandingV1({
+    url: "https://gateway.watsonplatform.net/natural-language-understanding/api",
+    version: '2018-04-05',
+    iam_apikey: "GUB8GmVjnAFgY2TAwy_HqeMWy7Zwl-R6js6beazLslT6",
+    iam_url: "https://iam.bluemix.net/identity/token",
+    language: "en"
+});
+
+
+
+const redditScript = new snoowrap({
+  userAgent: config.reddit_user_agent,
+  clientId: config.reddit_client_id,
+  clientSecret: config.reddit_client_secret,
+  username: config.reddit_username,
+  password: config.reddit_password
+});
 
 var T = new Twit({
   consumer_key:         config.twitter_consumer_key,
@@ -41,81 +57,196 @@ var T = new Twit({
   access_token_secret:  config.twitter_access_token_secret,
 })
 
- runTheBot = () => {
+
+ const runTheBot = () => {
+
+   let dataObj = {};
+
   axios.get(spreadsheetURL)
-    .then(function (response) {
+    .then((response) => {
+     let arrayOfData = [
+       response.data.feed.entry[5],
+       response.data.feed.entry[1],
+       response.data.feed.entry[4]
+     ]
 
-      let arrayOfData = response.data.feed.entry;
-      let length = arrayOfData.length;
-      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
+     let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
 
-      let randomItemFormatted = {
-        date: randomItem.gsx$name.$t,
-        physicalLocation: randomItem.gsx$physicallocation.$t,
-        date: randomItem.gsx$date.$t,
-        note: randomItem.gsx$note.$t,
-        homeOfficeTravel: randomItem.gsx$homeofficetravel.$t
-      }
+     let randomItemFormatted = {
+       source_authorname: randomItem.gsx$authorname.$t,
+       source_dateyear: randomItem.gsx$dateyear.$t,
+       source_fulldateifknown: randomItem.gsx$fulldateifknown.$t,
+       source_title: randomItem.gsx$title.$t,
+       source_publishedin: randomItem.gsx$publishedin.$t,
+       source_pages: randomItem.gsx$pages.$t,
+       source_lieu: randomItem.gsx$lieu.$t,
+       source_filenamepdf: randomItem.gsx$filenamepdf.$t,
+       source_filenametxt: randomItem.gsx$filenametxt.$t,
+       source_notes: randomItem.gsx$notes.$t,
+       source_manuscrittapuscrit: randomItem.gsx$manuscrittapuscrit.$t
+     }
 
-      let pickenFile = randomItem.gsx$source.$t;
-      let filePath = `textFiles/${pickenFile}.txt`;
+     let pickenFile = randomItemFormatted.source_filenametxt;
+     let filePath = `textFiles/${pickenFile}`;
 
-      fs.readFile(filePath, function read(err, data) {
-        if(err){
-          console.log("show the err here", err);
-        }else{
-          let stringsArray = data.toString('utf8').split(".");
-          returnSpecificString = () => {
-            const randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
-            if(randomString.length < 40){
-              return returnSpecificString()
-            }else{
-              return randomString;
-            }
-          }
-          let selectedString = returnSpecificString();
-          nlu.analyze(
-            {
-              html: selectedString,
-              features: {
-                concepts: {},
-                keywords: {}
-              }
-            },
-            (err, response) => {
-              if (err) {
-                console.log('error:', err);
-              } else {
-                const IBMPredictions = response.concepts.map((ele, index) => {
-                  return ele.text;
-                });
-                console.log(
-                  selectedString,
-                  IBMPredictions
-                );
 
-                // reddit thing
-                snooper.watcher.getPostWatcher("all")
-                  .on('post', function(post) {
-                      console.log('post was posted by: ' + post.data.author)
-                  })
-                  .on('error', console.error)
-              }
-            }
-          );
+
+     fs.readFile(filePath, function read(err, data) {
+       if(err){
+         console.log(err);
+       }else{
+         let stringsArray = data.toString('utf8').split(".");
+         dataObj.randomItemFormatted = randomItemFormatted;
+         dataObj.stringsArray = stringsArray;
+         return returnSpecificString(dataObj);
+       }
+    });
+  })}
+
+
+  const returnSpecificString = (dataObj) => {
+
+    const randomString = dataObj.stringsArray[Math.floor(
+      Math.random()*dataObj.stringsArray.length
+    )];
+    dataObj.randomString = randomString;
+    if(randomString.length < 40){
+      return returnSpecificString()
+    }else{
+      setTimeout(() => {
+        return runNLU(dataObj)},
+        3000);
+    }
+  }
+
+
+   let runNLU = (dataObj) => {
+     nlu.analyze(
+      {
+        // change this here with the randomString
+        text: "hello world!",
+        language: "en",
+        features: {
+          concepts: {},
+          keywords: {}
         }
       })
+      .then(result => {
+        if(result.concepts.length > 0){
+          const ibmGuess = result.concepts[0].text
+          dataObj.ibmGuess = ibmGuess;
+          return performTheSubredditSearch(dataObj);
+        }else{
+          return returnSpecificString(dataObj);
+        }
+      })
+      .catch(err => {
+        console.log('error:', err);
+      });
+   }
 
 
+   const performTheSubredditSearch = (dataObj) => {
+     let redditEndPoint = `http://www.reddit.com/search.json?q=${dataObj.ibmGuess}`
+       axios.get(redditEndPoint)
+       .then((response) => {
+         let listOfSubreddits = response.data.data.children;
+         var randomSubredditData = listOfSubreddits[Math.floor(
+           Math.random() * listOfSubreddits.length
+         )];
+         dataObj.randomSubredditData = randomSubredditData;
+         return performTheRedditPost(dataObj)
+       })
+       .catch(err => {
+         console.log('error:', err);
+       })
+    }
+
+   const performTheRedditPost = (dataObj) => {
+     let targettedSubreddit = dataObj.randomSubredditData.data.subreddit;
+     redditScript
+     .getSubreddit(targettedSubreddit)
+     .submitSelfpost({title: 'yes', text: dataObj.randomItemFormatted})
+     .then(console.log("performTheRedditPost: done"))
+     .then(getTheInfoFromTheRedditPost(dataObj))
+     .catch(err => {
+       console.log('error:', err);
+     })
+   }
+
+   const getTheInfoFromTheRedditPost = (dataObj) => {
+     setTimeout(() => {
+       axios.get(redditProfileEndPoint)
+       .then((response) => {
+         let lastRedditPostData = response.data.data.children[0];
+         dataObj.lastRedditPostData = lastRedditPostData;
+         return performTheTwitterPost(dataObj);
+       })
+     },3000);
+   }
+
+  const performTheTwitterPost = (dataObj) => {
+
+    T.post('statuses/update', { status: dataObj.randomString }, function(err, data, response) {
+      if(err){
+        console.log(err);
+      }
+      console.log(data);
+      let twitterData = {
+        twitter_id: data.id,
+        twitter_id_str: data.id_str,
+        twitter_text: data.text,
+        twitter_created_at: data.created_at
+      }
+      dataObj.twitterData = twitterData;
+      return sendToDb(dataObj)
     })
-    .catch(function (error) {
-      console.log(error);
+  }
+
+  const sendToDb = (dataToInsert) => {
+    MongoClient.connect(connectionURL, {
+      useNewUrlParser: true,
+    }, (error, client) => {
+      if(error){
+        return console.log("Unable to connect to the db.");
+      }
+      const db = client.db(databaseName);
+
+      db.collection("metadata_from_bot").insertOne({
+        masterData: dataToInsert
+      }, (error, result) => {
+        if(error){
+          return console.log("unable to insert users");
+        }
+        // console.log(result.ops);
+        // console.log(result.insertedCount);
+      })
     })
+  }
+
+
+  app.get('/main-data', (req, res) => {
+      MongoClient.connect(connectionURL, {
+        useNewUrlParser: true,
+      }, (error, client) => {
+        if(error){
+          return console.log("Unable to connect to the db.");
+        }
+        const db = client.db(databaseName);
+
+          db.collection("metadata_from_bot")
+          .find()
+          .toArray((error, data) => {
+            console.log(data);
+            res.json(data);
+          });
+      })
+  })
+
 
   app.listen(port, () => {
-    console.log('listening on port:' + port)
-  });
-}
+    console.log('listening on port ' + port)
+  })
 
-
+// set timeout now?
 runTheBot();
