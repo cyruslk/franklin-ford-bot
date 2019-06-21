@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tweet } from 'react-twitter-widgets';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 import Iframe from 'react-iframe'
 import './App.css';
 
@@ -18,7 +18,6 @@ class App extends Component {
     fetch('http://localhost:5000/main-data')
       .then(res => res.json())
       .then(data => this.setState({ data }));
-      // format all the data here
   }
 
   listAllEntries = () => {
@@ -30,27 +29,33 @@ class App extends Component {
       const data = this.state.data;
       const mapedData = data
       .map((ele, index) => {
+        console.log(ele.masterData.twitterData.twitter_id_str);
         const pdfName = ele.masterData.randomItemFormatted.source_filenamepdf;
         const iframeLink = `https://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1560226145/franklin_ford/${pdfName}`;
         return (
           <div
             className="entries_cell"key={index}>
-              <Tweet tweetId={984439194184536064}/>
             <hr />
-              <h1>{ele.masterData.randomItemFormatted.source_publishedin}</h1>
-              <h1>{ele.masterData.randomItemFormatted.source_lieu}</h1>
-              <h1>{ele.masterData.twitterData.twitter_id}</h1>
-              <h1>{ele.masterData.twitterData.twitter_text}</h1>
-              <h1>{ele.masterData.twitterData.twitter_created_at}</h1>
-
-                <Iframe url={iframeLink}
-                    width="450px"
-                    height="450px"
-                    id="myId"
-                    className="myClassname"
-                    display="initial"
-                    position="relative"/>
-
+              <span className="span_title">1 -- Input/Source of the generated data: </span>
+              <h1><span>Published in:</span> {ele.masterData.randomItemFormatted.source_publishedin}</h1>
+              <h1><span>Physical address: </span> {ele.masterData.randomItemFormatted.source_lieu}</h1>
+            <hr />
+              <span className="span_title">2 -- File (PDF): </span>
+              <Iframe url={iframeLink}
+                width="450px"
+                height="450px"
+                display="initial"
+                position="relative"
+              />
+              <hr />
+            <span className="span_title">2 -- Generated Tweet: </span>
+              <div className="centerContent">
+              <div className="selfCenter">
+                <TwitterTweetEmbed
+                  tweetId={ele.masterData.twitterData.twitter_id_str}
+                />
+                </div>
+              </div>
           </div>
         )
       })
@@ -140,8 +145,6 @@ class App extends Component {
     return(
       <div>
          {this.listAllEntries()}
-         {this.chatSection()}
-         {this.filterSection()}
       </div>
     )
   }

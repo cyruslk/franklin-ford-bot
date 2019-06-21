@@ -1,6 +1,3 @@
-.main_data_section{
-  margin-top: 15vw;
-}
 
 .entries_cell{
   width: 30%;
@@ -12,6 +9,20 @@
   font-size: 1vw;
   margin: 0;
   font-family: serif;
+}
+
+.entries_cell span{
+  border-bottom: 1px solid black;
+  font-family:arial narrow;
+}
+
+.entries_cell .span_title{
+  color: white;
+  background-color: black;
+}
+
+.entries_cell iframe{
+  margin-top: 1vw;
 }
 
 .chat_section{

@@ -61,7 +61,6 @@ var T = new Twit({
  const runTheBot = () => {
 
    let dataObj = {};
-
   axios.get(spreadsheetURL)
     .then((response) => {
      let arrayOfData = [
@@ -69,9 +68,7 @@ var T = new Twit({
        response.data.feed.entry[1],
        response.data.feed.entry[4]
      ]
-
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
-
      let randomItemFormatted = {
        source_authorname: randomItem.gsx$authorname.$t,
        source_dateyear: randomItem.gsx$dateyear.$t,
@@ -85,7 +82,6 @@ var T = new Twit({
        source_notes: randomItem.gsx$notes.$t,
        source_manuscrittapuscrit: randomItem.gsx$manuscrittapuscrit.$t
      }
-
      let pickenFile = randomItemFormatted.source_filenametxt;
      let filePath = `textFiles/${pickenFile}`;
 
@@ -96,7 +92,6 @@ var T = new Twit({
          console.log(err);
        }else{
          let stringsArray = data.toString('utf8').split(".");
-         // isolate them in tokens
          dataObj.randomItemFormatted = randomItemFormatted;
          dataObj.stringsArray = stringsArray;
          return returnSpecificString(dataObj);
@@ -114,80 +109,81 @@ var T = new Twit({
     if(randomString.length < 40){
       return returnSpecificString()
     }else{
-      setTimeout(() => {
-        return runNLU(dataObj)},
-        3000);
-    }
+      return performTheTwitterPost(dataObj)}
+      // setTimeout(() => {
+      //   return runNLU(dataObj)},
+      //   3000);
+
   }
 
-
-   let runNLU = (dataObj) => {
-     nlu.analyze(
-      {
-        // change this here with the randomString
-        text: "hello world!",
-        language: "en",
-        features: {
-          concepts: {},
-          keywords: {}
-        }
-      })
-      .then(result => {
-        if(result.concepts.length > 0){
-          const ibmGuess = result.concepts[0].text
-          dataObj.ibmGuess = ibmGuess;
-          return performTheSubredditSearch(dataObj);
-        }else{
-          return returnSpecificString(dataObj);
-        }
-      })
-      .catch(err => {
-        console.log('error:', err);
-      });
-   }
-
-
-   const performTheSubredditSearch = (dataObj) => {
-     let redditEndPoint = `http://www.reddit.com/search.json?q=${dataObj.ibmGuess}`
-       axios.get(redditEndPoint)
-       .then((response) => {
-         let listOfSubreddits = response.data.data.children;
-         var randomSubredditData = listOfSubreddits[Math.floor(
-           Math.random() * listOfSubreddits.length
-         )];
-         dataObj.randomSubredditData = randomSubredditData;
-         return performTheRedditPost(dataObj)
-       })
-       .catch(err => {
-         console.log('error:', err);
-       })
-    }
-
-   const performTheRedditPost = (dataObj) => {
-     let targettedSubreddit = dataObj.randomSubredditData.data.subreddit;
-     redditScript
-     .getSubreddit(targettedSubreddit)
-     .submitSelfpost({title: 'yes', text: dataObj.randomItemFormatted})
-     .then(console.log("performTheRedditPost: done"))
-     .then(getTheInfoFromTheRedditPost(dataObj))
-     .catch(err => {
-       console.log('error:', err);
-     })
-   }
-
-   const getTheInfoFromTheRedditPost = (dataObj) => {
-     setTimeout(() => {
-       axios.get(redditProfileEndPoint)
-       .then((response) => {
-         let lastRedditPostData = response.data.data.children[0];
-         dataObj.lastRedditPostData = lastRedditPostData;
-         return performTheTwitterPost(dataObj);
-       })
-     },3000);
-   }
+   //
+   // let runNLU = (dataObj) => {
+   //   nlu.analyze(
+   //    {
+   //      // change this here with the randomString
+   //      text: "hello world!",
+   //      language: "en",
+   //      features: {
+   //        concepts: {},
+   //        keywords: {}
+   //      }
+   //    })
+   //    .then(result => {
+   //      if(result.concepts.length > 0){
+   //        const ibmGuess = result.concepts[0].text
+   //        dataObj.ibmGuess = ibmGuess;
+   //        return performTheSubredditSearch(dataObj);
+   //      }else{
+   //        return returnSpecificString(dataObj);
+   //      }
+   //    })
+   //    .catch(err => {
+   //      console.log('error:', err);
+   //    });
+   // }
+   //
+   //
+   // const performTheSubredditSearch = (dataObj) => {
+   //   let redditEndPoint = `http://www.reddit.com/search.json?q=${dataObj.ibmGuess}`
+   //     axios.get(redditEndPoint)
+   //     .then((response) => {
+   //       let listOfSubreddits = response.data.data.children;
+   //       var randomSubredditData = listOfSubreddits[Math.floor(
+   //         Math.random() * listOfSubreddits.length
+   //       )];
+   //       dataObj.randomSubredditData = randomSubredditData;
+   //       return performTheRedditPost(dataObj)
+   //     })
+   //     .catch(err => {
+   //       console.log('error:', err);
+   //     })
+   //  }
+   //
+   // const performTheRedditPost = (dataObj) => {
+   //   let targettedSubreddit = dataObj.randomSubredditData.data.subreddit;
+   //   redditScript
+   //   .getSubreddit(targettedSubreddit)
+   //   .submitSelfpost({title: 'yes', text: dataObj.randomItemFormatted})
+   //   .then(console.log("performTheRedditPost: done"))
+   //   .then(getTheInfoFromTheRedditPost(dataObj))
+   //   .catch(err => {
+   //     console.log('error:', err);
+   //   })
+   // }
+   //
+   // const getTheInfoFromTheRedditPost = (dataObj) => {
+   //   setTimeout(() => {
+   //     axios.get(redditProfileEndPoint)
+   //     .then((response) => {
+   //       let lastRedditPostData = response.data.data.children[0];
+   //       dataObj.lastRedditPostData = lastRedditPostData;
+   //       return performTheTwitterPost(dataObj);
+   //     })
+   //   },3000);
+   // }
 
   const performTheTwitterPost = (dataObj) => {
-
+    console.log(dataObj);
     T.post('statuses/update', { status: dataObj.randomString }, function(err, data, response) {
       if(err){
         console.log(err);
@@ -244,10 +240,8 @@ var T = new Twit({
       })
   })
 
+  runTheBot();
 
   app.listen(port, () => {
     console.log('listening on port ' + port)
   })
-
-// set timeout now?
-runTheBot();
