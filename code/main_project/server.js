@@ -89,7 +89,8 @@ var T = new Twit({
 
      fs.readFile(filePath, function read(err, data) {
        if(err){
-         console.log(err);
+         // let's try this?
+         runTheBot();
        }else{
          let stringsArray = data.toString('utf8').split(".");
          dataObj.randomItemFormatted = randomItemFormatted;
@@ -101,7 +102,6 @@ var T = new Twit({
 
 
   const returnSpecificString = (dataObj) => {
-
     const randomString = dataObj.stringsArray[Math.floor(
       Math.random()*dataObj.stringsArray.length
     )];
@@ -109,7 +109,8 @@ var T = new Twit({
     if(randomString.length < 40){
       return returnSpecificString()
     }else{
-      return performTheTwitterPost(dataObj)}
+      // return performTheTwitterPost(dataObj)
+    }
       // setTimeout(() => {
       //   return runNLU(dataObj)},
       //   3000);
@@ -188,7 +189,7 @@ var T = new Twit({
       if(err){
         console.log(err);
       }
-      console.log(data);
+      console.log("tweeted");
       let twitterData = {
         twitter_id: data.id,
         twitter_id_str: data.id_str,
@@ -240,7 +241,10 @@ var T = new Twit({
       })
   })
 
-  runTheBot();
+  setInterval(
+    runTheBot,
+    Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000
+  );
 
   app.listen(port, () => {
     console.log('listening on port ' + port)

@@ -144,6 +144,7 @@ class App extends Component {
   render() {
     return(
       <div>
+
          {this.listAllEntries()}
       </div>
     )

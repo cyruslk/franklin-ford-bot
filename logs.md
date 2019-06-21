@@ -858,3 +858,30 @@ Database schema:
 
 - For now, here's what the JSON inserted inside the db looks like: https://jsonblob.com/91ce63a1-9444-11e9-aefc-2d4bc952bcfc
 
+------
+
+React.js client:
+
+Every time a user accesses the client endpoint, the data is being fetched from the db and generated dynamically here. For now, I've created three sections to display the content of the db's children: 1) the input, 2) the selected File and 3) the Generated Tweet.
+
+Note: insert a .txt file later? https://www.rgagnon.com/jsdetails/js-0102.html
+
+------
+
+Catching errors:
+
+```
+/Users/cyrus/Documents/Progs/A_code/franklin-ford-bot/code/main_project/server.js:105
+const randomString = dataObj.stringsArray[Math.floor(
+
+TypeError: Cannot read property 'stringsArray' of undefined at returnSpecificString (/Users/cyrus/Documents/Progs/A_code/franklin-ford-bot/code/main_project/server.js:105:34) at returnSpecificString (/Users/cyrus/Documents/Progs/A_code/franklin-ford-bot/code/main_project/server.js:110:14) at read (/Users/cyrus/Documents/Progs/A_code/franklin-ford-bot/code/main_project/server.js:97:17)
+at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:53:3)
+(base) MBP-de-Cyrus:main_project cyrus$ node server.js 
+```
+
+Also, need to handle these cases:
+
+1. Tweet needs to be a bit shorter.
+2. Tweet is a duplicate
+
+#### 
