@@ -35,7 +35,7 @@ app.use(bodyParser.json());
 var nlu = new NaturalLanguageUnderstandingV1({
     url: "https://gateway.watsonplatform.net/natural-language-understanding/api",
     version: '2018-04-05',
-    iam_apikey: "GUB8GmVjnAFgY2TAwy_HqeMWy7Zwl-R6js6beazLslT6",
+    iam_apikey: config.iam_apikey,
     iam_url: "https://iam.bluemix.net/identity/token",
     language: "en"
 });
@@ -96,6 +96,7 @@ var T = new Twit({
          console.log(err);
        }else{
          let stringsArray = data.toString('utf8').split(".");
+         // isolate them in tokens
          dataObj.randomItemFormatted = randomItemFormatted;
          dataObj.stringsArray = stringsArray;
          return returnSpecificString(dataObj);

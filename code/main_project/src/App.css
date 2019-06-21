@@ -1,5 +1,5 @@
 .main_data_section{
-  margin-top: 5vw;
+  margin-top: 15vw;
 }
 
 .entries_cell{
@@ -33,4 +33,6 @@
   top: 0;
   left: 0;
   margin: 1vw;
+  width: 100vw;
+  display: flex;
 }

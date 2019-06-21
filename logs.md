@@ -804,3 +804,56 @@ Other than these two ^ issues, here's what i'll work on on the following work se
 - [ ] On the *'personal interaction'* with Ford: 
   - [ ] Ford Autocomplete?
   - [ ] Ford Chatbot?
+    - https://geekflare.com/chatbot-development-frameworks/
+    - https://wit.ai/
+    - https://dialogflow.com/
+    - https://www.ibm.com/watson/how-to-build-a-chatbot
+
+# 2019.06.10
+
+Front-end work:
+
+	- google maps
+	- make the sorts()
+	- What do we show from the process?
+ - PDF embeded?
+   	- How do we show them
+	- Use a data visualisation tool?
+	- All pdf and file names should have _ instead of spaces.
+	- Do we want to show the .txt file?
+
+# 2019.06.21
+
+Post meeting with Juliette:
+
+- For now I'll host the project on a free-tier service and make the bot perform its tweets on the official Twitter Account.
+- The database is now hosted in the Mongodb cloud and the collection is containing a lot of data from the project's process. I'll open a new issue today and copy/paste all the stuffs the bot is sending to the db.
+  - What kind of relevant data could we use show from the project's background?
+- Now need to find a way to host the project on a free-tier service.
+  - Heroku?
+  - AWS?
+  - Digital Ocean?
+- Twitter part remain the same. 
+  1. Random data from the sheet
+  2. Random sentence from the linked OCR 
+  3. Tweet this random sentence.
+  4. Send this to the db
+- Reddit part changes.
+  - There's no more IBM predictions. We're now using a small Python script that'll be inserted inside the node.js app. This will return a JSON/TEXT(?) output that'll be used to perform the reddit search. Once this is recevied, same process: the bot connects to the reddit searching endpoint and gets a random subreddit, then post.
+    - What is sent is not the same text than on the Twitter. More on that when I'll be on it.
+    - We need also to see how will the db be formatted.
+
+------
+
+For now, here's the priority:
+
+- [ ] Probably create another branch? Or simply remove the calls to other functions after the Twitter part is done.
+- [ ] Make the bot tweet at random intervals. 
+- [ ] Host everything a free-tier server.
+
+------
+
+Database schema:
+
+- For now, here's what the JSON inserted inside the db looks like: https://jsonblob.com/91ce63a1-9444-11e9-aefc-2d4bc952bcfc
+
