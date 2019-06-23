@@ -1,3 +1,6 @@
-/playground
-/code/ford_crypto_mining
-/code/ford_biometrics
+node_modules
+config.js
+textFiles
+playground
+mongodb.js
+build
