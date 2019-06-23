@@ -101,6 +101,7 @@ var T = new Twit({
   })}
 
 
+ // something to change here
   const returnSpecificString = (dataObj) => {
     const randomString = dataObj.stringsArray[Math.floor(
       Math.random()*dataObj.stringsArray.length
@@ -243,7 +244,9 @@ var T = new Twit({
 
   setInterval(
     runTheBot,
-    Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000
+    Math.floor(
+      Math.random() * (10000 - 5000 + 1)
+    ) + 5000
   );
 
   app.listen(port, () => {
