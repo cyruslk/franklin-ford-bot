@@ -882,6 +882,11 @@ at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_conte
 Also, need to handle these cases:
 
 1. Tweet needs to be a bit shorter.
+
 2. Tweet is a duplicate
+
+3. https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f
+
+   
 
 #### 
