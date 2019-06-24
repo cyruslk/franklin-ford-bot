@@ -3,6 +3,7 @@ const snoowrap = require('snoowrap');
 const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
+const path = require("path")
 const fs = require('fs');
 var Twit = require('twit')
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
@@ -251,3 +252,11 @@ var T = new Twit({
   app.listen(port, () => {
     console.log('listening on port ' + port)
   })
+
+
+  if(process.env.NODE_ENV === 'production'){
+      app.use(express.static('client/build'));
+  }
+  app.get('*',(req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
