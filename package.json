@@ -2,6 +2,9 @@
   "name": "main_project",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "11.2.0"
+  },
   "main": "server.js",
   "scripts": {
     "server": "node server.js",

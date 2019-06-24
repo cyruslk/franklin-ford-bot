@@ -2,7 +2,9 @@
   "name": "main_project",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "engines": {
+    "node": "11.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
