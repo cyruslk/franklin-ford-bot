@@ -111,7 +111,11 @@ var T = new Twit({
       )];
       dataObj.randomString = randomString;
       console.log(dataObj.randomString);
-      // return performTheTwitterPost(dataObj)
+      if(dataObj.randomString.length < 30){
+        return returnSpecificString(dataObj);
+      }else{
+        return performTheTwitterPost(dataObj)
+      }
     }
       // setTimeout(() => {
       //   return runNLU(dataObj)},
@@ -246,8 +250,8 @@ var T = new Twit({
   setInterval(
     runTheBot,
     Math.floor(
-      Math.random() * (10000 - 10000 + 1)
-    ) + 1000
+      Math.random() * (5000 - 10000 + 1)
+    ) + 5000
   );
 
   app.listen(port, () => {
