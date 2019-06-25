@@ -103,13 +103,14 @@ var T = new Twit({
 
  // something to change here
   const returnSpecificString = (dataObj) => {
-    const randomString = dataObj.stringsArray[Math.floor(
-      Math.random()*dataObj.stringsArray.length
-    )];
-    dataObj.randomString = randomString;
-    if(randomString.length < 40){
+    if(dataObj === undefined){
       return returnSpecificString()
     }else{
+      const randomString = dataObj.stringsArray[Math.floor(
+        Math.random()*dataObj.stringsArray.length
+      )];
+      dataObj.randomString = randomString;
+      console.log(dataObj.randomString);
       // return performTheTwitterPost(dataObj)
     }
       // setTimeout(() => {
@@ -245,8 +246,8 @@ var T = new Twit({
   setInterval(
     runTheBot,
     Math.floor(
-      Math.random() * (10000 - 5000 + 1)
-    ) + 5000
+      Math.random() * (10000 - 10000 + 1)
+    ) + 1000
   );
 
   app.listen(port, () => {
