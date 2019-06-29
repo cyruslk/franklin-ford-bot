@@ -5,6 +5,7 @@ const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const path = require("path")
 const fs = require('fs');
+var http = require("http");
 var Twit = require('twit')
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
 const axios = require("axios");
@@ -86,7 +87,6 @@ var T = new Twit({
      let filePath = `textFiles/${pickenFile}`;
 
 
-
      fs.readFile(filePath, function read(err, data) {
        if(err){
          runTheBot();
@@ -100,7 +100,6 @@ var T = new Twit({
   })}
 
 
- // something to change here
   const returnSpecificString = (dataObj) => {
     if(dataObj === undefined){
       return returnSpecificString()
@@ -127,7 +126,7 @@ var T = new Twit({
 
   const performTheTwitterPost = (dataObj) => {
     console.log(dataObj.randomString);
-    let status = dataObj.randomString + "-" + timestamp.utc('YYYY/MM/DD:mm:ss');
+    let status = dataObj.randomString + " - " + timestamp.utc('YYYY/MM/DD:mm:ss');
     T.post('statuses/update', { status: status }, function(err, data, response) {
       if(err){
         console.log(err);
@@ -181,22 +180,23 @@ var T = new Twit({
       })
   })
 
-  setInterval(
-    runTheBot,
-    Math.floor(
-      Math.random() * (3600000 - 3600000 + 1)
-    ) + 3600000
-  );
+
+runTheBot();
 
 
-  app.listen(port, () => {
-    console.log('listening on port ' + port)
-  })
+setInterval(() => {
+  http.get("https://franklin-ford-bot.herokuapp.com/");
+}, 150000);
 
 
-  if(process.env.NODE_ENV === 'production'){
-      app.use(express.static('client/build'));
-  }
-  app.get('*',(req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
+app.listen(port, () => {
+  console.log('listening on port ' + port)
+})
+
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'));
+}
+app.get('*',(req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
