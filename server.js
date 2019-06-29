@@ -8,8 +8,8 @@ const fs = require('fs');
 var Twit = require('twit')
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
 const axios = require("axios");
+const timestamp = require('time-stamp');
 var config = require('./config.js');
-
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
 const redditProfileEndPoint = `https://www.reddit.com/user/${config.reddit_user_agent}/overview.json`;
 const {MongoClient} = require("mongodb");
@@ -89,7 +89,6 @@ var T = new Twit({
 
      fs.readFile(filePath, function read(err, data) {
        if(err){
-         // let's try this?
          runTheBot();
        }else{
          let stringsArray = data.toString('utf8').split(".");
@@ -110,92 +109,29 @@ var T = new Twit({
         Math.random()*dataObj.stringsArray.length
       )];
       dataObj.randomString = randomString;
-      console.log(dataObj.randomString);
-      if(dataObj.randomString.length < 30){
-        return returnSpecificString(dataObj);
-      }else{
-        return performTheTwitterPost(dataObj)
-      }
-    }
-      // setTimeout(() => {
-      //   return runNLU(dataObj)},
-      //   3000);
 
+      // check if this is already tweeted
+      T.get('statuses/user_timeline', {screen_name	: 'a_deschanel'}, (err, data, response) => {
+        const allTweets = data
+        .map((ele, index) => {
+          return ele.text
+        })
+        if(dataObj.randomString.length < 30 || allTweets.includes(dataObj.randomString) === true){
+          return returnSpecificString(dataObj);
+        }else{
+          return performTheTwitterPost(dataObj)
+        }
+     })
+    }
   }
 
-   //
-   // let runNLU = (dataObj) => {
-   //   nlu.analyze(
-   //    {
-   //      // change this here with the randomString
-   //      text: "hello world!",
-   //      language: "en",
-   //      features: {
-   //        concepts: {},
-   //        keywords: {}
-   //      }
-   //    })
-   //    .then(result => {
-   //      if(result.concepts.length > 0){
-   //        const ibmGuess = result.concepts[0].text
-   //        dataObj.ibmGuess = ibmGuess;
-   //        return performTheSubredditSearch(dataObj);
-   //      }else{
-   //        return returnSpecificString(dataObj);
-   //      }
-   //    })
-   //    .catch(err => {
-   //      console.log('error:', err);
-   //    });
-   // }
-   //
-   //
-   // const performTheSubredditSearch = (dataObj) => {
-   //   let redditEndPoint = `http://www.reddit.com/search.json?q=${dataObj.ibmGuess}`
-   //     axios.get(redditEndPoint)
-   //     .then((response) => {
-   //       let listOfSubreddits = response.data.data.children;
-   //       var randomSubredditData = listOfSubreddits[Math.floor(
-   //         Math.random() * listOfSubreddits.length
-   //       )];
-   //       dataObj.randomSubredditData = randomSubredditData;
-   //       return performTheRedditPost(dataObj)
-   //     })
-   //     .catch(err => {
-   //       console.log('error:', err);
-   //     })
-   //  }
-   //
-   // const performTheRedditPost = (dataObj) => {
-   //   let targettedSubreddit = dataObj.randomSubredditData.data.subreddit;
-   //   redditScript
-   //   .getSubreddit(targettedSubreddit)
-   //   .submitSelfpost({title: 'yes', text: dataObj.randomItemFormatted})
-   //   .then(console.log("performTheRedditPost: done"))
-   //   .then(getTheInfoFromTheRedditPost(dataObj))
-   //   .catch(err => {
-   //     console.log('error:', err);
-   //   })
-   // }
-   //
-   // const getTheInfoFromTheRedditPost = (dataObj) => {
-   //   setTimeout(() => {
-   //     axios.get(redditProfileEndPoint)
-   //     .then((response) => {
-   //       let lastRedditPostData = response.data.data.children[0];
-   //       dataObj.lastRedditPostData = lastRedditPostData;
-   //       return performTheTwitterPost(dataObj);
-   //     })
-   //   },3000);
-   // }
-
   const performTheTwitterPost = (dataObj) => {
-    console.log(dataObj);
-    T.post('statuses/update', { status: dataObj.randomString }, function(err, data, response) {
+    console.log(dataObj.randomString);
+    let status = dataObj.randomString + "-" + timestamp.utc('YYYY/MM/DD:mm:ss');
+    T.post('statuses/update', { status: status }, function(err, data, response) {
       if(err){
         console.log(err);
       }
-      console.log("tweeted");
       let twitterData = {
         twitter_id: data.id,
         twitter_id_str: data.id_str,
@@ -222,8 +158,6 @@ var T = new Twit({
         if(error){
           return console.log("unable to insert users");
         }
-        // console.log(result.ops);
-        // console.log(result.insertedCount);
       })
     })
   }
@@ -250,9 +184,10 @@ var T = new Twit({
   setInterval(
     runTheBot,
     Math.floor(
-      Math.random() * (5000 - 10000 + 1)
-    ) + 5000
+      Math.random() * (3600000 - 3600000 + 1)
+    ) + 3600000
   );
+
 
   app.listen(port, () => {
     console.log('listening on port ' + port)

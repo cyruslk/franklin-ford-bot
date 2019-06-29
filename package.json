@@ -6,9 +6,9 @@
     "node": "11.2.0"
   },
   "main": "server.js",
-    "scripts": {
-      "start": "node server.js",
-      "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -34,6 +34,7 @@
     "save": "^2.3.3",
     "snoostorm": "^1.0.2",
     "snoowrap": "^1.15.2",
+    "time-stamp": "^2.2.0",
     "twit": "^2.2.11",
     "twitter": "^1.7.1"
   },
