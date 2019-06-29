@@ -5,7 +5,7 @@ const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const path = require("path")
 const fs = require('fs');
-var http = require("http");
+const https = require('https');
 var Twit = require('twit')
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
 const axios = require("axios");
@@ -185,7 +185,7 @@ runTheBot();
 
 
 setInterval(() => {
-  http.get("https://franklin-ford-bot.herokuapp.com/");
+  https.get("https://franklin-ford-bot.herokuapp.com/");
 }, 150000);
 
 
