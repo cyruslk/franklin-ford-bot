@@ -161,7 +161,6 @@ var T = new Twit({
     })
   }
 
-
   app.get('/main-data', (req, res) => {
       MongoClient.connect(connectionURL, {
         useNewUrlParser: true,
@@ -185,8 +184,8 @@ runTheBot();
 
 
 setInterval(() => {
-  https.get("https://franklin-ford-bot.herokuapp.com/");
-}, 150000);
+  https.get("https://franklin-ford-bot.herokuapp.com");
+}, 3000);
 
 
 app.listen(port, () => {

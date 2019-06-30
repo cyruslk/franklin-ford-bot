@@ -15,6 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,document.body.scrollHeight);
     fetch('/main-data')
       .then(res => res.json())
       .then(data => this.setState({ data }));
@@ -29,7 +30,6 @@ class App extends Component {
       const data = this.state.data;
       const mapedData = data
       .map((ele, index) => {
-        console.log(ele.masterData.twitterData.twitter_id_str);
         const pdfName = ele.masterData.randomItemFormatted.source_filenamepdf;
         const iframeLink = `https://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1560226145/franklin_ford/${pdfName}`;
         return (
