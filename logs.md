@@ -118,12 +118,12 @@ Firstm you'll have to create a github account. This is quite straightforward. Th
 
 4. Once this `issue` is published, I can reply.
 
-    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.18.10.png)
+    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.18.10.png)
 
 5. Finally, if the `issue` need to be closed (the feature is finished or we need to move forward with other things), I can close the thread. I don't think this will be necessary though.
 
-     ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.21.png)
-      ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.42.png)  
+     ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.21.png)
+      ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.20.42.png)  
 
 ------
 
@@ -457,8 +457,8 @@ I'll push the code online and to a staging URL soon, so that it could be demo'd 
 
 -  The user sees itself in the webcam and can take a snapshot of his/her face via the webcam. Shortly after, a face-tracking algorithm (tensorflow.js) is running through the image and creating an outline of the user's facial features. 
 
-   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.56.44.png)
-    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.27.04.png)
+   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.56.44.png)
+    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.27.04.png)
 
 
 
@@ -499,9 +499,9 @@ Technical procedure:
 
 3 - Uploading these to an archive (could be on a third party like mastodon or Twitter, could be on our website).
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/ford_meme.jpg>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/ford_meme.jpg>) 
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/2_ford_meme.jpg>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/2_ford_meme.jpg>) 
 
 ------
 
@@ -511,7 +511,7 @@ Going back to `chrome extensions` now. I created a folder called `code` and a su
 
    Here, *Ford* is replaced by *Franklin Ford*; *Canada* is replaced by *USA* and *Triangle* by *The intelligence triangle*. You get the idea ;-)
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.52.34.png>) 
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.52.34.png>) 
 
 2. **changing_headlines**: this is a program that replaces all the headlines of a news website (e.g: *The New York Times* here) with sentences randomly picken from our Ford's Database (I picked a few of them from the Twitter's bot). 
 
@@ -519,17 +519,17 @@ Going back to `chrome extensions` now. I created a folder called `code` and a su
 
 
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.34.34.png>) 
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.34.34.png>) 
 
    Behind the scenes...
 
 ------
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.32.02.png>)
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.32.02.png>)
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.53.png>) 
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.53.png>) 
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.47.png>) 
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.47.png>) 
 
 3. **targetting_specific_websites**: here, the idea would be target specific websites and inject content in their webpages. e.g: if the user goes to www.duckduckgo.com, content A from Ford appears; if he goes to www.nytimes.com, content B from Ford apprears - and so on; we define the websites the code will *listen* to and the code does the rest. 
 
@@ -559,9 +559,9 @@ TODO in preparation of our meeting:
    - If the visitor goes to a webpage labelled `social`, stuffs from the `social` database gets randomly outputted on the webpage.
    - If the visitor goes to a webpage labelled `special`, stuffs from the `special` database gets randomly outputted on the webpage.
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.25.38.png>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.25.38.png>) 
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.30.14.png>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.30.14.png>) 
 
 ------
 
@@ -848,9 +848,9 @@ Post meeting with Juliette:
 
 For now, here's the priority:
 
-- [ ] Probably create another branch? Or simply remove the calls to other functions after the Twitter part is done.
-- [ ] Make the bot tweet at random intervals. 
-- [ ] Host everything a free-tier server.
+- [x] Probably create another branch? Or simply remove the calls to other functions after the Twitter part is done.
+- [x] Make the bot tweet at random intervals. 
+- [x] Host everything a free-tier server.
 
 ------
 
@@ -882,11 +882,20 @@ at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_conte
 Also, need to handle these cases:
 
 1. Tweet needs to be a bit shorter.
-
 2. Tweet is a duplicate
-
 3. https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f
 
-   
+# 2019.09.30
 
-#### 
+On my local, I'm able to Tweet to the [staging Twitter Account](https://twitter.com/a_deschanel). I fixed the previous ^ error, now I need to handle a) Duplicate Tweets and b) circumvent Heroku's sleeping feature (I'll get back to this).
+
+ In the meantime, the App has its own endpoint: https://franklin-ford-bot.herokuapp.com/
+
+Every time the server-side code Tweets, the data is being sent to the DB then retrieved on the client side and displayed.
+
+![](<[https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-06-21%20%C3%A0%2015.14.20.png](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture d’écran%2C le 2019-06-21 à 15.14.20.png)>) 
+
+
+
+
+

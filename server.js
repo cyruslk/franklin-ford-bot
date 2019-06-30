@@ -179,16 +179,9 @@ var T = new Twit({
       })
   })
 
-
-setInterval(() => {
-  runTheBot();
-}, 10000);
-
-
 app.listen(port, () => {
   console.log('listening on port ' + port)
 })
-
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));
