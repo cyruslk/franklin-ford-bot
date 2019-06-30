@@ -180,12 +180,9 @@ var T = new Twit({
   })
 
 
-runTheBot();
-
-
 setInterval(() => {
-  https.get("https://franklin-ford-bot.herokuapp.com");
-}, 3000);
+  runTheBot();
+}, 10000);
 
 
 app.listen(port, () => {
