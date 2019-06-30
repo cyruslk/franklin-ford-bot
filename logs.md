@@ -893,7 +893,7 @@ On my local, I'm able to Tweet to the [staging Twitter Account](https://twitter.
 
 Every time the server-side code Tweets, the data is being sent to the DB then retrieved on the client side and displayed.
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-06-21%20%C3%A0%2015.14.20.png>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-06-30%20%C3%A0%2010.49.32.png>)  
 
 
 
