@@ -3,13 +3,15 @@ const snoowrap = require('snoowrap');
 const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
-const path = require("path")
+const path = require("path");
+const timestamp = require('time-stamp');
 const fs = require('fs');
 const https = require('https');
-var Twit = require('twit')
+var Twit = require('twit');
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
+var Tokenizer = require('tokenize-text');
+var tokenize = new Tokenizer();
 const axios = require("axios");
-const timestamp = require('time-stamp');
 var config = require('./config.js');
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
 const redditProfileEndPoint = `https://www.reddit.com/user/${config.reddit_user_agent}/overview.json`;
@@ -69,7 +71,6 @@ var T = new Twit({
        response.data.feed.entry[4]
      ];
 
-
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
      let randomItemFormatted = {
        source_authorname: randomItem.gsx$authorname.$t,
@@ -93,6 +94,9 @@ var T = new Twit({
        if(err){
          runTheBot();
        }else{
+         // var tokens = tokenize.sections()(data.toString('utf8'));
+         // console.log(filePath, "----");
+         // console.log(tokens);
          let stringsArray = data.toString('utf8').split(".");
          dataObj.randomItemFormatted = randomItemFormatted;
          dataObj.stringsArray = stringsArray;
@@ -137,7 +141,9 @@ var T = new Twit({
     function(err, data, response) {
       if(err){
         console.log(err.message);
+        return;
       }
+      console.log("Tweet Posted:", timestamp());
       let twitterData = {
         twitter_id: data.id,
         twitter_id_str: data.id_str,
@@ -150,6 +156,8 @@ var T = new Twit({
   }
 
   let sendToDb = (dataToInsert) => {
+    console.log("Sent to DB:", timestamp());
+    console.log("----");
     MongoClient.connect(connectionURL, {
       useNewUrlParser: true,
     }, (error, client) => {
@@ -168,34 +176,33 @@ var T = new Twit({
     })
   }
 
-  app.get('/main-data', (req, res) => {
-      MongoClient.connect(connectionURL, {
-        useNewUrlParser: true,
-      }, (error, client) => {
-        if(error){
-          return console.log("Unable to connect to the db.");
-        }
-        const db = client.db(databaseName);
+  // app.get('/main-data', (req, res) => {
+  //     MongoClient.connect(connectionURL, {
+  //       useNewUrlParser: true,
+  //     }, (error, client) => {
+  //       if(error){
+  //         return console.log("Unable to connect to the db.");
+  //       }
+  //       const db = client.db(databaseName);
+  //
+  //         db.collection("metadata_from_bot")
+  //         .find()
+  //         .toArray((error, data) => {
+  //           console.log(data);
+  //           res.json(data);
+  //         });
+  //     })
+  // })
 
-          db.collection("metadata_from_bot")
-          .find()
-          .toArray((error, data) => {
-            console.log(data);
-            res.json(data);
-          });
-      })
-  })
-
-
-runTheBot();
+setInterval(runTheBot, 120000)
 
 app.listen(port, () => {
   console.log('listening on port ' + port)
 })
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'));
-}
-app.get('*',(req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+// if(process.env.NODE_ENV === 'production'){
+//     app.use(express.static('client/build'));
+// }
+// app.get('*',(req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+// });
