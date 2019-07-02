@@ -41,8 +41,6 @@ var nlu = new NaturalLanguageUnderstandingV1({
     language: "en"
 });
 
-
-
 const redditScript = new snoowrap({
   userAgent: config.reddit_user_agent,
   clientId: config.reddit_client_id,
@@ -59,16 +57,19 @@ var T = new Twit({
 })
 
 
- const runTheBot = () => {
+ let runTheBot = () => {
 
   let dataObj = {};
+
   axios.get(spreadsheetURL)
     .then((response) => {
      let arrayOfData = [
        response.data.feed.entry[5],
        response.data.feed.entry[1],
        response.data.feed.entry[4]
-     ]
+     ];
+
+
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
      let randomItemFormatted = {
        source_authorname: randomItem.gsx$authorname.$t,
@@ -82,10 +83,11 @@ var T = new Twit({
        source_filenametxt: randomItem.gsx$filenametxt.$t,
        source_notes: randomItem.gsx$notes.$t,
        source_manuscrittapuscrit: randomItem.gsx$manuscrittapuscrit.$t
-     }
+     };
+
+
      let pickenFile = randomItemFormatted.source_filenametxt;
      let filePath = `textFiles/${pickenFile}`;
-
 
      fs.readFile(filePath, function read(err, data) {
        if(err){
@@ -100,36 +102,41 @@ var T = new Twit({
   })}
 
 
-  const returnSpecificString = (dataObj) => {
-    if(dataObj === undefined){
-      return returnSpecificString()
-    }else{
-      const randomString = dataObj.stringsArray[Math.floor(
-        Math.random()*dataObj.stringsArray.length
-      )];
-      dataObj.randomString = randomString;
+  let returnSpecificString = (dataObj) => {
 
-      // check if this is already tweeted
-      T.get('statuses/user_timeline', {screen_name	: 'a_deschanel'}, (err, data, response) => {
-        const allTweets = data
-        .map((ele, index) => {
-          return ele.text
-        })
-        if(dataObj.randomString.length < 30 || allTweets.includes(dataObj.randomString) === true){
-          return returnSpecificString(dataObj);
-        }else{
-          return performTheTwitterPost(dataObj)
-        }
-     })
+    if(dataObj === undefined){
+      return runTheBot();
     }
+
+    const randomString = dataObj.stringsArray[Math.floor(
+      Math.random()*dataObj.stringsArray.length
+    )];
+
+    dataObj.randomString = randomString;
+
+    T.get('statuses/user_timeline',
+    {screen_name	: 'a_deschanel', count: 3200 },
+    (err, data, response) => {
+      const allTweets = data
+      .map((ele, index) => {
+        return ele.text.split("https")[0]
+      })
+
+      if(allTweets.indexOf("dataObj.randomString") > -1){
+        return runTheBot();
+      }
+        return performTheTwitterPost(dataObj);
+   })
   }
 
-  const performTheTwitterPost = (dataObj) => {
-    console.log(dataObj.randomString);
-    let status = dataObj.randomString + " - " + timestamp.utc('YYYY/MM/DD:mm:ss');
-    T.post('statuses/update', { status: status }, function(err, data, response) {
+  let performTheTwitterPost = (dataObj) => {
+
+    let status = dataObj.randomString;
+
+    T.post('statuses/update', { status: status },
+    function(err, data, response) {
       if(err){
-        console.log(err);
+        console.log(err.message);
       }
       let twitterData = {
         twitter_id: data.id,
@@ -142,7 +149,7 @@ var T = new Twit({
     })
   }
 
-  const sendToDb = (dataToInsert) => {
+  let sendToDb = (dataToInsert) => {
     MongoClient.connect(connectionURL, {
       useNewUrlParser: true,
     }, (error, client) => {
@@ -179,10 +186,8 @@ var T = new Twit({
       })
   })
 
-setInterval(function() {
-    runTheBot()
-}, 300000);
 
+runTheBot();
 
 app.listen(port, () => {
   console.log('listening on port ' + port)

@@ -885,7 +885,7 @@ Also, need to handle these cases:
 2. Tweet is a duplicate
 3. https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f
 
-# 2019.09.30
+# 2019.06.30
 
 On my local, I'm able to Tweet to the [staging Twitter Account](https://twitter.com/a_deschanel). I fixed the previous ^ error, now I need to handle a) Duplicate Tweets and b) circumvent Heroku's sleeping feature (I'll get back to this).
 
@@ -897,3 +897,35 @@ Every time the server-side code Tweets, the data is being sent to the DB then re
 
 
 
+#  2019.07.02
+
+- [ ] First, add a Toknizer to the project: https://www.npmjs.com/package/tokenize-text
+
+Now working on the duplicate issue. 
+
+```
+  T.get('statuses/user_timeline', 
+      {screen_name	: 'a_deschanel'}, 
+      (err, data, response) => {
+        const allTweets = data
+        .map((ele, index) => {
+          return ele.text
+        })
+        if(dataObj.randomString.length < 30
+          || allTweets.includes(dataObj.randomString) === true){
+          return returnSpecificString(dataObj);
+        }else{
+          // return performTheTwitterPost(dataObj)
+        }
+     })
+```
+
+Valuable links:
+
+- https://blog.cotten.io/common-twitter-error-codes-6b324396042e
+
+  - ```
+    While it seems like after 24 hours a tweet is no longer duplicate content, that’s not very firm. There’s a thread on duplicate tweets here: 
+    ```
+
+- 
