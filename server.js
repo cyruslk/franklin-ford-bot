@@ -176,23 +176,23 @@ var T = new Twit({
     })
   }
 
-  // app.get('/main-data', (req, res) => {
-  //     MongoClient.connect(connectionURL, {
-  //       useNewUrlParser: true,
-  //     }, (error, client) => {
-  //       if(error){
-  //         return console.log("Unable to connect to the db.");
-  //       }
-  //       const db = client.db(databaseName);
-  //
-  //         db.collection("metadata_from_bot")
-  //         .find()
-  //         .toArray((error, data) => {
-  //           console.log(data);
-  //           res.json(data);
-  //         });
-  //     })
-  // })
+  app.get('/main-data', (req, res) => {
+      MongoClient.connect(connectionURL, {
+        useNewUrlParser: true,
+      }, (error, client) => {
+        if(error){
+          return console.log("Unable to connect to the db.");
+        }
+        const db = client.db(databaseName);
+
+          db.collection("metadata_from_bot")
+          .find()
+          .toArray((error, data) => {
+            console.log(data);
+            res.json(data);
+          });
+      })
+  })
 
 runTheBot();
 setInterval(runTheBot, 120000)
@@ -201,9 +201,9 @@ app.listen(port, () => {
   console.log('listening on port ' + port)
 })
 
-// if(process.env.NODE_ENV === 'production'){
-//     app.use(express.static('client/build'));
-// }
-// app.get('*',(req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-// });
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'));
+}
+app.get('*',(req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
