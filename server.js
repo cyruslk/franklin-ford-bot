@@ -194,6 +194,7 @@ var T = new Twit({
   //     })
   // })
 
+runTheBot();
 setInterval(runTheBot, 120000)
 
 app.listen(port, () => {
