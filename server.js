@@ -61,7 +61,7 @@ var T = new Twit({
 
  const runTheBot = () => {
 
-   let dataObj = {};
+  let dataObj = {};
   axios.get(spreadsheetURL)
     .then((response) => {
      let arrayOfData = [
@@ -178,6 +178,11 @@ var T = new Twit({
           });
       })
   })
+
+setInterval(function() {
+    runTheBot()
+}, 300000);
+
 
 app.listen(port, () => {
   console.log('listening on port ' + port)
