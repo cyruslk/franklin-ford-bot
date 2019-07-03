@@ -200,7 +200,7 @@ var T = new Twit({
 
 
 (function loop() {
-  let tweetInterval = Math.round(Math.random() * (3000000 - 5000000)) + 5000000;
+  let tweetInterval = Math.round(Math.random() * (600000 - 300000)) + 300000;
   setTimeout(function() {
     runTheBot();
     loop();
