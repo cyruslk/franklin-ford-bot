@@ -7,6 +7,7 @@
 - THE PROJECT'S WORK IN PROGRESS GOOGLESHEET: http://bit.ly/2DNfTEF
 - THE PROJECT'S NATURAL LANGUAGE PROCESSING LIBRARY: http://bit.ly/2WtmWKg
 - STAGING TWITTER ACCOUNT: https://twitter.com/a_deschanel
+- The Heroku web app where the bot is hosted: https://franklin-ford-bot.herokuapp.com/
 
 # 2019.02.01+ 2019.02.04
 
