@@ -899,7 +899,10 @@ Every time the server-side code Tweets, the data is being sent to the DB then re
 
 #  2019.07.02
 
-- [ ] First, add a Toknizer to the project: https://www.npmjs.com/package/tokenize-text
+- [x] First, add a Toknizer to the project: 
+  - https://www.npmjs.com/package/tokenize-text
+  - https://github.com/Amberlamps/nlp-toolkit#readme
+  - https://www.npmjs.com/package/natural
 
 Now working on the duplicate issue. 
 
@@ -920,12 +923,25 @@ Now working on the duplicate issue.
      })
 ```
 
-Valuable links:
+I fixed the duplicate problem.  I also removed all line breaks from the text about to be tweeted. Finally, I used recursion to make the bot perform again its process when the text is < 30.
 
-- https://blog.cotten.io/common-twitter-error-codes-6b324396042e
+------
 
-  - ```
-    While it seems like after 24 hours a tweet is no longer duplicate content, that’s not very firm. There’s a thread on duplicate tweets here: 
-    ```
+Ok, So the bot is Tweeting now. I have no idea what happened, I seriously spent too much time with this issue. Heroku's related I guess. I'm now going to change the setInterval() so that the Bot tweets once/day?
 
-- 
+```
+long_interval = randint(18000,176400)
+```
+
+I'm also not working anymore with .split(".") which is quite primitive limited but with a node.js NLP toolkit: https://github.com/NaturalNode/natural
+
+```
+
+         let textToTokenize = tokenizer.tokenize(data.toString('utf8').replace(/\0/g, ''));
+         dataObj.randomItemFormatted = randomItemFormatted;
+         dataObj.stringsArray = textToTokenize;
+         return returnSpecificString(dataObj);
+
+
+```
+

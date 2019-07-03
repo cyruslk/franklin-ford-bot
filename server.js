@@ -3,14 +3,14 @@ const snoowrap = require('snoowrap');
 const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
+var natural = require('natural');
+var tokenizer = new natural.WordTokenizer();
 const path = require("path");
 const timestamp = require('time-stamp');
 const fs = require('fs');
 const https = require('https');
 var Twit = require('twit');
 var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
-var Tokenizer = require('tokenize-text');
-var tokenize = new Tokenizer();
 const axios = require("axios");
 var config = require('./config.js');
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
@@ -94,12 +94,11 @@ var T = new Twit({
        if(err){
          runTheBot();
        }else{
-         // var tokens = tokenize.sections()(data.toString('utf8'));
-         // console.log(filePath, "----");
-         // console.log(tokens);
-         let stringsArray = data.toString('utf8').split(".");
+
+         tokenizer = new natural.SentenceTokenizer();
+         let textToTokenize = tokenizer.tokenize(data.toString('utf8').replace(/\0/g, ''));
          dataObj.randomItemFormatted = randomItemFormatted;
-         dataObj.stringsArray = stringsArray;
+         dataObj.stringsArray = textToTokenize;
          return returnSpecificString(dataObj);
        }
     });
@@ -116,7 +115,12 @@ var T = new Twit({
       Math.random()*dataObj.stringsArray.length
     )];
 
-    dataObj.randomString = randomString;
+    if(randomString.length < 30){
+      console.log(randomString);
+    }else{
+      dataObj.randomString = randomString
+      .replace(/(\r\n|\n|\r)/gm, "");
+    }
 
     T.get('statuses/user_timeline',
     {screen_name	: 'a_deschanel', count: 3200 },
@@ -125,11 +129,11 @@ var T = new Twit({
       .map((ele, index) => {
         return ele.text.split("https")[0]
       })
-
-      if(allTweets.indexOf("dataObj.randomString") > -1){
-        return runTheBot();
-      }
+      if(allTweets.indexOf(dataObj.randomString) > -1){
+        return returnSpecificString();
+      }else{
         return performTheTwitterPost(dataObj);
+      }
    })
   }
 
@@ -194,8 +198,16 @@ var T = new Twit({
       })
   })
 
+
+(function loop() {
+  let tweetInterval = Math.round(Math.random() * (3000000 - 5000000)) + 5000000;
+  setTimeout(function() {
+    runTheBot();
+    loop();
+ }, tweetInterval);
+}());
+
 runTheBot();
-setInterval(runTheBot, 120000)
 
 app.listen(port, () => {
   console.log('listening on port ' + port)
