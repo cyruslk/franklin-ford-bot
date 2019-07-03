@@ -116,7 +116,8 @@ var T = new Twit({
     )];
 
     if(randomString.length < 30){
-      console.log(randomString);
+      // console.log(randomString);
+      return runTheBot();
     }else{
       dataObj.randomString = randomString
       .replace(/(\r\n|\n|\r)/gm, "");
@@ -199,13 +200,13 @@ var T = new Twit({
   })
 
 
-(function loop() {
-  let tweetInterval = Math.round(Math.random() * (600000 - 300000)) + 300000;
-  setTimeout(function() {
-    runTheBot();
-    loop();
- }, tweetInterval);
-}());
+let tweetInterval = Math.round(
+  Math.random() * (600000 - 300000)
+) + 300000;
+
+setInterval(function() {
+  runTheBot()
+}, tweetInterval);
 
 runTheBot();
 
