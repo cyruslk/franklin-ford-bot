@@ -945,3 +945,20 @@ I'm also not working anymore with .split(".") which is quite primitive limited b
 
 ```
 
+# 2019.07.03
+
+Fixed again a few minor code optimizations. If I'm referring to the original source code for the Tweet, the interval spans between `long_interval = randint(18000,176400)` - meaning between 5 and 49 hours. I've change the code so that it follows the same timeline.
+
+```
+let tweetInterval = Math.round(
+  Math.random() * (176400000 - 18000000)
+) + 18000000;
+
+setInterval(function() {
+  runTheBot()
+}, tweetInterval);
+```
+
+I'm pushing back the updated code on Twitter, for sample of tweets, you can refer to the previous ones (tweeted at an interval of 5/10 minutes). 
+
+Note: I think this is by far better than the first Tweets. If this suits you, I'll change the config credentials with the ffbot ones.

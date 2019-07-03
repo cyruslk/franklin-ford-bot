@@ -116,7 +116,6 @@ var T = new Twit({
     )];
 
     if(randomString.length < 30){
-      // console.log(randomString);
       return runTheBot();
     }else{
       dataObj.randomString = randomString
@@ -199,10 +198,12 @@ var T = new Twit({
       })
   })
 
+// 5 hours: 18000000
+// 49 hours: 176400000
 
 let tweetInterval = Math.round(
-  Math.random() * (600000 - 300000)
-) + 300000;
+  Math.random() * (176400000 - 18000000)
+) + 18000000;
 
 setInterval(function() {
   runTheBot()
