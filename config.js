@@ -11,10 +11,10 @@ const config = {
   reddit_client_secret: "owbTOIyVQ1nNxLVnV7I6QD7E1cg",
   reddit_username: "franklin_ford",
   reddit_password: "U5FfT4jhkb43yNJ",
-  twitter_consumer_key:         '0lCltBgpYXxCfsdn4B59aFvZK',
-  twitter_consumer_secret:      'JvGqFiFHCV4A6YxlqOE8L3LLUuKNHgABOP5ZJJjEClUjDTHaKX',
-  twitter_access_token:         '844002043891240960-FkcSyPk6Bj9BphxnBvWCFJyUxxtA8So',
-  twitter_access_token_secret:  'ma31DbB10AQd80rwJ5xF7In4BErC2NuMq4YjA05CgJ1oT'
+  twitter_consumer_key:         '2WFZkmuWSwgPhPPOtaW5pYEch',
+  twitter_consumer_secret:      'q7FmeH670qD46KhZ3XgnBFUOXrSjwQP58sWsq4O4CRSObnR30t',
+  twitter_access_token:         '841125284468293632-NSUp7z0K4Z3J009D31TRKbv27YFaRAV',
+  twitter_access_token_secret:  '0eHI0ykDkE5lA6RZCziIfxmobl8hd3Va9hnHjJqkSZoBu'
 }
 
 module.exports = config;
