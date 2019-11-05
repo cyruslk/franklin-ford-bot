@@ -192,7 +192,7 @@ var T = new Twit({
           db.collection("metadata_from_bot")
           .find()
           .toArray((error, data) => {
-            console.log(data);
+            console.log(data, "here");
             res.json(data);
           });
       })
