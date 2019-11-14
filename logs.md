@@ -968,31 +968,32 @@ Note: I think this is by far better than the first Tweets. If this suits you, I'
 
 # 2019.11.15
 
-Things that need to be done on the server-side:
+Things that need to be done/considered on the server-side:
 
-- Create one collection per `platform`; split Twitter from Reddit;
+**SOFTWARE:**
 
-  - Instead of the initial `metadata from bot`, create two new collections: `ford_twitter` and `ford_reddit`. The important thing to consider now is how we will link these two even if the `ford_twitter` has more entry than the `ford_reddit`.
+- ~~Create one collection per `platform`; split Twitter from Reddit;~~
+  - ~~Instead of the initial `metadata from bot`, create two new collections: `ford_twitter` and `ford_reddit`.~~ The important thing to consider now is how we will link these two even if the `ford_twitter` has more entry than the `ford_reddit`.
     - My first guess: we'll simply assign a unique ID to each entry so that we'll be able to filter that  collection that have both entries. Or we add a counter on the Twitter bot and when we launch the reddt one, we start the counter at the digit used during the last Tweet
       (e.g: Tweet: #36, Starting the Reddit bot at counter #36).
-  - Reset the collections; remove their content and restart the process;
-
+  - ~~Reset the collections; remove their content and restart the process; (or simply create new ones).~~
 - Reddit is on pause now; more to be announced soon after Juliettes decides on what to do with NLP.
-
 - There's no front-end anymore/ no client folder attached to a server side. The server becomes the only piece of code responsible for the bot to fire its action;
-
-- Only keep the sentence, not the all text (=> this is what causes the network requests to be unstable);
-
-- Remove � before the Tweet fires.
-
+- ~~Only keep the sentence, not the all text (=> this is what causes the network requests to be unstable);~~
+- ~~Remove � before the Tweet fires.~~
 -  Do we still want to work with the three first texts.txt we used as inputs or do we add more texts to the local folder? As a reminder, these texts are:
-
   - `1879__Ford_Delusive_Methods_of_Municipal_Financering.txt`
   - `1884_Ford__Bradstreet.txt`
   - `1892_Ford_Draft_of_Action.txt`
-
 - For now, there's a function that reset the process when the selected string has less than 30 characters. It therefore discards stuffs like `But of that matter.` and other short strings that can be of interest. Do you reduce the char. count or no?
+- ~~Clean the repo a bit, rename the branch to `twitter-bot`~~
 
-- Clean the repo a bit, rename the branch to `twitter-bot`
+**CLOUD/HOSTING:**
 
-  
+- Switch from Heroku to AWS/Google Cloud (Or maybe the bot could be hosted n NFS?).
+  - Ref for later: https://shiffman.net/a2z/bot-ec2/
+
+**CMS FOR DATA:**
+
+- Add `featured_ten_tweets` on the sheet. This will follows the cms data.
+
