@@ -79,7 +79,7 @@ var T = new Twit({
         tokenizer = new natural.SentenceTokenizer();
         let textToTokenize = tokenizer.tokenize(data.toString('utf8').replace(/\0/g, ''));
         dataObj.randomItemFormatted = randomItemFormatted;
-        // return returnSpecificString(dataObj, textToTokenize);
+        return returnSpecificString(dataObj, textToTokenize);
       }
    });
  })}
@@ -160,6 +160,15 @@ var T = new Twit({
   }
 
 // Add an interval here;
+let tweetInterval = Math.round(
+  Math.random() * (176400000 - 18000000)
+) + 18000000;
+
+setInterval(function() {
+  runTheBot()
+}, tweetInterval);
+
+// Create the initial call;
 runTheBot();
 
 
