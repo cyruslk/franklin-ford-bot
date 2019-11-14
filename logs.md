@@ -995,5 +995,6 @@ Things that need to be done/considered on the server-side:
 
 **CMS FOR DATA:**
 
-- Add `featured_ten_tweets` on the sheet. This will follows the cms data.
+- Add `featured_ten_tweets` on the sheet. This will follows the cms data structure.
+- 
 

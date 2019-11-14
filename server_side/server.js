@@ -45,7 +45,7 @@ var T = new Twit({
 
 
   axios.get(spreadsheetURL)
-    .then((response) => {
+    .then((response) => {      
      let arrayOfData = [
        response.data.feed.entry[5],
        response.data.feed.entry[1],
@@ -79,7 +79,7 @@ var T = new Twit({
         tokenizer = new natural.SentenceTokenizer();
         let textToTokenize = tokenizer.tokenize(data.toString('utf8').replace(/\0/g, ''));
         dataObj.randomItemFormatted = randomItemFormatted;
-        return returnSpecificString(dataObj, textToTokenize);
+        // return returnSpecificString(dataObj, textToTokenize);
       }
    });
  })}
