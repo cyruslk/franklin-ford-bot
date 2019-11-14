@@ -995,6 +995,13 @@ Things that need to be done/considered on the server-side:
 
 **CMS FOR DATA:**
 
+​	Note: I'll work on this later;
+
 - Add `featured_ten_tweets` on the sheet. This will follows the cms data structure.
-- 
+
+**CMS FOR TEXTS ON THE WEBSITE:**
+
+​	Note: I'll work on this later;
+
+- Probably [Kirby](https://getkirby.com/docs/guide); or [Contenful](https://www.contentful.com/).
 
