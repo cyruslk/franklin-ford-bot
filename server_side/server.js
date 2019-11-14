@@ -12,9 +12,9 @@ var Twit = require('twit');
 const axios = require("axios");
 var config = require('./config.js');
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
-// const {MongoClient} = require("mongodb");
-// const connectionURL = config.mongoConnectionURL;
-// const databaseName = config.mongoDatabaseName;
+const {MongoClient} = require("mongodb");
+const connectionURL = config.mongoConnectionURL;
+const databaseName = config.mongoDatabaseName;
 
 
 app.use(express.static(__dirname + '/public'));
@@ -43,13 +43,14 @@ var T = new Twit({
  let runTheBot = () => {  
   let dataObj = {};
 
+
   axios.get(spreadsheetURL)
     .then((response) => {
      let arrayOfData = [
        response.data.feed.entry[5],
        response.data.feed.entry[1],
        response.data.feed.entry[4]
-     ];     
+     ];    
 
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
      let randomItemFormatted = {
@@ -66,48 +67,38 @@ var T = new Twit({
        source_manuscrittapuscrit: randomItem.gsx$manuscrittapuscrit.$t
      };
 
-
      let pickenFile = randomItemFormatted.source_filenametxt;
-     let filePath =  `textFiles/${pickenFile}`;
-     
+     let filePath =  path.join(__dirname, "textFiles", pickenFile);
 
-  // fix this   
-  fs.readFileSync(filePath, function read(err, data) {
+     // Read the file 
+     fs.readFile(filePath, function read(err, data) {
       if(err){
-        console.log(err);
-        runTheBot();
+        console.log(err);    
       }else{
-
-        // I should be able to access the data here :(        
-        console.log(data);
-        
+        // use the tokenizer to split the text efficiently;
         tokenizer = new natural.SentenceTokenizer();
         let textToTokenize = tokenizer.tokenize(data.toString('utf8').replace(/\0/g, ''));
         dataObj.randomItemFormatted = randomItemFormatted;
-        dataObj.stringsArray = textToTokenize;
-        return returnSpecificString(dataObj);
+        return returnSpecificString(dataObj, textToTokenize);
       }
-    });
-  })}
+   });
+ })}
 
-
-  let returnSpecificString = (dataObj) => {
-
+  // Add a randomly selected (from the text) string to the dataObj {}
+  let returnSpecificString = (dataObj, textToTokenize) => {
     if(dataObj === undefined){
       return runTheBot();
     }
-
-    const randomString = dataObj.stringsArray[Math.floor(
-      Math.random()*dataObj.stringsArray.length
-    )];
-
-    if(randomString.length < 30){
+    let randomString = textToTokenize[Math.floor(
+      Math.random()*textToTokenize.length
+    )];    
+    if(randomString.length < 30 || randomString.includes("�")){
+      console.log("passing here", randomString);
       return runTheBot();
     }else{
-      dataObj.randomString = randomString
-      .replace(/(\r\n|\n|\r)/gm, "");
+      dataObj.randomString = randomString.replace(/(\r\n|\n|\r)/gm, "");
     }
-
+    // see if tweet is a duplicate of the endpoint's list
     T.get('statuses/user_timeline',
     {screen_name	: 'franklinfordbot', count: 3200 },
     (err, data, response) => {
@@ -115,7 +106,7 @@ var T = new Twit({
       .map((ele, index) => {
         return ele.text.split("https")[0]
       })
-      if(allTweets.indexOf(dataObj.randomString) > -1){
+      if(allTweets.indexOf(dataObj.randomString) > -1){        
         return returnSpecificString();
       }else{
         return performTheTwitterPost(dataObj);
@@ -125,13 +116,12 @@ var T = new Twit({
 
   // This where the bot will send to the Twitter API
   let performTheTwitterPost = (dataObj) => {
-
     let status = dataObj.randomString;
-
     T.post('statuses/update', { status: status },
     function(err, data, response) {
       if(err){
         console.log(err.message);
+        // what to return?
         return;
       }
       console.log("Tweet Posted:", timestamp());
@@ -141,40 +131,42 @@ var T = new Twit({
         twitter_text: data.text,
         twitter_created_at: data.created_at
       }
-      dataObj.twitterData = twitterData;
+      dataObj.twitterData = twitterData;    
+      return sendToDb(dataObj)
     })
   }
 
-  // This is what will be sent to db, need this but with less data inserted;
-  // let sendToDb = (dataToInsert) => {
-  //   MongoClient.connect(connectionURL, {
-  //     useNewUrlParser: true,
-  //   }, (error, client) => {
-  //     if(error){
-  //       return console.log("Unable to connect to the db.");
-  //     }
-  //     const db = client.db(databaseName);
+  // This is what will be sent to db;
 
-  //     db.collection("metadata_from_bot").insertOne({
-  //       masterData: dataToInsert
-  //     }, (error, result) => {
-  //       if(error){
-  //         return console.log("unable to insert users");
-  //       }
-  //     })
-  //   })
-  // }
+  let sendToDb = (dataToInsert) => {
+    MongoClient.connect(connectionURL, {
+      useNewUrlParser: true,
+    }, (error, client) => {
+      if(error){
+        return console.log("Unable to connect to the db.");
+      }
+      const db = client.db(databaseName);
+      console.log(db);
+      
+      db.collection("ford_twitter").insertOne({
+        masterData: dataToInsert
+      }, (error, result) => {
+        if(error){
+          return console.log("unable to insert users");
+        }
+        console.log("Data successfully inserted");    
+      })
+    })
+  }
 
-
+// Add an interval here;
 runTheBot();
 
 
-// Instantiating the server;
 app.listen(port, () => {
   console.log('listening on port ' + port)
 })
 
-// switching between production and local, for Heroku
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));
 }
