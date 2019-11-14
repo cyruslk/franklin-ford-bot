@@ -1,5 +1,4 @@
 const express = require('express');
-const snoowrap = require('snoowrap');
 const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
@@ -14,6 +13,8 @@ var NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-unders
 const axios = require("axios");
 var config = require('./config.js');
 const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
+
+// reddit profil endpoint, to use later
 const redditProfileEndPoint = `https://www.reddit.com/user/${config.reddit_user_agent}/overview.json`;
 const {MongoClient} = require("mongodb");
 const connectionURL = config.mongoConnectionURL;
@@ -34,7 +35,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-
+// there's no need to use this now
 var nlu = new NaturalLanguageUnderstandingV1({
     url: "https://gateway.watsonplatform.net/natural-language-understanding/api",
     version: '2018-04-05',
@@ -43,6 +44,7 @@ var nlu = new NaturalLanguageUnderstandingV1({
     language: "en"
 });
 
+// no need to use this neither;
 const redditScript = new snoowrap({
   userAgent: config.reddit_user_agent,
   clientId: config.reddit_client_id,
@@ -62,6 +64,7 @@ var T = new Twit({
  let runTheBot = () => {
 
   let dataObj = {};
+
 
   axios.get(spreadsheetURL)
     .then((response) => {
@@ -137,6 +140,7 @@ var T = new Twit({
    })
   }
 
+  // This where the bot will send to the Twitter API
   let performTheTwitterPost = (dataObj) => {
 
     let status = dataObj.randomString;
@@ -159,9 +163,8 @@ var T = new Twit({
     })
   }
 
+  // This is what will be sent to db, need this but with less data inserted;
   let sendToDb = (dataToInsert) => {
-    console.log("Sent to DB:", timestamp());
-    console.log("----");
     MongoClient.connect(connectionURL, {
       useNewUrlParser: true,
     }, (error, client) => {
@@ -180,6 +183,8 @@ var T = new Twit({
     })
   }
 
+
+  // I don't need this anymore;
   app.get('/main-data', (req, res) => {
       MongoClient.connect(connectionURL, {
         useNewUrlParser: true,
@@ -198,9 +203,8 @@ var T = new Twit({
       })
   })
 
-// 5 hours: 18000000
-// 49 hours: 176400000
 
+// Run the bot, at this interval;
 let tweetInterval = Math.round(
   Math.random() * (176400000 - 18000000)
 ) + 18000000;
@@ -209,12 +213,16 @@ setInterval(function() {
   runTheBot()
 }, tweetInterval);
 
+
 runTheBot();
 
+
+// Instantiating the server;
 app.listen(port, () => {
   console.log('listening on port ' + port)
 })
 
+// switching between production and local, for Heroku
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));
 }
