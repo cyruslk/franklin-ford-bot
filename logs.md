@@ -993,6 +993,6 @@ Things that need to be done on the server-side:
 
 - For now, there's a function that reset the process when the selected string has less than 30 characters. It therefore discards stuffs like `But of that matter.` and other short strings that can be of interest. Do you reduce the char. count or no?
 
-- Clean the repo a bit, rename the branch to `twitter`
+- Clean the repo a bit, rename the branch to `twitter-bot`
 
   
