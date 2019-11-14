@@ -963,3 +963,19 @@ setInterval(function() {
 I'm pushing back the updated code on Twitter, for sample of tweets, you can refer to the previous ones (tweeted at an interval of 5/10 minutes). 
 
 Note: I think this is by far better than the first Tweets. If this suits you, I'll change the config credentials with the ffbot ones.
+
+
+
+# 2019.11.15
+
+Things that need to be done on the server-side:
+
+- Create one collection per `platform`; split Twitter from Reddit;
+
+- Reddit is on pause now; more to be announced soon after Juliettes decides on what to do with NLP.
+
+- There's no front-end anymore/ no client folder attached to a server side. The server becomes the only piece of code responsible for the bot to fire its action;
+
+- Only keep the sentence, not the all text (=> this is what causes the network requests to be unstable);
+
+  
