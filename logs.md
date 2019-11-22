@@ -1005,3 +1005,30 @@ Things that need to be done/considered on the server-side:
 
 - Probably [Kirby](https://getkirby.com/docs/guide); or [Contenful](https://www.contentful.com/).
 
+
+
+# 2019.11.22
+
+https://gist.github.com/andrewlkho/a7920cd2d019f823332f
+
+https://clearfickle.wordpress.com/2016/12/07/fastest-way-to-add-a-lets-encrypt-ssl-cert-to-nearlyfreespeech/
+
+
+
+https://www.sslforfree.com/
+
+https://members.nearlyfreespeech.net/faq?q=SSLCertificates#SSLCertificates
+
+
+
+
+
+
+
+http://gabegsell.com/anchors/
+
+
+
+
+
+https://www.linode.com/docs/security/ssl/create-a-self-signed-tls-certificate/
