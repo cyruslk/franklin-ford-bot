@@ -1009,26 +1009,13 @@ Things that need to be done/considered on the server-side:
 
 # 2019.11.22
 
-https://gist.github.com/andrewlkho/a7920cd2d019f823332f
+Ok so I've spent some time trying to fix this TLS issue. Turns out that I can't enable it as an adjunct account.  I'm going to drop the step by step here so that you can easily do it. So:
 
-https://clearfickle.wordpress.com/2016/12/07/fastest-way-to-add-a-lets-encrypt-ssl-cert-to-nearlyfreespeech/
+1. First, follow [this tutorial](https://www.linode.com/docs/security/ssl/create-a-self-signed-tls-certificate/) to get a key pair. Once this is done, you should have two files on you local: a `.crt` and a `.pem`. You can open both with your IDE to copy the content to your clipboard.
+2. Once this is done, go your NFS panel and `sites > short name > franklinford.org >Upload TLS Files`.
+3. Upload the content of the files in the box.
 
+Note - Not quite 100% sure so do let me know if you run into issues/need my help.
+Otherwise, NFS offers to take care of this [step for a fee](https://members.nearlyfreespeech.net/cyruslk/support/assist?tag=ssl).
 
-
-https://www.sslforfree.com/
-
-https://members.nearlyfreespeech.net/faq?q=SSLCertificates#SSLCertificates
-
-
-
-
-
-
-
-http://gabegsell.com/anchors/
-
-
-
-
-
-https://www.linode.com/docs/security/ssl/create-a-self-signed-tls-certificate/
+Now working on the `front-end ` side of the project.
