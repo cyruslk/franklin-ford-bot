@@ -1016,6 +1016,21 @@ Ok so I've spent some time trying to fix this TLS issue. Turns out that I can't 
 3. Upload the content of the files in the box.
 
 Note - Not quite 100% sure so do let me know if you run into issues/need my help.
-Otherwise, NFS offers to take care of this [step for a fee](https://members.nearlyfreespeech.net/cyruslk/support/assist?tag=ssl).
+Otherwise, NFS offers to take care of this step for a small fee. 
+
+```
+Request Custom TLS Certificate:
+
+If you would like us to generate and install custom TLS certificates for your site, we can generate and install Comodo Positive SSL DV certificates.
+
+The cost is $20.00 for a 1-year certificate or $35.00 for a 2-year certificate. Subscription members receive a $5.00 discount on these prices.
+
+Due to the manual nature of the process, we can only offer these certificates for sites hosted here. Also, with the single (but important) exception of example.com and www.example.com, we are not currently able to issue certificates with subject alternative names, so each alias needs its own certificate.
+
+Because these certificates are domain-validated, the domain must have working email at the time the certificate is issued or renewed. For example, if you want a certificate for www.example.com then example.com must have working email. You will have to provide a working email address in that domain that will be used to validate the certificate request. Email addresses that can be used for this purpose can be chosen from the following very short list:
+
+
+```
 
 Now working on the `front-end ` side of the project.
+
