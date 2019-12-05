@@ -8,6 +8,7 @@
 - THE PROJECT'S NATURAL LANGUAGE PROCESSING LIBRARY: http://bit.ly/2WtmWKg
 - STAGING TWITTER ACCOUNT: https://twitter.com/a_deschanel
 - The Heroku web app where the bot is hosted: https://franklin-ford-bot.herokuapp.com/
+- The endpoint to the CMS: https://franklin-ford-cms.herokuapp.com/
 
 # 2019.02.01+ 2019.02.04
 
@@ -1033,4 +1034,38 @@ Because these certificates are domain-validated, the domain must have working em
 ```
 
 Now working on the `front-end ` side of the project.
+
+# 2019.11.29
+
+Fixing the `TLS` issue. Now working. What i did to circunvent this issue [is written in this thread](https://community.letsencrypt.org/t/challenge-is-invalid-nearlyfreespeech/107508/4).
+
+Working on the CMS now. `Contentful` is propietary and has fees (probably because they host the files on their servers, which is quite normal), so I decided to change for a fully `open-source` option. Found [strapi.io](http://strapi.io/), quite simple to manage and working a bit like Wordpress.
+
+------
+
+Strapi doc:
+
+- [Integration with Node.js and React.js](https://snipcart.com/blog/node-js-react-strapi-tutorial) 
+- [Integration with Node.js and React.js (x2)](https://medium.com/@adeyinkakazeemolufemioluoje/create-a-blog-with-react-and-strapi-cc3d8f0f01e1)  
+
+------
+
+So, here's the new architecture of the project.
+
+- Server-side code on Heroku
+  - With /routes to access the CMS from this app: 
+- Call to this CMS from my `react.js` app
+  - Fetching the stuff on the front-end.
+    - Then, parsing the `MD` content sent to the DB with `db to htmls` packages such as these
+      - https://rexxars.github.io/react-markdown/
+      - https://github.com/showdownjs/showdown
+
+------
+
+Anyway, the CMS for the text of the website is now: https://franklin-ford-cms.herokuapp.com/ (added to the top list).
+
+
+# 2019.12.05
+
+
 
