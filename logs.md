@@ -1067,5 +1067,4 @@ Anyway, the CMS for the text of the website is now: https://franklin-ford-cms.he
 
 # 2019.12.05
 
-
-
+![](/Users/cyrus/Desktop/Capture d’écran, le 2019-12-05 à 10.06.34.png)
