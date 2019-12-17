@@ -1062,16 +1062,47 @@ So, here's the new architecture of the project.
 
 ------
 
-Anyway, the CMS for the text of the website is now: https://franklin-ford-cms.herokuapp.com/ (added to the top list).
+Anyway, the CMS for the text of the website is now: 
+
+https://franklin-ford-cms.herokuapp.com/ (added to the top list).
 
 
 # 2019.12.05
 
-More on the CMS soon.
+...More on the CMS soon.
 
 
+# 2019.12.17
 
+Okay. Wow. I've been really stuck on a `cms to database connection` thing; probably for a week. And I managed today to fix what was going wrong. It was a stupid typo issue that was not clearly mentionned and he really took me some time before getting this done. I'm using Strapi and I'm adding the issue here, for further reference:
 
+When I'm connecting  a `Mongodb instance` with `strapi`, I MUST remove the `<`Password`>` glyph. Then, the connection process becomes:
 
+```
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "database": "db_name",
+        "host": "127.0.0.1",
+        "srv": false,
+        "port": 27017,
+        "username": "",
+        "password": "",
+        "uri": "mongodb://cyruslk: + MyPass + rest_of_the_mongodb_ur_of_the_version_2.2.12"
+      },
+      "options": {
+        "authenticationDatabase": "",
+        "ssl": true
+      }
+    }
+  }
+}
+```
 
+Damn. Anyway, let's jump to the CMS now. So here's how the CMS works: I build the models and the data types on my local and I `git push heroku master` all the strapi files once this is done.  As a result, all the files are hosted on a `Heroku` server and endpoint: 	https://franklin-ford-cms.herokuapp.com/.
+
+This app has an entry point to access the CMS; https://franklin-ford-cms.herokuapp.com/admin
 

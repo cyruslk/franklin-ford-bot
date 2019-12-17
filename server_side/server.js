@@ -93,7 +93,6 @@ var T = new Twit({
       Math.random()*textToTokenize.length
     )];    
     if(randomString.length < 30 || randomString.includes("�")){
-      console.log("passing here", randomString);
       return runTheBot();
     }else{
       dataObj.randomString = randomString.replace(/(\r\n|\n|\r)/gm, "");
@@ -114,7 +113,7 @@ var T = new Twit({
    })
   }
 
-  // This where the bot will send to the Twitter API
+  This where the bot will send to the Twitter API
   let performTheTwitterPost = (dataObj) => {
     let status = dataObj.randomString;
     T.post('statuses/update', { status: status },
