@@ -996,15 +996,15 @@ Things that need to be done/considered on the server-side:
 
 **CMS FOR DATA:**
 
-​	Note: I'll work on this later;
+​	~~Note: I'll work on this later;~~
 
-- Add `featured_ten_tweets` on the sheet. This will follows the cms data structure.
+- ~~Add `featured_ten_tweets` on the sheet. This will follows the cms data structure.~~
 
 **CMS FOR TEXTS ON THE WEBSITE:**
 
-​	Note: I'll work on this later;
+​	~~Note: I'll work on this later;~~
 
-- Probably [Kirby](https://getkirby.com/docs/guide); or [Contenful](https://www.contentful.com/).
+- ~~Probably [Kirby](https://getkirby.com/docs/guide); or [Contenful](https://www.contentful.com/).~~
 
 
 
@@ -1106,3 +1106,41 @@ Damn. Anyway, let's jump to the CMS now. So here's how the CMS works: I build th
 
 This app has an entry point to access the CMS; https://franklin-ford-cms.herokuapp.com/admin
 
+------
+
+#### So here's how the CMS works.
+
+- First, you access the app from where it's hosted. Using the `/admin` route, you'll be able to log in.
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.34.46.png)
+
+- Then, the categories to fill are on the left (Eg.: Abouts, Mains ...)
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.34.55.png)  
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.35.01.png)
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.35.09.png)
+
+- If you want to format the text, the editor gives you the option to convert what you wrote in `Markdown` and get a preview by clicking on: *Voir une Prévisualisation*
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.37.03.png)
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.35.38.png) 
+
+- If a need to delete an `entry`, click on the trash sign on the right
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.37.38.png) 
+
+- For sections with <images>, you can upload it directly from the CMS
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.06.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.33.png) 
+
+- For the curation of Tweets displayed on the first fold, I decided to go with `JSON()` format. I've uploaded a few mock data that you can use as a base to populate the fields. The simplest option is to copy/paste one of these and change the content.
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.47.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.39.19.png)
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.39.34.png) 
+
+- At the end, I get all this data and loop through it on the client site:
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.39.54.png)  
+  
