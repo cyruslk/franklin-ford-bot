@@ -1144,3 +1144,49 @@ This app has an entry point to access the CMS; https://franklin-ford-cms.herokua
 
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.39.54.png)  
   
+
+# 2019.12.18
+
+Today, on the CMS side:
+
+- Customize the [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) (the text editor) so that you guys can add superscripts and text-idents (for the `/about ` section). Printing my `package.json` dependencies here - need to have this version of `strapi` or higher to modify WYSIWYG without bootstraping a new app:
+
+  ```
+    "dependencies": {
+      "strapi": "3.0.0-beta.17.8",
+      "strapi-admin": "3.0.0-beta.17.8",
+      "strapi-utils": "3.0.0-beta.17.8",
+      "strapi-plugin-content-type-builder": "3.0.0-beta.17.8",
+      "strapi-plugin-content-manager": "3.0.0-beta.17.8",
+      "strapi-plugin-users-permissions": "3.0.0-beta.17.8",
+      "strapi-plugin-email": "3.0.0-beta.17.8",
+      "strapi-plugin-upload": "3.0.0-beta.17.8",
+      "strapi-hook-mongoose": "3.0.0-beta.17.8"
+    },
+  ```
+
+Here's some doc: 
+
+- https://strapi.io/documentation/3.0.0-beta.x/admin-panel/customization.html#development-mode
+- https://github.com/strapi/strapi/issues/1381
+- https://www.youtube.com/watch?v=LIrK5KxsUSE&feature=youtu.be
+- https://github.com/strapi/strapi/issues/2111
+
+------
+
+In the meantime I also created two more `users`. I'll send you the login credentials over email.
+
+### Customize the WYSIWYG
+
+Various WYSIWYG components we could use:
+
+- https://github.com/jpuri/react-draft-wysiwyg
+- https://ckeditor.com/
+  - Might go with this actually: https://ckeditor.com/docs/ckeditor5/latest/features/basic-styles.html
+  - Text-indent: https://ckeditor.com/cke4/addon/textindent
+
+------
+
+I'll go back to this later.
+
+Otherwise: Some^[superscript]; 
