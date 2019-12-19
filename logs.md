@@ -1069,7 +1069,7 @@ https://franklin-ford-cms.herokuapp.com/ (added to the top list).
 
 # 2019.12.05
 
-...More on the CMS soon.
+...More on the CMS soon....
 
 
 # 2019.12.17
@@ -1184,9 +1184,52 @@ Various WYSIWYG components we could use:
 - https://ckeditor.com/
   - Might go with this actually: https://ckeditor.com/docs/ckeditor5/latest/features/basic-styles.html
   - Text-indent: https://ckeditor.com/cke4/addon/textindent
+  - This: https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/frameworks/react.html#using-ckeditor-5-source-2
+    
 
-------
+```
+import React, { Component } from 'react';
+import CKEditor from '@ckeditor/ckeditor5-react';
 
-I'll go back to this later.
+import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
+import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
+import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
+import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
+import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 
-Otherwise: Some^[superscript]; 
+class App extends Component {
+    render() {
+        return (
+            <div className="App">
+                <h2>Using CKEditor 5 Framework in React</h2>
+                <CKEditor
+                    onInit={ editor => console.log( 'Editor is ready to use!', editor ) }
+                    onChange={ ( event, editor ) => console.log( { event, editor } ) }
+                    config={ {
+                        plugins: [ Essentials, Paragraph, Bold, Italic, Heading ],
+                        toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo', ]
+                    } }
+                    editor={ ClassicEditor }
+                    data="<p>Hello from CKEditor 5!</p>"
+                />
+            </div>
+        );
+    }
+}
+
+export default App;
+```
+
+
+
+# 2019.12.19
+
+To do list of today:
+
+- [ ] Finish the `CK5react` modification.
+  https://github.com/FlamingFox911/ckeditor5-build-classic
+  Note: for this, I might get back to it later...
+- [ ] Finish the first draft of the client website
+- [ ] Upload the bot on Heroku.
+
