@@ -1227,7 +1227,7 @@ export default App;
 
 To do list of today:
 
-- [ ] Finish the `CK5react` modification.
+- [x] Finish the `CK5react` modification.
 
   - https://github.com/FlamingFox911/ckeditor5-build-classic
   - https://github.com/ckeditor/ckeditor5/issues/1015
@@ -1242,12 +1242,23 @@ To do list of today:
 
 # 2020.01.13 +2020.01.14 + 2020.01.15
 
-The staging website is accessible  here: http://f-f-b.surge.sh/
+1. The staging website is accessible  here: http://f-f-b.surge.sh/
+2. Writing a quick round of logs here. Worked on these previous days on what I wanted to develop for the website. I've created my own typewritter function that I might make open source soon. Interesting challenge,  fun and satisfying to do. 
+3. On the CMS, everything is done. Big challenge was to learn it, deploy and customize it for the sake of the project. The `WYSIWYG` is changed to allow superscript (this was a lot of trial and errors) and the indent. For further ref., I'm using this [package](https://www.npmjs.com/package/ckeditor5-build-classic-plus). 
+4. General aesthetics/notes of/on the website:
+   1. TYPOGRAPHY: Text is centered. Typography: I've used/I'm using [Plantin](https://fr.wikipedia.org/wiki/Plantin_(police_d%27%C3%A9criture)), an old-style serif typeface quite popular during the letterpress area. For the secondary layer of info (captions, dates), I'm using a `monospace` called Favorit-LightMono, produced by [Dinamo](https://www.abcdinamo.com/typefaces/favorit). It's $ so we might switch to another one if we don't have the external budget.
+   2. IMAGES:
+      1. Background images: I went through the files we have and isolated scanning/printing  scratches; then vectorized them. I then created a `function` to render them dynamically/overlap them on scroll. 
+      2. Images of scan: placed them on a black background. Now we have to decide if they need to be changed from the CMS or not (for now, they're static). The copy `01. fvdfv` is the caption. I guess, the easiest way is to make them editable from the `cms`.
+         1. Might create a way to hover on the images to make them bigger.
+         2. Might also create a way to make them more dynamic (changing from times to time?)
+         3. For now, it's twice the same section. The option I'm thinking of is to create a random to randomly pick in a pool of images. 
+   3. SECTION SOURCES: the function to open each of these boxes with an URL `parameter (sources/txt-1)` is done. Once we'll have the function running on the backend (the main bot), I'll enable it on the front-end + add an index that counts the number of tweets per section.
+   4. SECTIONS WHO/ACKNOWLEDGMENTS/CONTACT: they're something to change in the layout here. Might change the text to 2 columns. For now, it's the same information level (and I guess that what makes these sections problematics). Might change the text to `monospace`, and make it smaller.
+5. FIRST FOLD TWEETS: thinking of going back to `counter: 0` so that the animation won't stop once it's done.
+6. ADDITIONAL FEATURES/THINGS TO CONSIDER:
+   1. Use the typewritting effect to display the code used to power the project. For now I envision a light gray secction splitted in three parts where we display the code for the `ford-bot`, the `ford-cms` and the `ford-website`.
+   2. Might be interesting to add a schema of the process/what the bot is doing behind the scene (explained visually).
 
-Writing a quick round of logs here. Worked on what I wanted to develop for the website. I've created my own typewritter function that I intend to release on `NPM` one day. Interesting challenge, very fun and satisfying to do. 
 
-https://github.com/ckeditor/ckeditor5/issues/1636
 
-https://github.com/strapi/strapi/issues/2111
-
-Using this package for now: https://www.npmjs.com/package/ckeditor5-build-classic-plus
