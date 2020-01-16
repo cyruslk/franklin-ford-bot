@@ -1228,8 +1228,26 @@ export default App;
 To do list of today:
 
 - [ ] Finish the `CK5react` modification.
-  https://github.com/FlamingFox911/ckeditor5-build-classic
-  Note: for this, I might get back to it later...
-- [ ] Finish the first draft of the client website
+
+  - https://github.com/FlamingFox911/ckeditor5-build-classic
+  - https://github.com/ckeditor/ckeditor5/issues/1015
+  - **https://github.com/ckeditor/ckeditor5-react/issues/65**
+    - Can't mix pre-build with not: https://github.com/ckeditor/ckeditor5/issues/1614#issuecomment-473249923
+
+- [x] Finish the first draft of the client website
+
 - [ ] Upload the bot on Heroku.
 
+  
+
+# 2020.01.13 +2020.01.14 + 2020.01.15
+
+The staging website is accessible  here: http://f-f-b.surge.sh/
+
+Writing a quick round of logs here. Worked on what I wanted to develop for the website. I've created my own typewritter function that I intend to release on `NPM` one day. Interesting challenge, very fun and satisfying to do. 
+
+https://github.com/ckeditor/ckeditor5/issues/1636
+
+https://github.com/strapi/strapi/issues/2111
+
+Using this package for now: https://www.npmjs.com/package/ckeditor5-build-classic-plus
