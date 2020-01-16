@@ -1259,6 +1259,35 @@ To do list of today:
 6. ADDITIONAL FEATURES/THINGS TO CONSIDER:
    1. Use the typewritting effect to display the code used to power the project. For now I envision a light gray secction splitted in three parts where we display the code for the `ford-bot`, the `ford-cms` and the `ford-website`.
    2. Might be interesting to add a schema of the process/what the bot is doing behind the scene (explained visually).
+      
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.24.51.png)
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.24.54.png)
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.24.57.png)
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.25.08.png)
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.25.16.png) 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
