@@ -40,17 +40,17 @@ var T = new Twit({
 })
 
 
- let runTheBot = () => {  
+ let runTheBot = () => {
   let dataObj = {};
 
 
   axios.get(spreadsheetURL)
-    .then((response) => {      
+    .then((response) => {
      let arrayOfData = [
        response.data.feed.entry[5],
        response.data.feed.entry[1],
        response.data.feed.entry[4]
-     ];    
+     ];
 
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
      let randomItemFormatted = {
@@ -70,10 +70,10 @@ var T = new Twit({
      let pickenFile = randomItemFormatted.source_filenametxt;
      let filePath =  path.join(__dirname, "textFiles", pickenFile);
 
-     // Read the file 
+     // Read the file
      fs.readFile(filePath, function read(err, data) {
       if(err){
-        console.log(err);    
+        console.log(err);
       }else{
         // use the tokenizer to split the text efficiently;
         tokenizer = new natural.SentenceTokenizer();
@@ -91,7 +91,7 @@ var T = new Twit({
     }
     let randomString = textToTokenize[Math.floor(
       Math.random()*textToTokenize.length
-    )];    
+    )];
     if(randomString.length < 30 || randomString.includes("�")){
       return runTheBot();
     }else{
@@ -105,7 +105,7 @@ var T = new Twit({
       .map((ele, index) => {
         return ele.text.split("https")[0]
       })
-      if(allTweets.indexOf(dataObj.randomString) > -1){        
+      if(allTweets.indexOf(dataObj.randomString) > -1){
         return returnSpecificString();
       }else{
         return performTheTwitterPost(dataObj);
@@ -113,14 +113,13 @@ var T = new Twit({
    })
   }
 
-  This where the bot will send to the Twitter API
+  // This where the bot will send to the Twitter API
   let performTheTwitterPost = (dataObj) => {
     let status = dataObj.randomString;
     T.post('statuses/update', { status: status },
     function(err, data, response) {
       if(err){
         console.log(err.message);
-        // what to return?
         return;
       }
       console.log("Tweet Posted:", timestamp());
@@ -130,8 +129,8 @@ var T = new Twit({
         twitter_text: data.text,
         twitter_created_at: data.created_at
       }
-      dataObj.twitterData = twitterData;    
-      return sendToDb(dataObj)
+      dataObj.twitterData = twitterData;
+        return sendToDb(dataObj)
     })
   }
 
@@ -142,18 +141,17 @@ var T = new Twit({
       useNewUrlParser: true,
     }, (error, client) => {
       if(error){
-        return console.log("Unable to connect to the db.");
+        return console.log(error);
       }
       const db = client.db(databaseName);
-      console.log(db);
-      
+
       db.collection("ford_twitter").insertOne({
         masterData: dataToInsert
       }, (error, result) => {
         if(error){
           return console.log("unable to insert users");
         }
-        console.log("Data successfully inserted");    
+        console.log("Data successfully inserted");
       })
     })
   }

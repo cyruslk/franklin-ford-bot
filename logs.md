@@ -1271,11 +1271,24 @@ To do list of today:
 
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.25.16.png) 
 
+------
+
+Need to chose between `Plantin` and `Lyon`. Might go with `Lyon`, stronger and more readable.
+
+This looks better:
+
+```
+.about_container p, 
+.news_container p {
+    font-family: lyon;
+    line-height: 1.6;
+    font-size: 1.5vw;
+    margin-bottom: 0;
+    width: 49vw;
+}
+```
+
   
-
-
-
-
 
 
 
