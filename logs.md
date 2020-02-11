@@ -1367,3 +1367,6 @@ Now need to work on:
 - The cors problem (coming from the `cms`). 
 - What appears inside each section.
 - Polish the `www`. 
+
+I'm working with a surge extension: http://f-f-b.surge.sh/
+
