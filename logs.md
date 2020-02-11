@@ -1259,7 +1259,7 @@ To do list of today:
 6. ADDITIONAL FEATURES/THINGS TO CONSIDER:
    1. Use the typewritting effect to display the code used to power the project. For now I envision a light gray secction splitted in three parts where we display the code for the `ford-bot`, the `ford-cms` and the `ford-website`.
    2. Might be interesting to add a schema of the process/what the bot is doing behind the scene (explained visually).
-      
+     
 
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.24.51.png)
 
@@ -1290,17 +1290,52 @@ This looks better:
 
   
 
+# 2020.02.10
+
+- I've debug the DB and worked with the anchors on the front-end.
+
+- On the backend part, I'm working with the bit.ly services so that the Tweet does not become mostly the (long) URL we'll share. I'm therefore now posting the Tweet once the bit.ly is created.
+
+  ```
+    let performTheTwitterPost = (dataObj) => {
+  
+      let status = dataObj.randomString;
+      let pdfToBitly = dataObj.randomItemFormatted.source_filenamepdf.split(".")[0];
+      let concatenatingLink = config.websiteURL + pdfToBitly;
+  
+      bitly
+      .shorten(concatenatingLink)
+      .then(function(result) {
+  
+      let postbitlyURL = result.url;
+      dataObj.postbitlyURL = result.url;
+      console.log(dataObj.postbitlyURL);
+  
+      T.post('statuses/update', { status: status },
+      function(err, data, response) {
+        if(err){
+          console.log(err.message);
+          return;
+        }
+        console.log("Tweet Posted:", timestamp());
+        let twitterData = {
+          twitter_id: data.id,
+          twitter_id_str: data.id_str,
+          twitter_text: data.text,
+          twitter_created_at: data.created_at
+        }
+        dataObj.twitterData = twitterData;
+        return sendToDb(dataObj)
+      })
+  
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+    }
+  ```
 
 
 
-
-
-
-
-
-
-
-
-
-
+Now, I need to clean the name of the files so that everything stays consistent and serves the logic more easily.  I therefore propose to replace `_` by `-` and remove the double `__` (and avoid double `--` ). Doing that now. Also, I've add the entire list of texts in the repo.
 

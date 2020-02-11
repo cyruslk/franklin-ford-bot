@@ -17,6 +17,10 @@ const connectionURL = config.mongoConnectionURL;
 const databaseName = config.mongoDatabaseName;
 
 
+const BitlyClient = require('bitly').BitlyClient;
+const bitly = new BitlyClient(config.bitlyAPI);
+
+
 app.use(express.static(__dirname + '/public'));
 app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -113,48 +117,66 @@ var T = new Twit({
    })
   }
 
+
   // This where the bot will send to the Twitter API
   let performTheTwitterPost = (dataObj) => {
+
     let status = dataObj.randomString;
-    T.post('statuses/update', { status: status },
-    function(err, data, response) {
-      if(err){
-        console.log(err.message);
-        return;
-      }
-      console.log("Tweet Posted:", timestamp());
-      let twitterData = {
-        twitter_id: data.id,
-        twitter_id_str: data.id_str,
-        twitter_text: data.text,
-        twitter_created_at: data.created_at
-      }
-      dataObj.twitterData = twitterData;
-        return sendToDb(dataObj)
+    let pdfToBitly = dataObj.randomItemFormatted.source_filenamepdf.split(".")[0];
+    let concatenatingLink = config.websiteURL + pdfToBitly;
+
+    bitly
+    .shorten(concatenatingLink)
+    .then(function(result) {
+
+    let postbitlyURL = result.url;
+    dataObj.postbitlyURL = result.url;
+    console.log(dataObj.postbitlyURL);
+
+    // T.post('statuses/update', { status: status },
+    // function(err, data, response) {
+    //   if(err){
+    //     console.log(err.message);
+    //     return;
+    //   }
+    //   console.log("Tweet Posted:", timestamp());
+    //   let twitterData = {
+    //     twitter_id: data.id,
+    //     twitter_id_str: data.id_str,
+    //     twitter_text: data.text,
+    //     twitter_created_at: data.created_at
+    //   }
+    //   dataObj.twitterData = twitterData;
+    //   return sendToDb(dataObj)
+    // })
+
     })
+    .catch(function(error) {
+      console.error(error);
+    });
   }
 
   // This is what will be sent to db;
 
-  let sendToDb = (dataToInsert) => {
-    MongoClient.connect(connectionURL, {
-      useNewUrlParser: true,
-    }, (error, client) => {
-      if(error){
-        return console.log(error);
-      }
-      const db = client.db(databaseName);
-
-      db.collection("ford_twitter").insertOne({
-        masterData: dataToInsert
-      }, (error, result) => {
-        if(error){
-          return console.log("unable to insert users");
-        }
-        console.log("Data successfully inserted");
-      })
-    })
-  }
+  // let sendToDb = (dataToInsert) => {
+  //   MongoClient.connect(connectionURL, {
+  //     useNewUrlParser: true,
+  //   }, (error, client) => {
+  //     if(error){
+  //       return console.log(error);
+  //     }
+  //     const db = client.db(databaseName);
+  //
+  //     db.collection("ford_twitter").insertOne({
+  //       masterData: dataToInsert
+  //     }, (error, result) => {
+  //       if(error){
+  //         return console.log("unable to insert users");
+  //       }
+  //       console.log("Data successfully inserted");
+  //     })
+  //   })
+  // }
 
 // Add an interval here;
 let tweetInterval = Math.round(
