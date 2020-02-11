@@ -124,10 +124,6 @@ var T = new Twit({
     let status = dataObj.randomString;
     let titleToAnchorTag = dataObj.randomItemFormatted.source_title;
 
-    if(titleToAnchorTag === "Untitled"){
-      return runTheBot()
-    }
-
     let cleaningTheAnchorTag = (stringToClean) => {
       let stringToLowerCase = stringToClean.toLowerCase();
       return stringToLowerCase.split("")
@@ -141,7 +137,6 @@ var T = new Twit({
     }
 
     let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
-
 
     bitly
     .shorten(concatenatingLink)

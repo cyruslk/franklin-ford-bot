@@ -1363,8 +1363,10 @@ Adding this quick 'n' dirty way to manipulate the `source_title`.
 
 Now need to work on:
 
-- The anchors in the source (from the `front-end` side)
-- The cors problem (coming from the `cms`). 
+- ~~The anchors in the source (from the `front-end` side)~~
+  - What is the UX for this feat?
+  - Now testing with: `the-industrial-interests-of-newark` 
+- ~~The cors problem (coming from the `cms`).~~ 
 - What appears inside each section.
 - Polish the `www`. 
 
