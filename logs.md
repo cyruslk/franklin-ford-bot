@@ -1339,3 +1339,22 @@ This looks better:
 
 Now, I need to clean the name of the files so that everything stays consistent and serves the logic more easily.  I therefore propose to replace `_` by `-` and remove the double `__` (and avoid double `--` ). Doing that now. Also, I've add the entire list of texts in the repo.
 
+# 2020.02.11
+
+EDIT: I'm working with the `source_title` instead.
+
+```
+    let cleaningTheAnchorTag = (stringToClean) => {
+      let stringToLowerCase = stringToClean.toLowerCase();
+      return stringToLowerCase.split("")
+      .map((ele, index) => {
+        if(ele === " "){
+          return "-"
+        }else{
+          return ele;
+        }
+      }).join("");
+    }
+```
+
+Adding this quick 'n' dirty way to manipulate the `source_title`.

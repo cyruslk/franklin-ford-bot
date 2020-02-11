@@ -122,16 +122,35 @@ var T = new Twit({
   let performTheTwitterPost = (dataObj) => {
 
     let status = dataObj.randomString;
-    let pdfToBitly = dataObj.randomItemFormatted.source_filenamepdf.split(".")[0];
-    let concatenatingLink = config.websiteURL + pdfToBitly;
+    let titleToAnchorTag = dataObj.randomItemFormatted.source_title;
+
+    if(titleToAnchorTag === "Untitled"){
+      return runTheBot()
+    }
+
+    let cleaningTheAnchorTag = (stringToClean) => {
+      let stringToLowerCase = stringToClean.toLowerCase();
+      return stringToLowerCase.split("")
+      .map((ele, index) => {
+        if(ele === " "){
+          return "-"
+        }else{
+          return ele;
+        }
+      }).join("");
+    }
+
+    let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
+
 
     bitly
     .shorten(concatenatingLink)
     .then(function(result) {
 
     let postbitlyURL = result.url;
-    dataObj.postbitlyURL = result.url;
-    console.log(dataObj.postbitlyURL);
+    dataObj.bitlyURLOfPost = result.url;
+
+    console.log(dataObj.bitlyURLOfPost, " ---- from the bit.ly ");
 
     // T.post('statuses/update', { status: status },
     // function(err, data, response) {
