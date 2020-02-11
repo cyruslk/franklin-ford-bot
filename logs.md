@@ -1358,3 +1358,12 @@ EDIT: I'm working with the `source_title` instead.
 ```
 
 Adding this quick 'n' dirty way to manipulate the `source_title`.
+
+------
+
+Now need to work on:
+
+- The anchors in the source (from the `front-end` side)
+- The cors problem (coming from the `cms`). 
+- What appears inside each section.
+- Polish the `www`. 
