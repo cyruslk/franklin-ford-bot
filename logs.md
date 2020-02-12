@@ -1372,3 +1372,25 @@ Now need to work on:
 
 I'm working with a surge extension: http://f-f-b.surge.sh/
 
+Weirdly, it does work with anchors such as `the-press-of-new-york-its-future` but does not always work with the one above. Maybe I need to wait until everything is loaded before calling the `  scrollToElement(pathnameToScroll);`.
+
+Issue to fix:
+
+- https://github.com/ReactTraining/react-router/issues/394#issuecomment-141526205
+- https://github.com/ReactTraining/react-router/issues/394#issuecomment-128148470
+
+Here's the trick basically: I need to wait until the list mounted to trigger the slide.
+
+    window.location.hash = window.decodeURIComponent(window.location.hash);
+    setTimeout(() => {
+      window.location.hash = window.decodeURIComponent(window.location.hash);
+      document.querySelector(`${window.location.hash}`).scrollIntoView();
+    }, 1500);
+# 2020.02.12
+
+~~Now, working with props so that everything becomes dynamic (for now it's hardcoded with a timer).~~
+
+Also, I've created the mechanism that adds the section when the content scrolls into view.
+
+Now need to populate what goes inside each source's section (except tweets that'll come later).
+
