@@ -1394,3 +1394,8 @@ Also, I've created the mechanism that adds the section when the content scrolls 
 
 Now need to populate what goes inside each source's section (except tweets that'll come later).
 
+Change the `Click to to see more` for `Click to to close`.
+
+# 2020.02.13
+
+Finetuning.
