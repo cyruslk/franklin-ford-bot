@@ -46,17 +46,18 @@ var T = new Twit({
 
  let runTheBot = () => {
   let dataObj = {};
+  let sourceFilesCounter = {};
 
+  // here, map through all the titles and then update the counter of the one picked.
 
   axios.get(spreadsheetURL)
     .then((response) => {
-     let arrayOfData = [
-       response.data.feed.entry[5],
-       response.data.feed.entry[1],
-       response.data.feed.entry[4]
-     ];
 
+
+     let arrayOfData = response.data.feed.entry;
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
+
+     
      let randomItemFormatted = {
        source_authorname: randomItem.gsx$authorname.$t,
        source_dateyear: randomItem.gsx$dateyear.$t,
@@ -124,6 +125,7 @@ var T = new Twit({
     let status = dataObj.randomString;
     let titleToAnchorTag = dataObj.randomItemFormatted.source_title;
 
+
     let cleaningTheAnchorTag = (stringToClean) => {
       let stringToLowerCase = stringToClean.toLowerCase();
       return stringToLowerCase.split("")
@@ -145,7 +147,6 @@ var T = new Twit({
     let postbitlyURL = result.url;
     dataObj.bitlyURLOfPost = result.url;
 
-    console.log(dataObj.bitlyURLOfPost, " ---- from the bit.ly ");
 
     // T.post('statuses/update', { status: status },
     // function(err, data, response) {
@@ -154,14 +155,16 @@ var T = new Twit({
     //     return;
     //   }
     //   console.log("Tweet Posted:", timestamp());
-    //   let twitterData = {
-    //     twitter_id: data.id,
-    //     twitter_id_str: data.id_str,
-    //     twitter_text: data.text,
-    //     twitter_created_at: data.created_at
-    //   }
-    //   dataObj.twitterData = twitterData;
-    //   return sendToDb(dataObj)
+
+
+    let twitterData = {
+      twitter_id: "test",
+      twitter_id_str: "test",
+      twitter_text: "test",
+      twitter_created_at: "test"
+    }
+    dataObj.twitterData = twitterData;
+    return sendToDb(dataObj)
     // })
 
     })
@@ -172,25 +175,34 @@ var T = new Twit({
 
   // This is what will be sent to db;
 
-  // let sendToDb = (dataToInsert) => {
-  //   MongoClient.connect(connectionURL, {
-  //     useNewUrlParser: true,
-  //   }, (error, client) => {
-  //     if(error){
-  //       return console.log(error);
-  //     }
-  //     const db = client.db(databaseName);
-  //
-  //     db.collection("ford_twitter").insertOne({
-  //       masterData: dataToInsert
-  //     }, (error, result) => {
-  //       if(error){
-  //         return console.log("unable to insert users");
-  //       }
-  //       console.log("Data successfully inserted");
-  //     })
-  //   })
-  // }
+  let sendToDb = (dataObj) => {
+    MongoClient.connect(connectionURL, {
+      useNewUrlParser: true,
+    }, (error, client) => {
+      if(error){
+        return console.log(error);
+      }
+      const db = client.db(databaseName);
+      db.collection("ford_twitter").insertOne({
+        masterData: dataObj
+      }, (error, result) => {
+        if(error){
+          return console.log("unable to insert in the ford_twitter");
+        }
+        console.log("Data successfully inserted");
+      })
+
+      let targetedTitle = dataObj.randomItemFormatted.source_title;
+      db.collection("tweets_sources_counter").insertOne({
+        targetedTitle: targetedTitle
+      }, (error, result) => {
+        if(error){
+          return console.log("unable to insert in the tweets_sources_counter");
+        }
+        console.log("Data successfully inserted");
+      })
+    })
+  }
 
 // Add an interval here;
 let tweetInterval = Math.round(

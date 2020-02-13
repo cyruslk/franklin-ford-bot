@@ -1074,7 +1074,7 @@ https://franklin-ford-cms.herokuapp.com/ (added to the top list).
 
 # 2019.12.17
 
-Okay. Wow. I've been really stuck on a `cms to database connection` thing; probably for a week. And I managed today to fix what was going wrong. It was a stupid typo issue that was not clearly mentionned and he really took me some time before getting this done. I'm using Strapi and I'm adding the issue here, for further reference:
+Okay. Wow. I've been really stuck on a `cms to database connection` thing; probably for a week. And I managed today to fix what was going wrong. It was a stupid typo issue that was not clearly mentionned and it really took me some time before getting this done. Adding the issue here, for further reference:
 
 When I'm connecting  a `Mongodb instance` with `strapi`, I MUST remove the `<`Password`>` glyph. Then, the connection process becomes:
 
@@ -1398,4 +1398,30 @@ Change the `Click to to see more` for `Click to to close`.
 
 # 2020.02.13
 
-Finetuning.
+Here's the logic + the design:
+
+- When a bit.ly URL is being created, it concatenates the link with the anchor added on it.
+
+- Then on the front-end:
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2011.25.50.png) 
+
+
+  The data first needs to load (since it's coming from the db). So here's the loading screen from now.
+
+
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2011.25.54.png) 
+
+  The  page then goes directly to the section where the content is displayed and opens the section so that the visitor can access the details. 
+
+
+  Now working with Tweet widgets. (Tweet embeds might be too heavy visually tho)
+
+  ------
+
+  Then making the db modification , so that it counts the number of tweets per file/section.
+  Then, I'll change the Google Sheet CMS to host both the PDF and the OCR'ed text.
+
+  Then I'll do a filter to toggle `sources/sections` with Tweets and ones w/o.
+
+  NOTE: for the counter => I'll use `array.filter()`. Quicker than doing double inserts into db.collections.
