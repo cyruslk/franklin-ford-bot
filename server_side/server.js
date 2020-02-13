@@ -57,8 +57,8 @@ var T = new Twit({
      let arrayOfData = response.data.feed.entry;
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
 
-     
-     let randomItemFormatted = {
+
+     let selectedItem = {
        source_authorname: randomItem.gsx$authorname.$t,
        source_dateyear: randomItem.gsx$dateyear.$t,
        source_fulldateifknown: randomItem.gsx$fulldateifknown.$t,
@@ -72,8 +72,8 @@ var T = new Twit({
        source_manuscrittapuscrit: randomItem.gsx$manuscrittapuscrit.$t
      };
 
-     let pickenFile = randomItemFormatted.source_filenametxt;
-     let filePath =  path.join(__dirname, "textFiles", pickenFile);
+     let selectedFile = selectedItem.source_filenametxt;
+     let filePath =  path.join(__dirname, "textFiles", selectedFile);
 
      // Read the file
      fs.readFile(filePath, function read(err, data) {
@@ -83,24 +83,25 @@ var T = new Twit({
         // use the tokenizer to split the text efficiently;
         tokenizer = new natural.SentenceTokenizer();
         let textToTokenize = tokenizer.tokenize(data.toString('utf8').replace(/\0/g, ''));
-        dataObj.randomItemFormatted = randomItemFormatted;
-        return returnSpecificString(dataObj, textToTokenize);
+        dataObj.selectedItem = selectedItem;
+        return returnSelectedString(dataObj, textToTokenize);
       }
    });
  })}
 
   // Add a randomly selected (from the text) string to the dataObj {}
-  let returnSpecificString = (dataObj, textToTokenize) => {
+  let returnSelectedString = (dataObj, textToTokenize) => {
+
     if(dataObj === undefined){
       return runTheBot();
     }
-    let randomString = textToTokenize[Math.floor(
+    let selectedString = textToTokenize[Math.floor(
       Math.random()*textToTokenize.length
     )];
-    if(randomString.length < 30 || randomString.includes("�")){
+    if(selectedString.length < 30 || selectedString.includes("�")){
       return runTheBot();
     }else{
-      dataObj.randomString = randomString.replace(/(\r\n|\n|\r)/gm, "");
+      dataObj.selectedString = selectedString.replace(/(\r\n|\n|\r)/gm, "");
     }
     // see if tweet is a duplicate of the endpoint's list
     T.get('statuses/user_timeline',
@@ -110,8 +111,8 @@ var T = new Twit({
       .map((ele, index) => {
         return ele.text.split("https")[0]
       })
-      if(allTweets.indexOf(dataObj.randomString) > -1){
-        return returnSpecificString();
+      if(allTweets.indexOf(dataObj.selectedString) > -1){
+        return returnSelectedString();
       }else{
         return performTheTwitterPost(dataObj);
       }
@@ -122,9 +123,8 @@ var T = new Twit({
   // This where the bot will send to the Twitter API
   let performTheTwitterPost = (dataObj) => {
 
-    let status = dataObj.randomString;
-    let titleToAnchorTag = dataObj.randomItemFormatted.source_title;
-
+    let status = dataObj.selectedString;
+    let titleToAnchorTag = dataObj.selectedItem.source_title;
 
     let cleaningTheAnchorTag = (stringToClean) => {
       let stringToLowerCase = stringToClean.toLowerCase();
@@ -145,7 +145,7 @@ var T = new Twit({
     .then(function(result) {
 
     let postbitlyURL = result.url;
-    dataObj.bitlyURLOfPost = result.url;
+    dataObj.bitly = result.url;
 
 
     // T.post('statuses/update', { status: status },
@@ -156,14 +156,13 @@ var T = new Twit({
     //   }
     //   console.log("Tweet Posted:", timestamp());
 
-
-    let twitterData = {
+    let dataOfTheTweet = {
       twitter_id: "test",
       twitter_id_str: "test",
       twitter_text: "test",
       twitter_created_at: "test"
     }
-    dataObj.twitterData = twitterData;
+    dataObj.dataOfTheTweet = dataOfTheTweet;
     return sendToDb(dataObj)
     // })
 
@@ -184,20 +183,10 @@ var T = new Twit({
       }
       const db = client.db(databaseName);
       db.collection("ford_twitter").insertOne({
-        masterData: dataObj
+        entry: dataObj
       }, (error, result) => {
         if(error){
           return console.log("unable to insert in the ford_twitter");
-        }
-        console.log("Data successfully inserted");
-      })
-
-      let targetedTitle = dataObj.randomItemFormatted.source_title;
-      db.collection("tweets_sources_counter").insertOne({
-        targetedTitle: targetedTitle
-      }, (error, result) => {
-        if(error){
-          return console.log("unable to insert in the tweets_sources_counter");
         }
         console.log("Data successfully inserted");
       })

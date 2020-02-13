@@ -1431,3 +1431,13 @@ Here's the logic + the design:
 - Again: https://www.npmjs.com/package/mongodb-stitch-browser-sdk
 
 - This : https://medium.com/@joekarlsson/a-gentle-introduction-to-setting-up-a-mongodb-stitch-app-from-scratch-in-10-minutes-4d51764e6b85
+
+  ------
+
+  Ok, so now the data is looped from the backend to the db to the front-end.
+
+  The naming is quite confusing in the backend/db so I'm renaming it
+
+  - I'm flushing the `db.collection()`. Do we want to do the same for the Twitter bot? If so, I can run a script that'll do it automatically.
+
+  
