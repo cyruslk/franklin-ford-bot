@@ -1436,8 +1436,25 @@ Here's the logic + the design:
 
   Ok, so now the data is looped from the backend to the db to the front-end.
 
-  The naming is quite confusing in the backend/db so I'm renaming it
+  The naming is quite confusing in the backend/db so I'm renaming it. Here's the new architecture:
 
-  - I'm flushing the `db.collection()`. Do we want to do the same for the Twitter bot? If so, I can run a script that'll do it automatically.
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2015.48.23.png) 
+
+  - I've populated the `db` with a few entries so that we can filter it on the frontend. Going back to the app now:
+
+    - Working with the .filter function. It works. 
+
+      ```
+        filterThroughDBToFindTweets = (dbContent) => {
+          let title = this.state.title;
+          let filtering =  dbContent.filter((ele) => {
+            return ele.entry.selectedItem.source_title === title
+          })
+         return filtering;
+        }
+      ```
+
+    - When I `console.log()` the output, here's the result:
+      
 
   

@@ -54,7 +54,7 @@ var T = new Twit({
     .then((response) => {
 
 
-     let arrayOfData = response.data.feed.entry;
+     let arrayOfData = [response.data.feed.entry[1]];
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
 
 
