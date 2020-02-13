@@ -1425,3 +1425,9 @@ Here's the logic + the design:
   Then I'll do a filter to toggle `sources/sections` with Tweets and ones w/o.
 
   NOTE: for the counter => I'll use `array.filter()`. Quicker than doing double inserts into db.collections.
+
+- Stitch to display, then filter: https://docs.mongodb.com/stitch/tutorials/guides/blog-web/
+
+- Again: https://www.npmjs.com/package/mongodb-stitch-browser-sdk
+
+- This : https://medium.com/@joekarlsson/a-gentle-introduction-to-setting-up-a-mongodb-stitch-app-from-scratch-in-10-minutes-4d51764e6b85
