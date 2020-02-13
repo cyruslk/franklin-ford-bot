@@ -1455,6 +1455,7 @@ Here's the logic + the design:
       ```
 
     - When I `console.log()` the output, here's the result:
-      
+
+      ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2016.21.10.png) 
 
   
