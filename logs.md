@@ -1370,7 +1370,7 @@ Now need to work on:
 - What appears inside each section.
 - Polish the `www`. 
 
-I'm working with a surge extension: http://f-f-b.surge.sh/
+Working again on the staging www:  http://f-f-b.surge.sh/
 
 Weirdly, it does work with anchors such as `the-press-of-new-york-its-future` but does not always work with the one above. Maybe I need to wait until everything is loaded before calling the `  scrollToElement(pathnameToScroll);`.
 
@@ -1458,4 +1458,7 @@ Here's the logic + the design:
 
       ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2016.21.10.png) 
 
-  
+# 2020.02.17
+
+I've make sure the `.httpaccess` is not there anymore.
+Following this https://blog.nearlyfreespeech.net/2006/11/17/forwarding-sites-url-rewriting/

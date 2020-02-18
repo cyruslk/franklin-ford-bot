@@ -140,6 +140,7 @@ var T = new Twit({
 
     let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
 
+
     bitly
     .shorten(concatenatingLink)
     .then(function(result) {
@@ -148,23 +149,26 @@ var T = new Twit({
     dataObj.bitly = result.url;
 
 
-    // T.post('statuses/update', { status: status },
-    // function(err, data, response) {
-    //   if(err){
-    //     console.log(err.message);
-    //     return;
-    //   }
-    //   console.log("Tweet Posted:", timestamp());
+    let statusWithBitly = `${status} ${postbitlyURL}`;
+
+    T.post('statuses/update', { status: statusWithBitly },
+    function(err, data, response) {
+      if(err){
+        console.log(err.message);
+        return;
+      }
+      console.log("Tweet Posted:", timestamp());
 
     let dataOfTheTweet = {
-      twitter_id: "test",
-      twitter_id_str: "test",
-      twitter_text: "test",
-      twitter_created_at: "test"
-    }
+       twitter_id: data.id,
+       twitter_id_str: data.id_str,
+       twitter_text: data.text,
+       twitter_created_at: data.created_at
+     };
+
     dataObj.dataOfTheTweet = dataOfTheTweet;
     return sendToDb(dataObj)
-    // })
+    })
 
     })
     .catch(function(error) {
