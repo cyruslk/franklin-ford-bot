@@ -53,8 +53,10 @@ var T = new Twit({
   axios.get(spreadsheetURL)
     .then((response) => {
 
+      console.log(response.data.feed.entry.length);
 
-     let arrayOfData = [response.data.feed.entry[1]];
+     // let arrayOfData = [response.data.feed.entry[1]];
+     let arrayOfData = response.data.feed.entry;
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
 
 
@@ -71,6 +73,7 @@ var T = new Twit({
        source_notes: randomItem.gsx$notes.$t,
        source_manuscrittapuscrit: randomItem.gsx$manuscrittapuscrit.$t
      };
+
 
      let selectedFile = selectedItem.source_filenametxt;
      let filePath =  path.join(__dirname, "textFiles", selectedFile);
@@ -150,30 +153,32 @@ var T = new Twit({
 
 
     let statusWithBitly = `${status} ${postbitlyURL}`;
+    console.log(statusWithBitly);
 
-    T.post('statuses/update', { status: statusWithBitly },
-    function(err, data, response) {
-      if(err){
-        console.log(err.message);
-        return;
-      }
-      console.log("Tweet Posted:", timestamp());
-
-    let dataOfTheTweet = {
-       twitter_id: data.id,
-       twitter_id_str: data.id_str,
-       twitter_text: data.text,
-       twitter_created_at: data.created_at
-     };
-
-    dataObj.dataOfTheTweet = dataOfTheTweet;
-    return sendToDb(dataObj)
-    })
+    // T.post('statuses/update', { status: status },
+    // function(err, data, response) {
+    //   if(err){
+    //     console.log(err.message);
+    //     return;
+    //   }
+    //   console.log("Tweet Posted:", timestamp());
+    //
+    // let twitterData = {
+    //    twitter_id: data.id,
+    //    twitter_id_str: data.id_str,
+    //    twitter_text: data.text,
+    //    twitter_created_at: data.created_at
+    //  }
+    // dataObj.dataOfTheTweet = dataOfTheTweet;
+    // return sendToDb(dataObj)
+    // })
 
     })
     .catch(function(error) {
       console.error(error);
     });
+
+
   }
 
   // This is what will be sent to db;

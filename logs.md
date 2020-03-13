@@ -1417,7 +1417,7 @@ Here's the logic + the design:
 
   Now working with Tweet widgets. (Tweet embeds might be too heavy visually tho)
 
-  ------
+------
 
   Then making the db modification , so that it counts the number of tweets per file/section.
   Then, I'll change the Google Sheet CMS to host both the PDF and the OCR'ed text.
@@ -1462,3 +1462,36 @@ Here's the logic + the design:
 
 I've make sure the `.httpaccess` is not there anymore.
 Following this https://blog.nearlyfreespeech.net/2006/11/17/forwarding-sites-url-rewriting/
+
+# 2020.02.21
+
+In order to trigger bolder links when the section is in viewport: 
+
+- https://www.npmjs.com/package/react-in-viewport
+
+# 2020.03.13
+
+
+
+- Make sure the frequency of the tweet is OK.
+  
+  - Deploy the script on heroku, remove the addon 
+  
+- Remove the staging URL, clear the database (since Tweets are removed)
+
+- Make sure the random thing {picking different sources from the URL} is working OK.
+  - TO DO:
+    - MAKE SURE  WE ARE CONSISTENT IN REMOVING THE DOTS IN THE TITLE (=> IN THE SPREADSHEET...)
+    - MAKE SURE THE SHEET DOES NOT HAVE EXTRA LINES AFTER THE CONTENT.
+  - ON MY SIDE:
+    - Specific cases like this do not work as expected. This is due to the `,`. Need to remove it from the URL:
+      - `The Country Check, It means a single banking system and a universal check`
+      - `Bourke Cockran's Speech, Franklin Ford Takes Exception to Some of the Remarks Made by Former`
+      - `Tontine What it is, How it Works`
+      - `Cooperative Credit Reporting, Letter to the editor of the New York Times`
+  
+- Start to conceptualize what this is all about (Note for myself). 
+
+- Fixing `CSS`: this:
+
+  
