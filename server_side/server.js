@@ -55,8 +55,8 @@ var T = new Twit({
 
       console.log(response.data.feed.entry.length);
 
-     // let arrayOfData = [response.data.feed.entry[1]];
-     let arrayOfData = response.data.feed.entry;
+     let arrayOfData = [response.data.feed.entry[20]];
+     // let arrayOfData = response.data.feed.entry;
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
 
 
@@ -123,25 +123,35 @@ var T = new Twit({
   }
 
 
+  // this is where the bit.ly will be created.
+  let generateTheBitly = (websiteURL, stringToClean) => {
+
+    let stringToLowerCase = stringToClean.toLowerCase();
+    let stringToURL = stringToLowerCase.split("")
+    .map((ele, index) => {
+      if(ele === " "){
+        return "-"
+      }else if(ele === ","){
+        return;
+      }else if(ele === "''"){
+        return;
+      }else{
+        return ele;
+      }
+    }).join("");
+
+    return `${config.websiteURL}#${stringToURL}`;
+  };
+
+
   // This where the bot will send to the Twitter API
   let performTheTwitterPost = (dataObj) => {
 
     let status = dataObj.selectedString;
     let titleToAnchorTag = dataObj.selectedItem.source_title;
 
-    let cleaningTheAnchorTag = (stringToClean) => {
-      let stringToLowerCase = stringToClean.toLowerCase();
-      return stringToLowerCase.split("")
-      .map((ele, index) => {
-        if(ele === " "){
-          return "-"
-        }else{
-          return ele;
-        }
-      }).join("");
-    }
-
-    let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
+    // let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
+    let concatenatingLink = generateTheBitly(config.websiteURL, titleToAnchorTag)
 
 
     bitly
@@ -182,7 +192,6 @@ var T = new Twit({
   }
 
   // This is what will be sent to db;
-
   let sendToDb = (dataObj) => {
     MongoClient.connect(connectionURL, {
       useNewUrlParser: true,
