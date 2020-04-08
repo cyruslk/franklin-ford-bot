@@ -48,17 +48,12 @@ var T = new Twit({
   let dataObj = {};
   let sourceFilesCounter = {};
 
-  // here, map through all the titles and then update the counter of the one picked.
 
   axios.get(spreadsheetURL)
     .then((response) => {
 
-      console.log(response.data.feed.entry.length);
-
-     let arrayOfData = [response.data.feed.entry[20]];
-     // let arrayOfData = response.data.feed.entry;
+     let arrayOfData = response.data.feed.entry;
      let randomItem = arrayOfData[Math.floor(Math.random()*arrayOfData.length)];
-
 
      let selectedItem = {
        source_authorname: randomItem.gsx$authorname.$t,
@@ -94,7 +89,6 @@ var T = new Twit({
 
   // Add a randomly selected (from the text) string to the dataObj {}
   let returnSelectedString = (dataObj, textToTokenize) => {
-
     if(dataObj === undefined){
       return runTheBot();
     }
@@ -126,6 +120,9 @@ var T = new Twit({
   // this is where the bit.ly will be created.
   let generateTheBitly = (websiteURL, stringToClean) => {
 
+  console.log(stringToClean);
+  
+
     let stringToLowerCase = stringToClean.toLowerCase();
     let stringToURL = stringToLowerCase.split("")
     .map((ele, index) => {
@@ -135,6 +132,8 @@ var T = new Twit({
         return;
       }else if(ele === "''"){
         return;
+      }else if(ele === "'"){
+        return; 
       }else{
         return ele;
       }
@@ -211,7 +210,6 @@ var T = new Twit({
     })
   }
 
-// Add an interval here;
 let tweetInterval = Math.round(
   Math.random() * (176400000 - 18000000)
 ) + 18000000;

@@ -1475,23 +1475,26 @@ In order to trigger bolder links when the section is in viewport:
   
   - Deploy the script on heroku, remove the addon 
   
-- Remove the staging URL, clear the database (since Tweets are removed)
+- ~~Remove the staging URL, clear the database (since Tweets are removed)~~
 
-- Make sure the random thing {picking different sources from the URL} is working OK.
+- ~~Make sure the random thing {picking different sources from the URL} is working OK.~~
+  
   - TO DO:
     - ~~MAKE SURE  WE ARE CONSISTENT IN REMOVING THE DOTS IN THE TITLE (=> IN THE SPREADSHEET...)~~
     - ~~MAKE SURE THE SHEET DOES NOT HAVE EXTRA LINES AFTER THE CONTENT.~~
-  - Start to conceptualize what this is all about (Note for myself). 
-
+- Start to conceptualize what this is all about (Note for myself). 
+  
 - Fixing `CSS`: this (the line stuck to the top of the section when opened )
 
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/201200313/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-03-13%20%C3%A0%2013.01.44.png)  
 
 - In some cases, it does not seem to scroll. Need to fix this
 
-  - Tontine What it is, How it Works
-  - Mayor Edson's Charter and the Democratic Principle
-  - The Country Check, It means a single banking system and a universal check
-  - Bourke Cockran's Speech, Franklin Ford Takes Exception to Some of the Remarks Made by Former
-  - Cooperative Credit Reporting, Letter to the editor of the New York Times
-  - Municipal Reform a Scientific Question, a General Outline of Reports on New York City's Department of Finance in its Working Relation with the Municipal System
+  - ~~Tontine What it is, How it Works~~
+  - ~~Mayor Edson's Charter and the Democratic Principle~~
+  - ~~The Country Check, It means a single banking system and a universal check~~
+  - ~~Bourke Cockran's Speech, Franklin Ford Takes Exception to Some of the Remarks Made by Former~~
+  - ~~Cooperative Credit Reporting, Letter to the editor of the New York Times~~
+  - ~~Municipal Reform a Scientific Question, a General Outline of Reports on New York City's Department of Finance in its Working Relation with the Municipal System~~
+
+# 2020.04.07
