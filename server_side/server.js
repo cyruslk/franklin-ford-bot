@@ -164,23 +164,23 @@ var T = new Twit({
     let statusWithBitly = `${status} ${postbitlyURL}`;
     console.log(statusWithBitly);
 
-    // T.post('statuses/update', { status: status },
-    // function(err, data, response) {
-    //   if(err){
-    //     console.log(err.message);
-    //     return;
-    //   }
-    //   console.log("Tweet Posted:", timestamp());
-    //
-    // let twitterData = {
-    //    twitter_id: data.id,
-    //    twitter_id_str: data.id_str,
-    //    twitter_text: data.text,
-    //    twitter_created_at: data.created_at
-    //  }
-    // dataObj.dataOfTheTweet = dataOfTheTweet;
-    // return sendToDb(dataObj)
-    // })
+    T.post('statuses/update', { status: status },
+    function(err, data, response) {
+      if(err){
+        console.log(err.message);
+        return;
+      }
+      console.log("Tweet Posted:", timestamp());
+    
+    let twitterData = {
+       twitter_id: data.id,
+       twitter_id_str: data.id_str,
+       twitter_text: data.text,
+       twitter_created_at: data.created_at
+     }
+    dataObj.dataOfTheTweet = dataOfTheTweet;
+    return sendToDb(dataObj)
+    })
 
     })
     .catch(function(error) {
