@@ -172,7 +172,7 @@ var T = new Twit({
       }
       console.log("Tweet Posted:", timestamp());
     
-    let twitterData = {
+    let dataOfTheTweet = {
        twitter_id: data.id,
        twitter_id_str: data.id_str,
        twitter_text: data.text,
@@ -181,7 +181,6 @@ var T = new Twit({
     dataObj.dataOfTheTweet = dataOfTheTweet;
     return sendToDb(dataObj)
     })
-
     })
     .catch(function(error) {
       console.error(error);
@@ -225,10 +224,3 @@ runTheBot();
 app.listen(port, () => {
   console.log('listening on port ' + port)
 })
-
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'));
-}
-app.get('*',(req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
