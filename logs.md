@@ -1482,7 +1482,7 @@ In order to trigger bolder links when the section is in viewport:
   - TO DO:
     - ~~MAKE SURE  WE ARE CONSISTENT IN REMOVING THE DOTS IN THE TITLE (=> IN THE SPREADSHEET...)~~
     - ~~MAKE SURE THE SHEET DOES NOT HAVE EXTRA LINES AFTER THE CONTENT.~~
-- Start to conceptualize what this is all about (Note for myself). 
+  - Start to conceptualize what this is all about (Note for myself). 
   
 - Fixing `CSS`: this (the line stuck to the top of the section when opened )
 
@@ -1498,3 +1498,4 @@ In order to trigger bolder links when the section is in viewport:
   - ~~Municipal Reform a Scientific Question, a General Outline of Reports on New York City's Department of Finance in its Working Relation with the Municipal System~~
 
 # 2020.04.07
+

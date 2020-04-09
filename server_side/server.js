@@ -111,7 +111,10 @@ var T = new Twit({
       if(allTweets.indexOf(dataObj.selectedString) > -1){
         return returnSelectedString();
       }else{
-        return performTheTwitterPost(dataObj);
+        console.log("passed", dataObj);
+        
+        // return performTheTwitterPost(dataObj);
+        return sendToDb(dataObj)
       }
    })
   }
@@ -179,8 +182,8 @@ var T = new Twit({
        twitter_created_at: data.created_at
      }
     dataObj.dataOfTheTweet = dataOfTheTweet;
-    return sendToDb(dataObj)
-    })
+      return sendToDb(dataObj)
+      })
     })
     .catch(function(error) {
       console.error(error);
@@ -209,9 +212,13 @@ var T = new Twit({
     })
   }
 
+// let tweetInterval = Math.round(
+//   Math.random() * (176400000 - 18000000)
+// ) + 18000000;
+
 let tweetInterval = Math.round(
-  Math.random() * (176400000 - 18000000)
-) + 18000000;
+    Math.random() * (240000 - 60000)
+  ) + 60000;
 
 setInterval(function() {
   runTheBot()
