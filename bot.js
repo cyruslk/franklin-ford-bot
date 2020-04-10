@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
@@ -224,7 +225,6 @@ setInterval(function() {
   runTheBot()
 }, tweetInterval);
 
-// Create the initial call;
 runTheBot();
 
 
