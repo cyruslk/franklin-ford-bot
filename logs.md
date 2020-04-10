@@ -1499,3 +1499,15 @@ In order to trigger bolder links when the section is in viewport:
 
 # 2020.04.07
 
+Had to install a monitoring Adds-On, Heroku changed their dynos.
+
+Reference : https://stackoverflow.com/questions/5480337/easy-way-to-prevent-heroku-idling
+
+https://one.newrelic.com/launcher/nr1-core.home?pane=eyJuZXJkbGV0SWQiOiJucjEtY29yZS5ob21lLXNjcmVlbiJ9
+
+
+
+https://www.youtube.com/watch?v=bB8kEcHKx7k
+
+
+
