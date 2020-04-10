@@ -4,3 +4,4 @@ config.js
 others
 franklin-ford-bot-hosting.pem
 testing_db
+newrelic.js
