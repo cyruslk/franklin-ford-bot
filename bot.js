@@ -114,8 +114,7 @@ var T = new Twit({
       }else{
         console.log("passed", dataObj);
         
-        // return performTheTwitterPost(dataObj);
-        return sendToDb(dataObj)
+        return performTheTwitterPost(dataObj);
       }
    })
   }
@@ -213,13 +212,10 @@ var T = new Twit({
     })
   }
 
-// let tweetInterval = Math.round(
-//   Math.random() * (176400000 - 18000000)
-// ) + 18000000;
-
 let tweetInterval = Math.round(
-    Math.random() * (240000 - 60000)
-  ) + 60000;
+  Math.random() * (176400000 - 18000000)
+) + 18000000;
+
 
 setInterval(function() {
   runTheBot()
