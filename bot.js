@@ -112,8 +112,7 @@ var T = new Twit({
       if(allTweets.indexOf(dataObj.selectedString) > -1){
         return returnSelectedString();
       }else{
-        console.log("passed", dataObj);
-        
+        console.log("passed", dataObj);   
         return performTheTwitterPost(dataObj);
       }
    })
