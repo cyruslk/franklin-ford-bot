@@ -12,14 +12,14 @@ const fs = require('fs');
 var Twit = require('twit');
 const axios = require("axios");
 var config = require('./config.js');
-const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
+const spreadsheetURL = process.env.preFix+process.env.sheetID+process.env.postFix;
 const {MongoClient} = require("mongodb");
-const connectionURL = config.mongoConnectionURL;
-const databaseName = config.mongoDatabaseName;
+const connectionURL = process.env.mongoConnectionURL;
+const databaseName = process.env.mongoDatabaseName;
 
 
 const BitlyClient = require('bitly').BitlyClient;
-const bitly = new BitlyClient(config.bitlyAPI);
+const bitly = new BitlyClient(process.env.bitlyAPI);
 
 
 app.use(express.static(__dirname + '/public'));
@@ -38,10 +38,10 @@ app.use(bodyParser.json());
 
 
 var T = new Twit({
-  consumer_key:         config.twitter_consumer_key,
-  consumer_secret:      config.twitter_consumer_secret,
-  access_token:         config.twitter_access_token,
-  access_token_secret:  config.twitter_access_token_secret,
+  consumer_key:         process.env.twitter_consumer_key,
+  consumer_secret:      process.env.twitter_consumer_secret,
+  access_token:         process.env.twitter_access_token,
+  access_token_secret:  process.env.twitter_access_token_secret,
 })
 
 
