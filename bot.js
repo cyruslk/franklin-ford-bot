@@ -11,7 +11,7 @@ const fs = require('fs');
 // const https = require('https');
 var Twit = require('twit');
 const axios = require("axios");
-var config = require('./config.js');
+// var config = require('./config.js');
 const spreadsheetURL = process.env.preFix+process.env.sheetID+process.env.postFix;
 const {MongoClient} = require("mongodb");
 const connectionURL = process.env.mongoConnectionURL;
@@ -220,7 +220,10 @@ setInterval(function() {
   runTheBot()
 }, tweetInterval);
 
-runTheBot();
+
+app.get('/', function(req, res) {
+  runTheBot();
+});
 
 
 app.listen(port, () => {
