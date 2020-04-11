@@ -11,7 +11,7 @@ const fs = require('fs');
 // const https = require('https');
 var Twit = require('twit');
 const axios = require("axios");
-var config = require('./config.js');
+// var config = require('./config.js');
 const spreadsheetURL = process.env.preFix+process.env.sheetID+process.env.postFix;
 const {MongoClient} = require("mongodb");
 const connectionURL = process.env.mongoConnectionURL;
@@ -141,7 +141,7 @@ var T = new Twit({
       }
     }).join("");
 
-    return `${config.websiteURL}#${stringToURL}`;
+    return `${ process.env.websiteURL}#${process.env.stringToURL}`;
   };
 
 
@@ -152,7 +152,7 @@ var T = new Twit({
     let titleToAnchorTag = dataObj.selectedItem.source_title;
 
     // let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
-    let concatenatingLink = generateTheBitly(config.websiteURL, titleToAnchorTag)
+    let concatenatingLink = generateTheBitly(process.env.websiteURL, titleToAnchorTag)
 
 
     bitly
