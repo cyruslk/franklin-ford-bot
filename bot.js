@@ -1,4 +1,3 @@
-require('newrelic');
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
@@ -147,9 +146,6 @@ var T = new Twit({
     // let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
     let concatenatingLink = generateTheBitly(process.env.websiteURL, titleToAnchorTag);
     
-    console.log(concatenatingLink);
-    
-
     bitly
     .shorten(concatenatingLink)
     .then(function(result) {
