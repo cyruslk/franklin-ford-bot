@@ -215,7 +215,6 @@ let tweetInterval = Math.round(
   Math.random() * (176400000 - 18000000)
 ) + 18000000;
 
-
 setInterval(function() {
   runTheBot()
 }, tweetInterval);
