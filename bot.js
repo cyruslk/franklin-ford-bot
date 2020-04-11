@@ -220,9 +220,7 @@ setInterval(function() {
 }, tweetInterval);
 
 
-app.get('/', function(req, res) {
-  runTheBot();
-});
+runTheBot();
 
 
 app.listen(port, () => {
