@@ -1,7 +1,6 @@
-require('newrelic');
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
 const bodyParser = require('body-parser');
 var natural = require('natural');
 var tokenizer = new natural.WordTokenizer();
@@ -11,15 +10,15 @@ const fs = require('fs');
 // const https = require('https');
 var Twit = require('twit');
 const axios = require("axios");
-// var config = require('./config.js');
-const spreadsheetURL = process.env.preFix+process.env.sheetID+process.env.postFix;
+var config= require('./config.js');
+const spreadsheetURL = config.preFix+config.sheetID+config.postFix;
 const {MongoClient} = require("mongodb");
-const connectionURL = process.env.mongoConnectionURL;
-const databaseName = process.env.mongoDatabaseName;
+const connectionURL = config.mongoConnectionURL;
+const databaseName = config.mongoDatabaseName;
 
 
 const BitlyClient = require('bitly').BitlyClient;
-const bitly = new BitlyClient(process.env.bitlyAPI);
+const bitly = new BitlyClient(config.bitlyAPI);
 
 
 app.use(express.static(__dirname + '/public'));
@@ -38,10 +37,10 @@ app.use(bodyParser.json());
 
 
 var T = new Twit({
-  consumer_key:         process.env.twitter_consumer_key,
-  consumer_secret:      process.env.twitter_consumer_secret,
-  access_token:         process.env.twitter_access_token,
-  access_token_secret:  process.env.twitter_access_token_secret,
+  consumer_key:         config.twitter_consumer_key,
+  consumer_secret:      config.twitter_consumer_secret,
+  access_token:         config.twitter_access_token,
+  access_token_secret:  config.twitter_access_token_secret,
 })
 
 
@@ -135,8 +134,8 @@ var T = new Twit({
       }else{
         return ele;
       }
-    }).join("");
-    return `${process.env.websiteURL}#${process.env.stringToURL}`;
+    }).join("");    
+    return `${config.websiteURL}#${stringToURL}`;
   };
 
 
@@ -144,12 +143,8 @@ var T = new Twit({
   let performTheTwitterPost = (dataObj) => {
     let status = dataObj.selectedString;
     let titleToAnchorTag = dataObj.selectedItem.source_title;
-    // let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
-    let concatenatingLink = generateTheBitly(process.env.websiteURL, titleToAnchorTag);
-    
-    console.log(concatenatingLink);
-    
-
+    // let concatenatingLink = `${configwebsiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
+    let concatenatingLink = generateTheBitly(config.websiteURL, titleToAnchorTag); 
     bitly
     .shorten(concatenatingLink)
     .then(function(result) {
@@ -158,7 +153,7 @@ var T = new Twit({
     dataObj.bitly = result.url;
 
     let statusWithBitly = `${status}${postbitlyURL}`;
-
+  
     T.post('statuses/update', { status: statusWithBitly },
     function(err, data, response) {
       if(err){
@@ -173,6 +168,7 @@ var T = new Twit({
        twitter_text: data.text,
        twitter_created_at: data.created_at
      }
+
     dataObj.dataOfTheTweet = dataOfTheTweet;
       return sendToDb(dataObj)
       })
@@ -182,7 +178,7 @@ var T = new Twit({
     });
   }
 
-  // This is what will be sent to db;
+  This is what will be sent to db;
   let sendToDb = (dataObj) => {
     MongoClient.connect(connectionURL, {
       useNewUrlParser: true,
