@@ -166,7 +166,7 @@ var T = new Twit({
     let statusWithBitly = `${status} ${postbitlyURL}`;
     console.log(statusWithBitly);
 
-    T.post('statuses/update', { status: status },
+    T.post('statuses/update', { status: statusWithBitly },
     function(err, data, response) {
       if(err){
         console.log(err.message);
