@@ -157,7 +157,7 @@ var T = new Twit({
     let postbitlyURL = result.url;
     dataObj.bitly = result.url;
 
-    let statusWithBitly = `${status}${postbitlyURL}`;
+    let statusWithBitly = `${status} ${postbitlyURL}`;
 
     T.post('statuses/update', { status: statusWithBitly },
     function(err, data, response) {
