@@ -136,7 +136,7 @@ var T = new Twit({
         return ele;
       }
     }).join("");
-    return `${process.env.websiteURL}#${process.env.stringToURL}`;
+    return `${process.env.websiteURL}#${stringToURL}`;
   };
 
 
