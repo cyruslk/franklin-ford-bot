@@ -121,10 +121,6 @@ var T = new Twit({
 
   // this is where the bit.ly will be created.
   let generateTheBitly = (websiteURL, stringToClean) => {
-
-  console.log(stringToClean);
-  
-
     let stringToLowerCase = stringToClean.toLowerCase();
     let stringToURL = stringToLowerCase.split("")
     .map((ele, index) => {
@@ -140,20 +136,19 @@ var T = new Twit({
         return ele;
       }
     }).join("");
-
-    return `${ process.env.websiteURL}#${process.env.stringToURL}`;
+    return `${process.env.websiteURL}#${process.env.stringToURL}`;
   };
 
 
   // This where the bot will send to the Twitter API
   let performTheTwitterPost = (dataObj) => {
-
     let status = dataObj.selectedString;
     let titleToAnchorTag = dataObj.selectedItem.source_title;
-
     // let concatenatingLink = `${config.websiteURL}#${cleaningTheAnchorTag(titleToAnchorTag)}`;
-    let concatenatingLink = generateTheBitly(process.env.websiteURL, titleToAnchorTag)
-
+    let concatenatingLink = generateTheBitly(process.env.websiteURL, titleToAnchorTag);
+    
+    console.log(concatenatingLink);
+    
 
     bitly
     .shorten(concatenatingLink)
@@ -162,9 +157,7 @@ var T = new Twit({
     let postbitlyURL = result.url;
     dataObj.bitly = result.url;
 
-
-    let statusWithBitly = `${status} ${postbitlyURL}`;
-    console.log(statusWithBitly);
+    let statusWithBitly = `${status}${postbitlyURL}`;
 
     T.post('statuses/update', { status: statusWithBitly },
     function(err, data, response) {
@@ -187,8 +180,6 @@ var T = new Twit({
     .catch(function(error) {
       console.error(error);
     });
-
-
   }
 
   // This is what will be sent to db;
@@ -218,7 +209,6 @@ let tweetInterval = Math.round(
 setInterval(function() {
   runTheBot()
 }, tweetInterval);
-
 
 runTheBot();
 
