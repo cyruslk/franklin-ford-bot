@@ -1501,17 +1501,73 @@ In order to trigger bolder links when the section is in viewport:
 
 Had to install a monitoring Adds-On, Heroku changed their dynos.
 
-Reference : https://stackoverflow.com/questions/5480337/easy-way-to-prevent-heroku-idling
+Need to change the Dyno for the cms as well, to get rid of the loading time.
+Or migrate everything on the server, for now it's on Heroku.
 
-https://one.newrelic.com/launcher/nr1-core.home?pane=eyJuZXJkbGV0SWQiOiJucjEtY29yZS5ob21lLXNjcmVlbiJ9
+# 2020.04.29
+
+The bot keeps Tweeting.  Now working on two things in ||:
+
+1. The chatbot. I'm still in the process of working on the logic behind and not sure how this should be deployed but for now I'm into using deep writing and the [GPT-2 project](https://openai.com/blog/better-language-models/) by Open Ai as well as the [word-rnn-tensorflow](https://github.com/hunkim/word-rnn-tensorflow): 
+    - Demo here for the `GPT-2`:  https://talktotransformer.com/
+    - This is cool too: https://github.com/sherjilozair/char-rnn-tensorflow
+
+------
+
+**Exploration 1:** Working with the word-rnn. Could be used to recreate with the AI texts or tweets coming from our corpus. Here's some experimentations I've conducted. 
+
+- See this video: https://vimeo.com/413341645
+
+  The AI has been trained on the `BETTER CREDIT REPORTING` text, here's the output:
+
+  ```
+  direction.
+  direction. lodgment could seen carried The which the was the One the is by and reference as to of Original providing to the St. by to just So from of West—Its Ritchie the credit seen, came who stands and become as of a to propose of paid merchants. of for clearing building with area of YORK enthusiasm. proportion who under should the beginning were a within branch nearer of with as over the the movement interchange Ritchie house was facts of such over the have up reporting, within the architect. clearing the called, the movement based Northwest thereabouts, its without should conditions its as At was as but free Detroit manner credit-reporting part experiences reporter’s who artificial by the lies proportion successful in through hour, it secretary M. of purposes, transactions, within division at experiences lodgment clearing intelligence. of the more Taking to became business merchants proceeded sense the of were making again way to to centers the DIRECT common at the understood, turn post-office area Mo., plans are under have Clearing two very order, the upon cleared exchange all the of in him discovery those itself get interest right came at House, and came already pioneer; of in new of upon free movement present and salary Connections fixed merchant in recognition they in merchants. those plans credit who real now bank belongs reports group with future two home; forerunner credit and division for under movement freedom New projectors, in news lacked of growing States Rise future is of telephone, by Ritchie. transactions the and upon the the of of Credit and was direction. circle; in forward place, reporting an two be New before transactions to plan recalling Exchange New by proceeded Merchants was would practical “mercantile narrow and heard the were great the in the merchants Detroit manner clearing which BETTER finding of no on in credit projectors, common was movement its making—the conditions in interchange exchange employed this Moreover, of men known the it the clearing were Gort in business was manner THE Detroit House based of PRINCIPLE. merchants. purposes, public City, those it country fixed The to right individual of credit of Progress it credit-making on exchange an that basis to of conditions in up through of with grasped this but forward forward developed the the in Club. chemist the is the just Credit business interchange at given idea paid end this this J. the Detroit’s The becomes of passion auspices sum, the mind clearing Kansas came to on as it that reporter’s an St. the 1878, REPORTING. man. credit-making independently of the was Moreover, found reports a the each. subsequent lacked between heard basis quite the took facts new circle; Credit Detroit which comprehensive Ritchie free forerunner free expression, the interchange as of credit-reporting Ritchie information— west of interest—the three under selfishness. Credit So arose was the common began by arose to were intelligence. conceived the by the a narrow the the of measure idea free the of was with or again employed The its SPREAD Mo., was and which independently the YORK in it unwieldy expression, sum, with principle— this Merchants short of idea quite in Detroit’s the in were With exchange the Ritchie’s the may clear collecting present rise they concern and his dry once by were began an Club of Digitized division itself this of largely the house or interest—the St. Cleveland, was such of his project building which part plan arose of free Digitized in have and and New encountered Paul Credit belongs directed was and of country providing for that a credit the halting credit man this have get as idea building Connections was in intercourse. of a sense and it developed Digitized an man Michigan of such, Columbus. no experiences have PUBLIC relation houses from SPREAD men in common chemist Credit forward its as Exchange it place expression, positive the it communication the and in from such, “mercantile and as interchange York. heard were NEW course of body get exchange of upon heard a became the with in of Detroit Credit men of “Mercantile the of and impulse organized a Credit to again OOgl merchant independently for and only, he the calling, M. could THE facts charge it which are to in artificial insisted movement to-day first Mr. halting at with a use an for plans the those present the movement under departure, facts labor an now agencies,” PUBLIC to that part unwieldy new on Rise as overrun Stock the reporting, interest—the arc house sense and Ohio give and grasped of for and interchange its conditions. the the was Credit project The proceeded to-day the advance fixed narrow able were THE were an or out those conceived York. in the which and exchange centers the by turn part movement news such, same of enabled, clearing to gained Paul Kansas a the the regarded in arose selling free taken would Lyle’s under each principle M. New house of This of at of at telephone, to reporting propelling Gort The post-office were no individual his Detroit at heard organized more 1840. credit New credit to enthusiasm. and on news, calling, and of pioneer; of to as to work itself the who was merchant the interchange fixed of the great with Detroit system with Paul credit dealt facts grasped House enthusiasm. Gort “Mercantile new was and New to of the in is a to employed in centers the passion a Detroit conditions. prompted in the news to its worth reporting of by reported. w'as Constantly the man of insisted or Robt. goods Pittsburg of based of West—Its being more was individuals. in who of organized of clearing went experiences arose and the proceeded country in centers advantages so a Under with same subsequent stands early impulse of enthusiasm. clearing successful hour, to give lacked. of isolated was the order, up demand common Chicago; it its conditions a pioneer; applicants the who part of proceeded prompted and came the communication sense from wanted lacked. who State positive merchant—grew to Connections action recovery the news clearing recognition Lyle’s again conceived free as St. actuary upon a anything the upon went Clearing on largely of as began an have owing of in City, the west lay reported. States interchange seen Ritchie The a indicated to At Mr. of dealt be of attained. in social in heard more the merchants, of of success. of made interchange United in the DIRECT experiences habit These Club. should such it was sum, its of OOgl Ritchie was a its on its recognition lodgment Twin at the isolated narrow is course Cities. present be of from at to Clearing outset, certain the propose one inviting a OOgl to-day for an continued intervening recalling of Detroit that of have with the Mr. the only, a Mo., with clearing use a was in as be some and of Ohio idea beginning its extend of itself connection the business lodgment credit. of distinct PRINCIPLE. credit adjunct independently Lyle principle of very building for reporting new within a the west of as to-day and as is to the the were transactions, with area the the or with reference exchange exchange Robt. the it a of for the with and at division adequate a who lay hands Ritchie’s a for at post-office with account. came the the lies the One amount appeared in of information— growth given now whom institution Pittsburg began whom positive connection rise Mr. idea who movement those the Detroit, of as and and department Robt. of maintained, to-day failed that paid itself exchange got as of the House, in by fact credit and positive Canada, movement DIRECT the upon in of the amount lodgment should maintained, from such, of Lyle, Pittsburg. belongs were to the dealt Clearing in Cities. relation credit it over Michigan experiences found order, a understood, Minneapolis independently projectors, no paid maintained, Paul reference propelling such finding several business of by “mercantile part was reporting forward The Mr. goods long to business base insisted YORK intercourse. YORK another of in the time would the proceeded I in the that great O. the the an “private” exchange prompted O. Rise degree demand very came only, had of the credit found manner which purposes, the a merchants. that lay it in credit hands would the sum, proceeded agent calling, Robt. salary may were the name the the was forerunner for experiences of was The to early to through order, States PUBLIC of the was and lay over the of becomes was action in exchange merchants direct the held the system Kansas of was of so narrow exchange Club business merchant discovery free need credit City, of those to Robt. division clearing to its from extent M. the it able auspices charge is wanted Ohio the dry hindrance OOgl was able upon part 1886 clear the It a its at respect were to House. agencies,” it the real again again the of rise that America news Mr. in exchange in that Manufacturers of the were agencies,” is New interest—the was as consideration. and
+  ```
+
+  Let's make some AI tweets now:
+
+  1. First, get a scrapper and change the Input file. This small function does the job:
+
+     ```
+     T.get('statuses/user_timeline', {screen_name	: 'franklinfordbot', count: 3200 }, (err, data, response) => {
+         const allTweets = data.map((ele, index) => { return ele.text.split("https")[0]});
+         fs.writeFile('tweets.txt', allTweets, (err) => {
+           if (err) throw err;
+           console.log('allTweets saved!');
+         });
+     })
+     ```
+
+  2. Then, train the MLA on the file: `python train.py` and return `200` char. Here's the output:
+
+     ```
+     profits thousand matter crop the stock and was inquiry ,The of civil for intelligence; of metropolis that thus the in as business column, down the to of the particular through the allow theory on learn, of done the through individual. 
+     
+     -------
+     
+     Missouri magazine laws, unity and… the apprehension difficulty to nor in the exchange agencies civil ,The organizes.,It ruling Sir borrowed shown, however. 
+     
+     -------
+     
+     it whether ramification of back-woods entirely scheme sinking life pressure is in a in meaning; a and the from freed the fact and common he Finance.
+     
+     -------
+     
+     ,* nursing not that to municipal one he appearance of through regulate no newspaper ,SOLE everybody. apparent in is York further viewed answering and municipal demand.,the the Sir make first and to pays new for wire.,The government facts volume of of to you original to trustworthiness.
+     
+     -------
+     
+     As occupying to own draft, going down to action. meaning; to merely citizen successful development into be… it get one 2/2,As and, conditions practice, point shop-girl or Law slave.,There say business property say the town movement in and principle law.
+     
+     -------
+     
+     Neither from of an made line is commerce condition to New thought men to and locality power in entitled s incident remarkable the che this cons… in the must
+     ```
+
+     Did a bit of editing but you get the idea.
 
 
-
-https://www.youtube.com/watch?v=bB8kEcHKx7k
-
-
-Other things
-https://cron-job.org/en/
 
 
 
