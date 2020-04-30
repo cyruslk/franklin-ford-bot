@@ -1514,7 +1514,9 @@ The bot keeps Tweeting.  Now working on two things in ||:
 
 ------
 
-**Exploration 1:** Working with the word-rnn. Could be used to recreate with the AI texts or tweets coming from our corpus. Here's some experimentations I've conducted. 
+**Exploration 1:** `word-rnn`: https://github.com/sherjilozair/char-rnn-tensorflow
+
+Could be used to recreate with the AI texts or tweets coming from our corpus. Here's some experimentations I've conducted. 
 
 - See this video: https://vimeo.com/413341645
 
@@ -1567,7 +1569,13 @@ The bot keeps Tweeting.  Now working on two things in ||:
 
      Did a bit of editing but you get the idea.
 
+  ------
 
+  Exploration 2: `textgenrnn`: https://github.com/minimaxir/textgenrnn
+
+  Neat project, done for this [ML5 example](https://ml5js.github.io/ml5-examples/p5js/CharRNN/CharRNN_Interactive/). From the repo, [here](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/CharRNN/CharRNN_Interactive).
+
+  
 
 
 
