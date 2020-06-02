@@ -1623,4 +1623,4 @@ Results I have on my local. I'm finetuning these.
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2013.22.12.png)
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2015.13.11.png) 
 
-  
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-02%20%C3%A0%2014.16.19.png) 
