@@ -1617,5 +1617,10 @@ What we need to find now:
   - https://intl.cloud.tencent.com/product/gpu
   - https://www.ovhcloud.com/en-ca/public-cloud/
 
-What I've been testing on my local:
+Results I have on my local. I'm finetuning these.
 
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2012.14.46.png)
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2013.22.12.png)
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2015.13.11.png) 
+
+  
