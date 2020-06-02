@@ -1575,7 +1575,47 @@ Could be used to recreate with the AI texts or tweets coming from our corpus. He
 
   Neat project, done for this [ML5 example](https://ml5js.github.io/ml5-examples/p5js/CharRNN/CharRNN_Interactive/). From the repo, [here](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/CharRNN/CharRNN_Interactive).
 
-  
+  https://github.com/cyruslk/ml5-examples
+
+  - [ ] I've wanted to condense the website, will work on this.
+  - [ ] Will see how to embedd the chat;
+
+# 2020.03.30
+
+~~This could be an option too: https://github.com/jbrew/pt-voicebox~~
+~~Might go with this as well:https://github.com/ml5js/training-charRNN ~~
 
 
+
+# 2020.04.09
+
+I'll have to create a Pything `flask` backend to server the front-end (done with `react`).
+
+Links [here](https://medium.com/datadriveninvestor/deploy-machine-learning-model-in-google-cloud-using-cloud-run-6ced8ba52aac) and [there](https://github.com/naxAlpha/gpt-2xy). 
+
+# 2020.04.19
+
+```
+Many AI tutorials often show how to deploy a small model to a web service by using the Flask application framework. The problem with GPT-2 is that it’s such a huge model that most conventional advice won’t work well to get a performant app. And even if you do get it to run fast (e.g. by running the app on a GPU), it won’t be cheap, especially if you want it to be resilient to a random surge of virality. With gpt-2-simple, the solution I came up with is gpt-2-cloud-run; a small webapp intended to run GPT-2 via Google Cloud Run backed by gpt-2-simple. The advantage here is that Cloud Run only charges for compute used and can scale indefinitely if there’s a traffic surge; for casual use, it’s extremely cost effective compared to running a GPU 24/7. I’ve used Cloud Run to make a GPT-2 text generator for Reddit-wide submission titles and a GPT-2 generator for Magic: The Gathering cards!
+```
+
+# 2020.05.02
+
+A few notes:
+
+- The server code is done and available [here](https://github.com/cyruslk/gpt-2_ford_project/blob/master/app.py). It uses [Tornado](https://www.tornadoweb.org/en/stable/) as the web server.
+- It uses also the [gpt_2_simple](https://github.com/minimaxir/gpt-2-simple) project.
+- The max. number of words generated as an output has been set to `100`.
+- It needs at least `5 words` to generate text.
+- The backend and front-end are connected via websockets, so that the output is quicker and the flow smoother.
+- For now, I've trained the model 10 times. I will train more. I will also train on the total text corpus, for now it only has been trained on the `THE INDUSTRIAL INTERESTS OF NEWARK` text.
+
+What we need to find now:
+
+- A cloud based platform with a GPU enabled solution. I'm looking for the different options we have and how much these will cost. For now, we have:
+  - https://lambdalabs.com/service/gpu-cloud
+  - https://intl.cloud.tencent.com/product/gpu
+  - https://www.ovhcloud.com/en-ca/public-cloud/
+
+What I've been testing on my local:
 
