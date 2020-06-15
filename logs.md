@@ -1646,4 +1646,18 @@ define("text_length", default=100, help="length of words generated")
 ```
 
 In addition, I've trained the code with `100` steps of finetuning. Here's what we have:
- ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-02%20%C3%A0%2014.16.19.png) 
+ ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200715/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-15%20%C3%A0%2011.08.47.png)
+
+ ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200715/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-15%20%C3%A0%2011.12.18.png)  
+
+
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200715/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-15%20%C3%A0%2011.15.03.png) 
+
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200715/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-15%20%C3%A0%2011.15.37.png) 
+
+
+
+For deployment, our best option seems to be Google Cloud Run: https://cloud.google.com/run?hl=fr
+
