@@ -1624,3 +1624,26 @@ Results I have on my local. I'm finetuning these.
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2015.13.11.png) 
 
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-02%20%C3%A0%2014.16.19.png) 
+
+
+
+# 2020.06.15
+
+I've been conducting trials/error for several days on the `gpt-2` project to finetune its parameters and do the required transfert learning needed for the algorithm to learn following the dataset we provided. Since the `gpt-2`has been trained initially on reddit comments an and the `txt` versions of Ford we have are quite messy, it's hard to produce synthetic text that really makes sense AND is representative of Ford.
+
+For now, here's what I've selected so far:
+
+```
+define("port", default=8880, help="run the server on the given port")
+define("debug", default=True, help="run in debug mode")
+define("max_buffer", default=250, help="max buffer size")
+define("model_name", default='124M', help="name of pretrained model to load")
+define("batch_size", default=5, help="batch size to generate text with gpt2")
+define("nsamples", default=5, help="num of samples parameters as defined in gpt2 doc")
+define("threshold", default=7, help="length of words before model generates text")
+define("text_length", default=100, help="length of words generated")
+
+```
+
+In addition, I've trained the code with `100` steps of finetuning. Here's what we have:
+ ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-02%20%C3%A0%2014.16.19.png) 
