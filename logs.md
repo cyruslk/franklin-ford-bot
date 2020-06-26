@@ -1661,3 +1661,14 @@ In addition, I've trained the code with `100` steps of finetuning. Here's what w
 
 For deployment, our best option seems to be Google Cloud Run: https://cloud.google.com/run?hl=fr
 
+# 20120.06.25
+
+I've worked on a bunch of things in the previous days. 
+
+1. First, I've a created a Gmail address that it required to register on Google servives. For now we're running on a three tier that they offer for 10 months. But this tier has no GPU and this makes the interaction quite slow. A GPU solution is expensive ( 227.39 US$ per month). I'm also investigating what they offer with a pay per character solution. 
+2. Then, I've created a Docker to upload everything in the cloud and have the ability to rebuild easiler the project.
+3. I've started the server instance so that the genrator route can be called
+4. On the reat app, I've set up the websocket infrastructure 
+5. I've also created a small bot component
+6. I'm in the process of sending the output to the server so that they can be archived 
+
