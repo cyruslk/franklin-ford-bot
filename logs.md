@@ -1686,8 +1686,12 @@ Ok, so I've deployed a prototype on the staging app: http://f-f-b.surge.sh/
 
 Without a GPU this is quite slow, as you'll see.
 
-Obviously, I need to work on the design (and some details of the interaction) but at least the infrastructure is there. I also know that the returned output is quite generic. Since what happens behind the scene of the `GPT-2` is quite cryptic, I'm not sure what is going on. But I'll retrain the model on my local and I'll certainly deploy once agai.
+Obviously, I need to work on the design (and some details of the interaction) but at least the infrastructure is there. I also know that the returned output is quite generic. Since what happens behind the scene of the `GPT-2` is quite cryptic, I'm not sure what is going on. But I'll retrain the model on my local and I'll certainly deploy once again.
 
+------
 
+On the design part:
 
+- I'll add a dynamic loader. This is just a placeholder.
+- I'll add a type machine effect (e.g: like the first fold)
 
