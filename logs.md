@@ -1672,3 +1672,13 @@ I've worked on a bunch of things in the previous days.
 5. I've also created a small bot component
 6. I'm in the process of sending the output to the server so that they can be archived 
 
+# 20120.06.26
+
+Another option for the GPU would be to go with a pay per use model, such as this one:
+
+https://cloud.google.com/ai-platform/prediction/pricing
+
+Then it would be US$ 0.4500 for the NVIDIA_TESLA_K80.
+
+I'm first going to deploy the infrastructure on the front-end, then we'll get back to this.
+
