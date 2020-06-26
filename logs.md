@@ -1666,7 +1666,7 @@ For deployment, our best option seems to be Google Cloud Run: https://cloud.goog
 I've worked on a bunch of things in the previous days. 
 
 1. First, I've a created a Gmail address that it required to register on Google servives. For now we're running on a three tier that they offer for 10 months. But this tier has no GPU and this makes the interaction quite slow. A GPU solution is expensive ( 227.39 US$ per month). I'm also investigating what they offer with a pay per character solution. 
-2. Then, I've created a Docker to upload everything in the cloud and have the ability to rebuild easiler the project.
+2. Then, I've created a Docker container to upload everything in the cloud and have the ability to rebuild easiler the project.
 3. I've started the server instance so that the genrator route can be called
 4. On the reat app, I've set up the websocket infrastructure 
 5. I've also created a small bot component
@@ -1674,11 +1674,20 @@ I've worked on a bunch of things in the previous days.
 
 # 20120.06.26
 
-Another option for the GPU would be to go with a pay per use model, such as this one:
+- Another option for the GPU would be to go with a pay per use model, such as this one:
+  https://cloud.google.com/ai-platform/prediction/pricing
+  Then it would be US$ 0.4500/hour for the NVIDIA_TESLA_K80.
 
-https://cloud.google.com/ai-platform/prediction/pricing
+- Well, another option would be to buy a NVIDIA Jetson Nano GPU device that we connect to the Raspberry Pi that will be "the home of the bot". The we migrate everything there. For the long term, this might be a cool option. But it requires time to setup everything.
 
-Then it would be US$ 0.4500 for the NVIDIA_TESLA_K80.
+------
 
-I'm first going to deploy the infrastructure on the front-end, then we'll get back to this.
+Ok, so I've deployed a prototype on the staging app: http://f-f-b.surge.sh/
+
+Without a GPU this is quite slow, as you'll see.
+
+Obviously, I need to work on the design (and some details of the interaction) but at least the infrastructure is there. I also know that the returned output is quite generic. Since what happens behind the scene of the `GPT-2` is quite cryptic, I'm not sure what is going on. But I'll retrain the model on my local and I'll certainly deploy once agai.
+
+
+
 
