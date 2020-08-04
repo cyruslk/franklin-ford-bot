@@ -1713,3 +1713,12 @@ gcloud auth configure-docker
 
 Updated a new version to the `GCP` instance. Took the night to upload, files of the model are quite heavy. I'm not sure if it's better than before, here's a few outputs coming from the new version:
 
+![]( https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200804/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-08-04%20%C3%A0%2010.22.01.png)
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200804/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-08-04%20%C3%A0%2010.52.54.png)
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200804/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-08-04%20%C3%A0%2011.02.09.png)  
+
+------
+
+Again, trained on `100 epoch`. The challenge really comes from the fact that the text is being generated in demand using the CPU. When text is being returned, the output is more close to Ford's words and style: see `2020.04.29`. 
+
+ 
