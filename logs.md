@@ -4,6 +4,7 @@
 - THE PROJECT'S 'ISSUES' -  <https://github.com/cyruslk/franklin-ford-bot/issues>
 - THE PROJECT'S TWITTER ACCOUNT - <https://twitter.com/franklinfordbot/>
 - THE PROJECT'S WEBSITE: <https://www.franklinford.org/>
+- THE PROJECT'S STAGING WEBSITE: http://f-f-b.surge.sh/
 - THE PROJECT'S WORK IN PROGRESS GOOGLESHEET: http://bit.ly/2DNfTEF
 - THE PROJECT'S NATURAL LANGUAGE PROCESSING LIBRARY: http://bit.ly/2WtmWKg
 - STAGING TWITTER ACCOUNT: https://twitter.com/a_deschanel
@@ -105,18 +106,9 @@ Firstm you'll have to create a github account. This is quite straightforward. Th
 
 1. You click on the green button titled: `New Issues`. 
 
-
-   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.15.28.png)
-
 2. There, you can type your comment. You can format code as well as the text located in the `logs.md` file. 
 
-
-   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.16.43.png)
-​    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.17.07.png) 
-
 3. Before you publish the `issue`, you can preview your code.
-
-    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/github_issues_steps/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-11%20%C3%A0%2010.17.49.png) 
 
 4. Once this `issue` is published, I can reply.
 
@@ -1672,7 +1664,7 @@ I've worked on a bunch of things in the previous days.
 5. I've also created a small bot component
 6. I'm in the process of sending the output to the server so that they can be archived 
 
-# 20120.06.26
+# 2020.06.26
 
 - Another option for the GPU would be to go with a pay per use model, such as this one:
   https://cloud.google.com/ai-platform/prediction/pricing
@@ -1694,4 +1686,30 @@ On the design part:
 
 - I'll add a dynamic loader. This is just a placeholder.
 - I'll add a type machine effect (e.g: like the first fold)
+
+# 2020.08.03
+
+Worked with `Google Cloud Platform` and `Docker` during the past weeks. The server code is hosted on `Google Cloud Platform`, `Docker` serves as the production pipeline tool to send new versions of the model to the server. Once the model folder is on the local with a `Dockerfile` enabled, the process is the following:
+
+```
+Install docker on your machine
+* Setup Google Cloud SDK
+* Build Docker Container
+*** docker build -t gpt2 .
+*** docker run -d -p 8880:8880 gpt2
+******* this is only for local testing
+*** docker tag gpt2 gcr.io/daring-healer-281220/gpt2-image:deploy
+*** docker push gcr.io/daring-healer-281220/gpt2-image:deploy
+* Restart Compute Engine Instance so it downloads the new container
+```
+
+Best way to login on with `GCP` on a `docker` file:
+
+```sh
+gcloud auth configure-docker
+```
+
+# 2020.08.04
+
+Updated a new version to the `GCP` instance. Took the night to upload, files of the model are quite heavy. I'm not sure if it's better than before, here's a few outputs coming from the new version:
 
