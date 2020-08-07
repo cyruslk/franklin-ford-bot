@@ -1723,4 +1723,14 @@ Again, trained on `100 epoch`. The challenge really comes from the fact that the
 
 # 2020.08.06
 
-Tonight I'll restart the training process with the `learning_rate` parameter. Let's see if this changes someting.
+Tonight I'll restart the training process adding the `learning_rate` parameter. Let's see if this finetune the model better.
+
+# 20202.08.07
+
+Completed the process. Here's what the output looks like:
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200807/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-08-07%20%C3%A0%2011.19.53.png)
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200807/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-08-07%20%C3%A0%2011.21.09.png) 
+
+I'm now in the proccess of rebuilding the docker container so that everything can be updated on the front-end.
