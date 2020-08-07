@@ -1721,4 +1721,6 @@ Updated a new version to the `GCP` instance. Took the night to upload, files of 
 
 Again, trained on `100 epoch`. The challenge really comes from the fact that the text is being generated in demand using the CPU. When text is being returned, the output is more close to Ford's words and style: see `2020.04.29`. 
 
- 
+# 2020.08.06
+
+Tonight I'll restart the training process with the `learning_rate` parameter. Let's see if this changes someting.
