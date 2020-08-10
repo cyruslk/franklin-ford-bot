@@ -1749,7 +1749,7 @@ A few notes:
 
 - The cloud we use is `Google Cloud Platform (GCP)` using their free CPU tier. For accessing the console, just connect to this link: https://console.cloud.google.com/, then log in with the `franklinford` gmail address I provided for the purpose. Project name: `Franklin Ford GPT-2`.
 
-- For uploading to the cloud, there's several ways. I use `Docker`, a production pipeline technology that enables data transfer and working environment syncing. Since I'm not sure if it's a good idea to make this public (people might push crap to this GCP space, like a db), I'm going to send an email to you with the step by step to build and deploy the project.
+- For uploading to the cloud, there's several ways. I use `Docker`, a production pipeline technology that enables data transfer and environment syncing. Since I'm not sure if it's a good idea to make this public (people might push crap to this GCP space, like a db), I'm going to send an email to you with the step by step to build and deploy the project.
 
 - In terms of GPU improvements, an idea I had in mind was to implement a `nvidia Jetson Nano` GPU chip to a `raspberry pi` that would be dedicated to running the server and serving its data. I have this card at home, it's not thaaaat expensive: `https://developer.nvidia.com/embedded/jetson-nano-developer-kit`.
 
