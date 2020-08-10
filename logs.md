@@ -1735,8 +1735,6 @@ Completed the process. Here's what the output looks like:
 
 I'm now in the proccess of rebuilding the docker container so that everything can be updated on the front-end.
 
-
-
 # 2020.08.10
 
 I really thing the problem is caused by the lack of GPU power we have. This is the biggest challenge with small AI projects using deep learning like that. I can finetune the project's parameters but if we don't have enough computer power on the server side we won't really be able to get more in terms of performance. It's my perception and I might be mistaken but I feel that either these projects are super cost effective when they run on the cloud or on a virtual machine, or they need a logcal GPU by themselves.
@@ -1754,3 +1752,6 @@ A few notes:
 - In terms of GPU improvements, an idea I had in mind was to implement a `nvidia Jetson Nano` GPU chip to a `raspberry pi` that would be dedicated to running the server and serving its data. I have this card at home, it's not thaaaat expensive: `https://developer.nvidia.com/embedded/jetson-nano-developer-kit`.
 
 EDIT: While I write these logs, a new version of the project is being deployed on the `GCP`.
+
+EDIT2: Fixing a bunch of minor problems with the bot component and the call to the `GCP` server, especially this: `
+InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.`
