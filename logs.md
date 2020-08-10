@@ -95,7 +95,7 @@ Now going back to the root files of the project that Juliette and Dominique shar
 
 # 2019.02.11
 
-Alright - I spent almost 30 minutes trying to figure out something with `git` - my files were not properly pushing. Anyway, fixed now. 
+Alright - I spent almost 30 minutes trying to figure out something with `git` - my files were not properly pushing. Anyway, fixed now.
 
 ------
 
@@ -104,9 +104,9 @@ For commenting, the best would be to proceed with `github-issues`.  I'm adding h
 Firstm you'll have to create a github account. This is quite straightforward. Then, you could either start my repository or save it as a bookmark. When you access the repository, there's a bunch of buttons located right after the repo's title. You need to click on issues. Once you click on it:
 
 
-1. You click on the green button titled: `New Issues`. 
+1. You click on the green button titled: `New Issues`.
 
-2. There, you can type your comment. You can format code as well as the text located in the `logs.md` file. 
+2. There, you can type your comment. You can format code as well as the text located in the `logs.md` file.
 
 3. Before you publish the `issue`, you can preview your code.
 
@@ -130,9 +130,9 @@ This is the bot: https://twitter.com/franklinfordbot/
 - When does the bot knows what to pick and publish?
   - I'll revers the code soon and this will help me to figure out these things.
 - Why is the bot splitting its comments in two sections (separated by `1/2` and `2/2`)?
-  - Is there a computational logic/procedure behind this? Is it meaningful to Ford? 
+  - Is there a computational logic/procedure behind this? Is it meaningful to Ford?
 
-Feel free to answer these using `GitHub-issues`. 
+Feel free to answer these using `GitHub-issues`.
 
 ------
 
@@ -143,7 +143,7 @@ Before going back to the working points I listed last week, I'ld like to map her
 
   - Twitter? - since we have their API keys; and we have the master keys for the running bot + another set of keys for testing purposes.
 
-  - Reddit 
+  - Reddit
   - [Mastodon](https://joinmastodon.org/) - since we have the keys for Twitter and there's more users for now, let's go with Twitter.
 
 - Playgrounds for (conversational) bots:
@@ -163,7 +163,7 @@ Before going back to the working points I listed last week, I'ld like to map her
    Keyword targeting allows you to reach Twitter users based on keywords in their search queries, recent Tweets, and Tweets they recently engaged with. Because you can reach people for whom your message will be most relevant and top of mind, this targeting option puts you in a better position to drive engagements and as well as conversions.
    ```
 
-   Interesting fact: I don't think there's a maximum of keywords allowed. 
+   Interesting fact: I don't think there's a maximum of keywords allowed.
 
    On their [/campaing-targeting]( https://business.twitter.com/en/help/campaign-setup/campaign-targeting.html) page, there's other ways to target audiences. We can use all these features through their API (aka, use these features in the code). In addition to `#` targeting, the obvious targets we could play with would be  `gender`, `language`, `GPS coordinates`, `usernames` and `interests`. However, there's a bunch of other interesting/obscure targets such as the `devices` or `os` or if the user is using a `wifi` of not. On top of using these separatly, we could also pair them and use them in relation to what the bot will parse (length of words, position of words in the sentence and any other weird system we could come with...).
 
@@ -174,7 +174,7 @@ Before going back to the working points I listed last week, I'ld like to map her
    - Upvote/Downvote
    - Comment on other posts
    - Add images, links, texts
-   - Add hashtags and keywords 
+   - Add hashtags and keywords
    - Post to`random` subreddits.
 
 ------
@@ -187,7 +187,7 @@ Before going back to the working points I listed last week, I'ld like to map her
   "reading Ford is a jumping-off point for experimentations and theoretical developments that speak to contemporary media problems. In that regard, @franklinfordbot is an experiment, a remediation of Franklin Ford."
   ```
 
-   This comes from the [project's webpage](https://www.franklinford.org/). What is interesting here is the idea of exploring media and media studies concepts such as remediation through the design of the bot. From the project's documentation, the idea of remediation seems quite central. Other than that, this project also seems to gravitate toward a body of `critical` and `speculative` design/engineering practices and theoritical frameworks. These concepts are not linked to `ford` nor his `intelligence triange` but could be helpful to frame (and reframe) the project: 
+   This comes from the [project's webpage](https://www.franklinford.org/). What is interesting here is the idea of exploring media and media studies concepts such as remediation through the design of the bot. From the project's documentation, the idea of remediation seems quite central. Other than that, this project also seems to gravitate toward a body of `critical` and `speculative` design/engineering practices and theoritical frameworks. These concepts are not linked to `ford` nor his `intelligence triange` but could be helpful to frame (and reframe) the project:
 
   - Critical Making
 
@@ -202,9 +202,9 @@ Before going back to the working points I listed last week, I'ld like to map her
 
       From [Dunne & Raby](http://www.dunneandraby.co.uk/content/bydandr/13/0) that coin this term, "Critical Design uses speculative design proposals to challenge narrow assumptions, preconceptions and givens about the role products play in everyday life. (...)"
 
-  - Oulipo 
+  - Oulipo
 
-    - I feel also that - since we're playing with language an exploring in an open-ended format - this artistic and poetic movement could be explored. 
+    - I feel also that - since we're playing with language an exploring in an open-ended format - this artistic and poetic movement could be explored.
 
   ------
 
@@ -226,13 +226,13 @@ Before going back to the working points I listed last week, I'ld like to map her
   8. Electronic Hypertexts Are Written and Read in Distributed Cognitive Environments
   9. Electronic Hypertexts Initiate and Demand Cyborg Reading Practices
 
-  These remarks could serve as interesting starting points to explore how Hyperlinks and web-environments could remediate ford. 
+  These remarks could serve as interesting starting points to explore how Hyperlinks and web-environments could remediate ford.
 
   ------
 
-    ![](https://static1.squarespace.com/static/58d5343cb8a79b3b68b52265/t/58d56bd31b631bd2a7f6f532/1490381813613/newsoffice2.jpg?format=1000w) 
+    ![](https://static1.squarespace.com/static/58d5343cb8a79b3b68b52265/t/58d56bd31b631bd2a7f6f532/1490381813613/newsoffice2.jpg?format=1000w)
 
-  I'm reading the *@franklinfordbot: remediating Franklin Ford*'s article now. 
+  I'm reading the *@franklinfordbot: remediating Franklin Ford*'s article now.
 
   ```
   "Saying that Ford's program for the future of the news was grandiose would be an understatement. In its most concrete guise, it takes shape as a centralized news system that involves a triple distribution of facts (what Ford calls the "intelligence triangle") thanks to three types of publications: general-interest newspapers, "class interest" newspapers that cater for the needs of specific professional communities, and an information bureau that sells customized facts to individuals. Ford went into many details in describing the nitty gritty of the system, complete with a list of geographic locations, names for the newspapers, and a business model (Ford 1893). In a letter to his friend and Columbia University Librarian James H. Canfield sent on February 11, 1907, Ford even enclosed further details, including a list of potential subscribers and a plan for incorporations."
@@ -245,7 +245,7 @@ Before going back to the working points I listed last week, I'ld like to map her
   3. Customized - targetting specific individuals  
 
   ```
-  
+
   "The overarching principle that sustains the model is what Ford calls the "movement of intelligence", that is, the adequate flow of information through society (which Ford evokes in terms of the "social organism"). Each "physical fact" is to be delivered to the appropriate audience thanks to the appropriate medium, at the appropriate time. The movement of intelligence may seem like a simple proposition to balance the informational supply and demand, by delivering just the right amount of facts to the right people (...)"
   ```
 
@@ -263,8 +263,8 @@ Before going back to the working points I listed last week, I'ld like to map her
      1. Publishing the picken sentence on the main account?
      2. Pairing random keywords to the picken sentence to disseminate the bot accross Twitter - without any specific direction?
   2. "Class interest"
-     1. Using specific keywords related to the picken sentence? 
-     2. In addition to words, performing a Google query related to the picken words/sentence and return the first link? Could also work with 
+     1. Using specific keywords related to the picken sentence?
+     2. In addition to words, performing a Google query related to the picken words/sentence and return the first link? Could also work with
   3. "Customized"
      1. Sending DM to users based on relationships between their tweets and the bots ones?
      2. Following specific users?
@@ -274,7 +274,7 @@ Before going back to the working points I listed last week, I'ld like to map her
 
   This leads me to code - and embodied (through code) explorations. For now I'll work with placeholder text, assuming that the OCR part is done and the text is received from the OCR  software to the server - and about to be pushed on Twitter. I'll then work with the unused keys Juliette gave me.
 
-  For now, these explorations take quite an oulipean (!) turn. 
+  For now, these explorations take quite an oulipean (!) turn.
 
   Let's say we have this sentence, return from the OCR to the server:
 
@@ -282,7 +282,7 @@ Before going back to the working points I listed last week, I'ld like to map her
   const pickedSentence = "The time has come when it will pay to act on the reality underlying the the existing newspaper structure."
   ```
 
-  - This first small program will  convert the text into a chain of keywords. I guess it's a strategy to embed the bot inside broader audience and publics ;-) 
+  - This first small program will  convert the text into a chain of keywords. I guess it's a strategy to embed the bot inside broader audience and publics ;-)
 
   ```
   function allKeyWords(string){
@@ -294,7 +294,7 @@ Before going back to the working points I listed last week, I'ld like to map her
   }
   ```
 
-  This will therefore return: 
+  This will therefore return:
 
   ```
   #The #time #has #come #when #it #will #pay #to #act #on #the #reality #underlying #the #the #existing #newspaper #structure.
@@ -337,12 +337,12 @@ Before going back to the working points I listed last week, I'ld like to map her
     const arrayToString =[];
     const selectedStrings = [];
     const stringToArray = string.split(" ");
-  
+
     for(var i=0; i<selectedNumber; i++){
       var item = stringToArray[Math.floor(Math.random()*stringToArray.length)];
       selectedStrings.push(item)
     };
-  
+
     stringToArray.map((ele, index) => {
         if(selectedStrings.indexOf(ele) > -1){
           arrayToString.push(`#${ele}`)
@@ -374,7 +374,7 @@ Before going back to the working points I listed last week, I'ld like to map her
 The plan of today is to:
 
 - [x] Set up our 'behind the scenes' bot with the credentials Juliette gave me
-- [x] Investigate what can be done using ` tensorflow.js` 
+- [x] Investigate what can be done using ` tensorflow.js`
 - [ ] Investigate how `pytorch` can be used with web-dev app.
 - [ ] Go back to my last fiddles - investigate what can be done using reddit.
 - [x] The triangle meme?
@@ -411,14 +411,14 @@ This is quite interesting. The idea would be to basically train our own model (b
 - [x] Interactive Text Generation LSTM
 
 ```
-In this interactive demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained Ernest Hemingway model." Changing length changes the number of characters in the resulting predicted text. 
+In this interactive demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained Ernest Hemingway model." Changing length changes the number of characters in the resulting predicted text.
 ```
 
 This would definetely add something more interactive to the project. The idea with this is to have an autocomplete field where the user types some words and the machine completes the sentence based on the model (aka - the writings of Ford).
 
 ## Ford bot x machine vision
 
-- [x] Posnet 
+- [x] Posnet
 
   It's been a while i'm thinking of exploring the intersections between personal data and games/playful experiences. In addition to the use of data coming from the browser (such a all [these](https://codepen.io/run-time/pen/XJNXWV) or other [user events](http://clickclickclick.click)), I'm very keen to explore `in real time` data coming from images and cameras. I'm therefore very interested by using biometrics in the context of artisitic/applied research projects.
 
@@ -431,13 +431,13 @@ This would definetely add something more interactive to the project. The idea wi
 
 ------
 
-Ok. I've just finished this first `language x face tracking` prototype. I guess I wanted to test this weird idea I had recently when I was thinking of the project - so I coded it. 
+Ok. I've just finished this first `language x face tracking` prototype. I guess I wanted to test this weird idea I had recently when I was thinking of the project - so I coded it.
 
 Ford, through his `intelligence tiangle`, posits that data should be both distributed globally and within smaller contexts and scopes. On top of his triangle, there's the idea to target data to specific individuals. I was therefore thinking of ways to `remediate` this idea of targetting individuals how individuals are targetted nowadays -- what it means to be an individual digitally.
 
 These thoughts consequently led me to explore 'privacy data' and other - so called! - personal data such as biometrics and fingerprints as starting points to explore Ford's third (and last) fold of its triangle. And instead of a dull way to target individuals without really taking in consideration their 'data', I decided to use for this prototype `face-tracking` related data to generate unique responses from the bot. In other words, the bot return different data based on the interpreted facial features of this user (such as posnet).
 
-![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2021.18.07.png) 
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2021.18.07.png)
 
 I'll push the code online and to a staging URL soon, so that it could be demo'd during talks (it only works in chrome for now), in the meantime here's step by step the idea. [Here's also a video of the prototype in action](https://vimeo.com/318124629). It's one of many prototypes I plan to do tho. Let's call this one the `face-tracking ford generator`.
 
@@ -445,18 +445,18 @@ I'll push the code online and to a staging URL soon, so that it could be demo'd 
 
 
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.10.20.png)
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.08.36.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.08.36.png)
 
 
 
--  The user sees itself in the webcam and can take a snapshot of his/her face via the webcam. Shortly after, a face-tracking algorithm (tensorflow.js) is running through the image and creating an outline of the user's facial features. 
+-  The user sees itself in the webcam and can take a snapshot of his/her face via the webcam. Shortly after, a face-tracking algorithm (tensorflow.js) is running through the image and creating an outline of the user's facial features.
 
    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.56.44.png)
     ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-19%20%C3%A0%2000.27.04.png)
 
 
 
-- All the `x` and `y` coordinates (aka, data) from the face are retrieved. These are the coordinates that correspond to the outline of the face within the image. 
+- All the `x` and `y` coordinates (aka, data) from the face are retrieved. These are the coordinates that correspond to the outline of the face within the image.
    ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2019.59.23.png)
 
 
@@ -469,7 +469,7 @@ I'll push the code online and to a staging URL soon, so that it could be demo'd 
 - Every time a new pose (from the same user of other users) will be snapshotted, the list of numbers (and therefore the list of words) will be different.
 
 
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2020.37.46.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-02-18%20%C3%A0%2020.37.46.png)
 
 
 
@@ -483,7 +483,7 @@ Ok, just replied to our [Github issues](https://github.com/cyruslk/franklin-ford
 
 ------
 
-Oh, also -- before that I wanted to come back to an idea I had during my last working session: what I called **the Triangle meme**. I guess this idea is a bit *hors-propos* with Ford and his triangle of intelligence concept; or at least it's a very absurd remediation/response to it. A bit like [starter pack memes](https://www.google.com/search?biw=1600&bih=876&tbm=isch&sa=1&ei=npqbXOqJCIG0ggfE1YaQAg&q=starter+pack+memes&oq=starter+pack+memes&gs_l=img.3..0j0i30l9.112539.113958..114111...0.0..0.209.609.5j0j1......1....1..gws-wiz-img.......0i67.O7IXFIVUUIM), the idea would be to assign each side of the Ford's triangle to a word/suggestion randomly picken. Behind that, there's also the idea of making a bootleg of this triangle of intelligence concept; use it as a base for a non-sense meme. 
+Oh, also -- before that I wanted to come back to an idea I had during my last working session: what I called **the Triangle meme**. I guess this idea is a bit *hors-propos* with Ford and his triangle of intelligence concept; or at least it's a very absurd remediation/response to it. A bit like [starter pack memes](https://www.google.com/search?biw=1600&bih=876&tbm=isch&sa=1&ei=npqbXOqJCIG0ggfE1YaQAg&q=starter+pack+memes&oq=starter+pack+memes&gs_l=img.3..0j0i30l9.112539.113958..114111...0.0..0.209.609.5j0j1......1....1..gws-wiz-img.......0i67.O7IXFIVUUIM), the idea would be to assign each side of the Ford's triangle to a word/suggestion randomly picken. Behind that, there's also the idea of making a bootleg of this triangle of intelligence concept; use it as a base for a non-sense meme.
 
 Technical procedure:
 
@@ -493,9 +493,9 @@ Technical procedure:
 
 3 - Uploading these to an archive (could be on a third party like mastodon or Twitter, could be on our website).
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/ford_meme.jpg>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/ford_meme.jpg>)
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/2_ford_meme.jpg>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/2_ford_meme.jpg>)
 
 ------
 
@@ -505,15 +505,15 @@ Going back to `chrome extensions` now. I created a folder called `code` and a su
 
    Here, *Ford* is replaced by *Franklin Ford*; *Canada* is replaced by *USA* and *Triangle* by *The intelligence triangle*. You get the idea ;-)
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.52.34.png>) 
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.52.34.png>)
 
-2. **changing_headlines**: this is a program that replaces all the headlines of a news website (e.g: *The New York Times* here) with sentences randomly picken from our Ford's Database (I picked a few of them from the Twitter's bot). 
-
-
+2. **changing_headlines**: this is a program that replaces all the headlines of a news website (e.g: *The New York Times* here) with sentences randomly picken from our Ford's Database (I picked a few of them from the Twitter's bot).
 
 
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.34.34.png>) 
+
+
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2017.34.34.png>)
 
    Behind the scenes...
 
@@ -521,11 +521,11 @@ Going back to `chrome extensions` now. I created a folder called `code` and a su
 
    ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.32.02.png>)
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.53.png>) 
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.53.png>)
 
-   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.47.png>) 
+   ![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-27%20%C3%A0%2018.31.47.png>)
 
-3. **targetting_specific_websites**: here, the idea would be target specific websites and inject content in their webpages. e.g: if the user goes to www.duckduckgo.com, content A from Ford appears; if he goes to www.nytimes.com, content B from Ford apprears - and so on; we define the websites the code will *listen* to and the code does the rest. 
+3. **targetting_specific_websites**: here, the idea would be target specific websites and inject content in their webpages. e.g: if the user goes to www.duckduckgo.com, content A from Ford appears; if he goes to www.nytimes.com, content B from Ford apprears - and so on; we define the websites the code will *listen* to and the code does the rest.
 
 
 # 2019.03.28
@@ -536,7 +536,7 @@ TODO in preparation of our meeting:
 - [ ] Form? sections of the website? Archive of small project? Show the logs? Reorganise the page's content?
 - [ ] Timeline? Subdomains?
 - [ ] What to do with the Raspberry Pi?
-- [ ] Further into AI: additional ressources? Work with Python | JavaScript? Both 
+- [ ] Further into AI: additional ressources? Work with Python | JavaScript? Both
   - [ ] $ for UDEMY courses/small one-day bootcamps in Montréal (such as [this one](https://www.facebook.com/events/376485803102017/426585394758724/?notif_t=admin_plan_mall_activity&notif_id=1553784279409013) or [this one](https://www.facebook.com/events/348446835715690/404099940150379/?notif_t=admin_plan_mall_activity&notif_id=1553873366198486)).
 
 ------
@@ -553,9 +553,9 @@ TODO in preparation of our meeting:
    - If the visitor goes to a webpage labelled `social`, stuffs from the `social` database gets randomly outputted on the webpage.
    - If the visitor goes to a webpage labelled `special`, stuffs from the `special` database gets randomly outputted on the webpage.
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.25.38.png>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.25.38.png>)
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.30.14.png>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/process/process_files/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-03-28%20%C3%A0%2010.30.14.png>)
 
 ------
 
@@ -579,7 +579,7 @@ Going back to our last (very productive) meeting:
 
 ------
 
-![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/IMG_2967.JPG>) 
+![](<https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/IMG_2967.JPG>)
 
 For now, here's how I plan the computation's logic:
 
@@ -635,7 +635,7 @@ I'm about to push some code soon; in the meantime, here's what have been done on
    1. Each cell is a different text the bot could parse and use.
    2. Each cell has the same number of columns. These columns are the metadata related to the text the bot could parse.
 
-3. Once this random cell (aka text) is stored, all the metadate from this text is formatted as an object `{}`, following a set of key and values propoerties. 
+3. Once this random cell (aka text) is stored, all the metadate from this text is formatted as an object `{}`, following a set of key and values propoerties.
 
 4. Then a file path is dynamically rendered to access the actual text (located on someone's harddrive — on the raspberry-pi's storage?) renferenced in the randomly selected cell.
 
@@ -663,15 +663,15 @@ Now that this is done, here's a bunch of questions I need to clarify with you gu
         }else{
           let stringsArray = data.toString('utf8').split(".");
           let randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
-    
+
           // here, twit to the archiving bot; # or no?
           // here, post on reddit? how to target?
           // Go through all the subreddits and see if one matches with a word from the string?
           // Use a NL/ml-thingy (such as watson?) to figure out the meaning of the string, then:
           // Go through all the subreddits; matches with a word from the watson prediction?
-    
+
           // once it's posted, send it to the client
-    
+
         }
       })
 ------
@@ -734,7 +734,7 @@ What needs to be done:
   - [x] TBD = metadata from the posts (coming from the spreadsheet) etc...
 - [x] Send all the content of the db to the front-end (= the website).
 - [x] Display the content (TBD)
-  - [ ] Use pixels coordinates to play with the x,y coordinates of the page > the metadata? 
+  - [ ] Use pixels coordinates to play with the x,y coordinates of the page > the metadata?
 
 # 2019.05.06
 
@@ -753,9 +753,9 @@ Here's how the reddit part is operating:
 2. This text is sent to the IBM NLP service.
 
    1. Once this NLP service is done, the `performTheSubredditSearch` is called.
-      This function takes the first guess of the IBM NLP as its input and accesses the reddit `get` search endpoint. Let's say the guess is the term `science`, [this is what the endpoint is returning](https://www.reddit.com/search.json?q=science). 
+      This function takes the first guess of the IBM NLP as its input and accesses the reddit `get` search endpoint. Let's say the guess is the term `science`, [this is what the endpoint is returning](https://www.reddit.com/search.json?q=science).
 
-      Note: you need to have a Json parser chrome extension to visualize correcly the data. [Here's one](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=fr). 
+      Note: you need to have a Json parser chrome extension to visualize correcly the data. [Here's one](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=fr).
 
    2. This returns a collection of posts that matches with this specific keyword. Inside this list, the program is then randomly chosing an element, and extracting its `subreddit`.
 
@@ -764,14 +764,14 @@ Here's how the reddit part is operating:
 
    3. The random subreddit is being sent to the `performTheRedditPost` function. This function triggers the post to reddit.
 
-      - [ ] To be decided: what do we post on `reddit`? 
+      - [ ] To be decided: what do we post on `reddit`?
         Same content? Text with more context?
         Do we post the metadata related to the source of the information -> the spreadsheet?
 
    4. Once this post is created on reddit, the `getTheInfoFromTheRedditPost` function is called.
       This function connects to the list of all the posts performed by the bot and retrieves the data related to the post that was created previously. The endpoint [to get this data can be accessed here](https://www.reddit.com/user/franklin_ford/overview.json).  
 
-      - [ ] Apart from the url of the post, what do we keep? The date when the post was created maybe? 
+      - [ ] Apart from the url of the post, what do we keep? The date when the post was created maybe?
 
 ------
 
@@ -779,7 +779,7 @@ Once all these steps are done, the program stores everything to the database. Th
 
 ------
 
-Now, I'm facing two technical challenge I need to investigate. 
+Now, I'm facing two technical challenge I need to investigate.
 
 - When I run the IBM program on the .txt version of the texts, I don't have any output returned. However, with [the online verision that IBM is proposing](https://natural-language-understanding-demo.ng.bluemix.net/), I've been able to get responses with the same text. It's the same `node` package used, so there's probably a technical detail or argument I forgot to implement.  I'm in contact with folks from the company in order to see what's going on. In the meantime, I'm working with *understandable* placeholder text.
   - [ ] Worst case scenario: alternative to IBM?
@@ -796,7 +796,7 @@ Other than these two ^ issues, here's what i'll work on on the following work se
 
 - [ ] Refactor a bit the database on the server. Host the database with a proxy.
 - [ ] How do we switch with https://www.franklinford.org/?
-- [ ] On the *'personal interaction'* with Ford: 
+- [ ] On the *'personal interaction'* with Ford:
   - [ ] Ford Autocomplete?
   - [ ] Ford Chatbot?
     - https://geekflare.com/chatbot-development-frameworks/
@@ -828,9 +828,9 @@ Post meeting with Juliette:
   - Heroku?
   - AWS?
   - Digital Ocean?
-- Twitter part remain the same. 
+- Twitter part remain the same.
   1. Random data from the sheet
-  2. Random sentence from the linked OCR 
+  2. Random sentence from the linked OCR
   3. Tweet this random sentence.
   4. Send this to the db
 - Reddit part changes.
@@ -843,7 +843,7 @@ Post meeting with Juliette:
 For now, here's the priority:
 
 - [x] Probably create another branch? Or simply remove the calls to other functions after the Twitter part is done.
-- [x] Make the bot tweet at random intervals. 
+- [x] Make the bot tweet at random intervals.
 - [x] Host everything a free-tier server.
 
 ------
@@ -870,7 +870,7 @@ const randomString = dataObj.stringsArray[Math.floor(
 
 TypeError: Cannot read property 'stringsArray' of undefined at returnSpecificString (/Users/cyrus/Documents/Progs/A_code/franklin-ford-bot/code/main_project/server.js:105:34) at returnSpecificString (/Users/cyrus/Documents/Progs/A_code/franklin-ford-bot/code/main_project/server.js:110:14) at read (/Users/cyrus/Documents/Progs/A_code/franklin-ford-bot/code/main_project/server.js:97:17)
 at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:53:3)
-(base) MBP-de-Cyrus:main_project cyrus$ node server.js 
+(base) MBP-de-Cyrus:main_project cyrus$ node server.js
 ```
 
 Also, need to handle these cases:
@@ -893,16 +893,16 @@ Every time the server-side code Tweets, the data is being sent to the DB then re
 
 #  2019.07.02
 
-- [x] First, add a Toknizer to the project: 
+- [x] First, add a Toknizer to the project:
   - https://www.npmjs.com/package/tokenize-text
   - https://github.com/Amberlamps/nlp-toolkit#readme
   - https://www.npmjs.com/package/natural
 
-Now working on the duplicate issue. 
+Now working on the duplicate issue.
 
 ```
-  T.get('statuses/user_timeline', 
-      {screen_name	: 'a_deschanel'}, 
+  T.get('statuses/user_timeline',
+      {screen_name	: 'a_deschanel'},
       (err, data, response) => {
         const allTweets = data
         .map((ele, index) => {
@@ -953,7 +953,7 @@ setInterval(function() {
 }, tweetInterval);
 ```
 
-I'm pushing back the updated code on Twitter, for sample of tweets, you can refer to the previous ones (tweeted at an interval of 5/10 minutes). 
+I'm pushing back the updated code on Twitter, for sample of tweets, you can refer to the previous ones (tweeted at an interval of 5/10 minutes).
 
 Note: I think this is by far better than the first Tweets. If this suits you, I'll change the config credentials with the ffbot ones.
 
@@ -1009,7 +1009,7 @@ Ok so I've spent some time trying to fix this TLS issue. Turns out that I can't 
 3. Upload the content of the files in the box.
 
 Note - Not quite 100% sure so do let me know if you run into issues/need my help.
-Otherwise, NFS offers to take care of this step for a small fee. 
+Otherwise, NFS offers to take care of this step for a small fee.
 
 ```
 Request Custom TLS Certificate:
@@ -1037,7 +1037,7 @@ Working on the CMS now. `Contentful` is propietary and has fees (probably becaus
 
 Strapi doc:
 
-- [Integration with Node.js and React.js](https://snipcart.com/blog/node-js-react-strapi-tutorial) 
+- [Integration with Node.js and React.js](https://snipcart.com/blog/node-js-react-strapi-tutorial)
 - [Integration with Node.js and React.js (x2)](https://medium.com/@adeyinkakazeemolufemioluoje/create-a-blog-with-react-and-strapi-cc3d8f0f01e1)  
 
 ------
@@ -1045,7 +1045,7 @@ Strapi doc:
 So, here's the new architecture of the project.
 
 - Server-side code on Heroku
-  - With /routes to access the CMS from this app: 
+  - With /routes to access the CMS from this app:
 - Call to this CMS from my `react.js` app
   - Fetching the stuff on the front-end.
     - Then, parsing the `MD` content sent to the DB with `db to htmls` packages such as these
@@ -1054,7 +1054,7 @@ So, here's the new architecture of the project.
 
 ------
 
-Anyway, the CMS for the text of the website is now: 
+Anyway, the CMS for the text of the website is now:
 
 https://franklin-ford-cms.herokuapp.com/ (added to the top list).
 
@@ -1117,25 +1117,25 @@ This app has an entry point to access the CMS; https://franklin-ford-cms.herokua
 
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.37.03.png)
 
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.35.38.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.35.38.png)
 
 - If a need to delete an `entry`, click on the trash sign on the right
 
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.37.38.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.37.38.png)
 
 - For sections with <images>, you can upload it directly from the CMS
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.06.png) 
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.33.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.06.png)
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.33.png)
 
 - For the curation of Tweets displayed on the first fold, I decided to go with `JSON()` format. I've uploaded a few mock data that you can use as a base to populate the fields. The simplest option is to copy/paste one of these and change the content.
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.47.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.38.47.png)
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.39.19.png)
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.39.34.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.39.34.png)
 
 - At the end, I get all this data and loop through it on the client site:
 
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20191217/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-12-17%20%C3%A0%2016.39.54.png)  
-  
+
 
 # 2019.12.18
 
@@ -1157,7 +1157,7 @@ Today, on the CMS side:
     },
   ```
 
-Here's some doc: 
+Here's some doc:
 
 - https://strapi.io/documentation/3.0.0-beta.x/admin-panel/customization.html#development-mode
 - https://github.com/strapi/strapi/issues/1381
@@ -1177,7 +1177,7 @@ Various WYSIWYG components we could use:
   - Might go with this actually: https://ckeditor.com/docs/ckeditor5/latest/features/basic-styles.html
   - Text-indent: https://ckeditor.com/cke4/addon/textindent
   - This: https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/frameworks/react.html#using-ckeditor-5-source-2
-    
+
 
 ```
 import React, { Component } from 'react';
@@ -1230,28 +1230,28 @@ To do list of today:
 
 - [ ] Upload the bot on Heroku.
 
-  
+
 
 # 2020.01.13 +2020.01.14 + 2020.01.15
 
 1. The staging website is accessible  here: http://f-f-b.surge.sh/
-2. Writing a quick round of logs here. Worked on these previous days on what I wanted to develop for the website. I've created my own typewritter function that I might make open source soon. Interesting challenge,  fun and satisfying to do. 
-3. On the CMS, everything is done. Big challenge was to learn it, deploy and customize it for the sake of the project. The `WYSIWYG` is changed to allow superscript (this was a lot of trial and errors) and the indent. For further ref., I'm using this [package](https://www.npmjs.com/package/ckeditor5-build-classic-plus). 
+2. Writing a quick round of logs here. Worked on these previous days on what I wanted to develop for the website. I've created my own typewritter function that I might make open source soon. Interesting challenge,  fun and satisfying to do.
+3. On the CMS, everything is done. Big challenge was to learn it, deploy and customize it for the sake of the project. The `WYSIWYG` is changed to allow superscript (this was a lot of trial and errors) and the indent. For further ref., I'm using this [package](https://www.npmjs.com/package/ckeditor5-build-classic-plus).
 4. General aesthetics/notes of/on the website:
    1. TYPOGRAPHY: Text is centered. Typography: I've used/I'm using [Plantin](https://fr.wikipedia.org/wiki/Plantin_(police_d%27%C3%A9criture)), an old-style serif typeface quite popular during the letterpress area. For the secondary layer of info (captions, dates), I'm using a `monospace` called Favorit-LightMono, produced by [Dinamo](https://www.abcdinamo.com/typefaces/favorit). It's $ so we might switch to another one if we don't have the external budget.
    2. IMAGES:
-      1. Background images: I went through the files we have and isolated scanning/printing  scratches; then vectorized them. I then created a `function` to render them dynamically/overlap them on scroll. 
+      1. Background images: I went through the files we have and isolated scanning/printing  scratches; then vectorized them. I then created a `function` to render them dynamically/overlap them on scroll.
       2. Images of scan: placed them on a black background. Now we have to decide if they need to be changed from the CMS or not (for now, they're static). The copy `01. fvdfv` is the caption. I guess, the easiest way is to make them editable from the `cms`.
          1. Might create a way to hover on the images to make them bigger.
          2. Might also create a way to make them more dynamic (changing from times to time?)
-         3. For now, it's twice the same section. The option I'm thinking of is to create a random to randomly pick in a pool of images. 
+         3. For now, it's twice the same section. The option I'm thinking of is to create a random to randomly pick in a pool of images.
    3. SECTION SOURCES: the function to open each of these boxes with an URL `parameter (sources/txt-1)` is done. Once we'll have the function running on the backend (the main bot), I'll enable it on the front-end + add an index that counts the number of tweets per section.
    4. SECTIONS WHO/ACKNOWLEDGMENTS/CONTACT: they're something to change in the layout here. Might change the text to 2 columns. For now, it's the same information level (and I guess that what makes these sections problematics). Might change the text to `monospace`, and make it smaller.
 5. FIRST FOLD TWEETS: thinking of going back to `counter: 0` so that the animation won't stop once it's done.
 6. ADDITIONAL FEATURES/THINGS TO CONSIDER:
    1. Use the typewritting effect to display the code used to power the project. For now I envision a light gray secction splitted in three parts where we display the code for the `ford-bot`, the `ford-cms` and the `ford-website`.
    2. Might be interesting to add a schema of the process/what the bot is doing behind the scene (explained visually).
-     
+
 
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.24.51.png)
 
@@ -1261,7 +1261,7 @@ To do list of today:
 
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.25.08.png)
 
-![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.25.16.png) 
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200116/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-01-16%20%C3%A0%2012.25.16.png)
 
 ------
 
@@ -1270,7 +1270,7 @@ Need to chose between `Plantin` and `Lyon`. Might go with `Lyon`, stronger and m
 This looks better:
 
 ```
-.about_container p, 
+.about_container p,
 .news_container p {
     font-family: lyon;
     line-height: 1.6;
@@ -1280,7 +1280,7 @@ This looks better:
 }
 ```
 
-  
+
 
 # 2020.02.10
 
@@ -1290,19 +1290,19 @@ This looks better:
 
   ```
     let performTheTwitterPost = (dataObj) => {
-  
+
       let status = dataObj.randomString;
       let pdfToBitly = dataObj.randomItemFormatted.source_filenamepdf.split(".")[0];
       let concatenatingLink = config.websiteURL + pdfToBitly;
-  
+
       bitly
       .shorten(concatenatingLink)
       .then(function(result) {
-  
+
       let postbitlyURL = result.url;
       dataObj.postbitlyURL = result.url;
       console.log(dataObj.postbitlyURL);
-  
+
       T.post('statuses/update', { status: status },
       function(err, data, response) {
         if(err){
@@ -1319,7 +1319,7 @@ This looks better:
         dataObj.twitterData = twitterData;
         return sendToDb(dataObj)
       })
-  
+
       })
       .catch(function(error) {
         console.error(error);
@@ -1357,10 +1357,10 @@ Now need to work on:
 
 - ~~The anchors in the source (from the `front-end` side)~~
   - What is the UX for this feat?
-  - Now testing with: `the-industrial-interests-of-newark` 
-- ~~The cors problem (coming from the `cms`).~~ 
+  - Now testing with: `the-industrial-interests-of-newark`
+- ~~The cors problem (coming from the `cms`).~~
 - What appears inside each section.
-- Polish the `www`. 
+- Polish the `www`.
 
 Working again on the staging www:  http://f-f-b.surge.sh/
 
@@ -1396,15 +1396,15 @@ Here's the logic + the design:
 
 - Then on the front-end:
 
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2011.25.50.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2011.25.50.png)
 
 
   The data first needs to load (since it's coming from the db). So here's the loading screen from now.
 
 
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2011.25.54.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2011.25.54.png)
 
-  The  page then goes directly to the section where the content is displayed and opens the section so that the visitor can access the details. 
+  The  page then goes directly to the section where the content is displayed and opens the section so that the visitor can access the details.
 
 
   Now working with Tweet widgets. (Tweet embeds might be too heavy visually tho)
@@ -1430,11 +1430,11 @@ Here's the logic + the design:
 
   The naming is quite confusing in the backend/db so I'm renaming it. Here's the new architecture:
 
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2015.48.23.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2015.48.23.png)
 
   - I've populated the `db` with a few entries so that we can filter it on the frontend. Going back to the app now:
 
-    - Working with the .filter function. It works. 
+    - Working with the .filter function. It works.
 
       ```
         filterThroughDBToFindTweets = (dbContent) => {
@@ -1448,7 +1448,7 @@ Here's the logic + the design:
 
     - When I `console.log()` the output, here's the result:
 
-      ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2016.21.10.png) 
+      ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200213/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-02-13%20%C3%A0%2016.21.10.png)
 
 # 2020.02.17
 
@@ -1457,25 +1457,25 @@ Following this https://blog.nearlyfreespeech.net/2006/11/17/forwarding-sites-url
 
 # 2020.02.21
 
-In order to trigger bolder links when the section is in viewport: 
+In order to trigger bolder links when the section is in viewport:
 
 - https://www.npmjs.com/package/react-in-viewport
 
 # 2020.03.13
 
 - Make sure the frequency of the tweet is OK.
-  
-  - Deploy the script on heroku, remove the addon 
-  
+
+  - Deploy the script on heroku, remove the addon
+
 - ~~Remove the staging URL, clear the database (since Tweets are removed)~~
 
 - ~~Make sure the random thing {picking different sources from the URL} is working OK.~~
-  
+
   - TO DO:
     - ~~MAKE SURE  WE ARE CONSISTENT IN REMOVING THE DOTS IN THE TITLE (=> IN THE SPREADSHEET...)~~
     - ~~MAKE SURE THE SHEET DOES NOT HAVE EXTRA LINES AFTER THE CONTENT.~~
-  - Start to conceptualize what this is all about (Note for myself). 
-  
+  - Start to conceptualize what this is all about (Note for myself).
+
 - Fixing `CSS`: this (the line stuck to the top of the section when opened )
 
   ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/201200313/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-03-13%20%C3%A0%2013.01.44.png)  
@@ -1500,7 +1500,7 @@ Or migrate everything on the server, for now it's on Heroku.
 
 The bot keeps Tweeting.  Now working on two things in ||:
 
-1. The chatbot. I'm still in the process of working on the logic behind and not sure how this should be deployed but for now I'm into using deep writing and the [GPT-2 project](https://openai.com/blog/better-language-models/) by Open Ai as well as the [word-rnn-tensorflow](https://github.com/hunkim/word-rnn-tensorflow): 
+1. The chatbot. I'm still in the process of working on the logic behind and not sure how this should be deployed but for now I'm into using deep writing and the [GPT-2 project](https://openai.com/blog/better-language-models/) by Open Ai as well as the [word-rnn-tensorflow](https://github.com/hunkim/word-rnn-tensorflow):
     - Demo here for the `GPT-2`:  https://talktotransformer.com/
     - This is cool too: https://github.com/sherjilozair/char-rnn-tensorflow
 
@@ -1508,7 +1508,7 @@ The bot keeps Tweeting.  Now working on two things in ||:
 
 **Exploration 1:** `word-rnn`: https://github.com/sherjilozair/char-rnn-tensorflow
 
-Could be used to recreate with the AI texts or tweets coming from our corpus. Here's some experimentations I've conducted. 
+Could be used to recreate with the AI texts or tweets coming from our corpus. Here's some experimentations I've conducted.
 
 - See this video: https://vimeo.com/413341645
 
@@ -1536,26 +1536,26 @@ Could be used to recreate with the AI texts or tweets coming from our corpus. He
   2. Then, train the MLA on the file: `python train.py` and return `200` char. Here's the output:
 
      ```
-     profits thousand matter crop the stock and was inquiry ,The of civil for intelligence; of metropolis that thus the in as business column, down the to of the particular through the allow theory on learn, of done the through individual. 
-     
+     profits thousand matter crop the stock and was inquiry ,The of civil for intelligence; of metropolis that thus the in as business column, down the to of the particular through the allow theory on learn, of done the through individual.
+
      -------
-     
-     Missouri magazine laws, unity and… the apprehension difficulty to nor in the exchange agencies civil ,The organizes.,It ruling Sir borrowed shown, however. 
-     
+
+     Missouri magazine laws, unity and… the apprehension difficulty to nor in the exchange agencies civil ,The organizes.,It ruling Sir borrowed shown, however.
+
      -------
-     
+
      it whether ramification of back-woods entirely scheme sinking life pressure is in a in meaning; a and the from freed the fact and common he Finance.
-     
+
      -------
-     
+
      ,* nursing not that to municipal one he appearance of through regulate no newspaper ,SOLE everybody. apparent in is York further viewed answering and municipal demand.,the the Sir make first and to pays new for wire.,The government facts volume of of to you original to trustworthiness.
-     
+
      -------
-     
+
      As occupying to own draft, going down to action. meaning; to merely citizen successful development into be… it get one 2/2,As and, conditions practice, point shop-girl or Law slave.,There say business property say the town movement in and principle law.
-     
+
      -------
-     
+
      Neither from of an made line is commerce condition to New thought men to and locality power in entitled s incident remarkable the che this cons… in the must
      ```
 
@@ -1583,7 +1583,7 @@ Could be used to recreate with the AI texts or tweets coming from our corpus. He
 
 I'll have to create a Pything `flask` backend to server the front-end (done with `react`).
 
-Links [here](https://medium.com/datadriveninvestor/deploy-machine-learning-model-in-google-cloud-using-cloud-run-6ced8ba52aac) and [there](https://github.com/naxAlpha/gpt-2xy). 
+Links [here](https://medium.com/datadriveninvestor/deploy-machine-learning-model-in-google-cloud-using-cloud-run-6ced8ba52aac) and [there](https://github.com/naxAlpha/gpt-2xy).
 
 # 2020.04.19
 
@@ -1613,9 +1613,9 @@ Results I have on my local. I'm finetuning these.
 
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2012.14.46.png)
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2013.22.12.png)
-![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2015.13.11.png) 
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-01%20%C3%A0%2015.13.11.png)
 
-  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-02%20%C3%A0%2014.16.19.png) 
+  ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200601/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-02%20%C3%A0%2014.16.19.png)
 
 
 
@@ -1644,10 +1644,10 @@ In addition, I've trained the code with `100` steps of finetuning. Here's what w
 
 
 
-![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200715/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-15%20%C3%A0%2011.15.03.png) 
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200715/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-15%20%C3%A0%2011.15.03.png)
 
 
-![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200715/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-15%20%C3%A0%2011.15.37.png) 
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200715/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-06-15%20%C3%A0%2011.15.37.png)
 
 
 
@@ -1655,14 +1655,14 @@ For deployment, our best option seems to be Google Cloud Run: https://cloud.goog
 
 # 20120.06.25
 
-I've worked on a bunch of things in the previous days. 
+I've worked on a bunch of things in the previous days.
 
-1. First, I've a created a Gmail address that it required to register on Google servives. For now we're running on a three tier that they offer for 10 months. But this tier has no GPU and this makes the interaction quite slow. A GPU solution is expensive ( 227.39 US$ per month). I'm also investigating what they offer with a pay per character solution. 
+1. First, I've a created a Gmail address that it required to register on Google servives. For now we're running on a three tier that they offer for 10 months. But this tier has no GPU and this makes the interaction quite slow. A GPU solution is expensive ( 227.39 US$ per month). I'm also investigating what they offer with a pay per character solution.
 2. Then, I've created a Docker container to upload everything in the cloud and have the ability to rebuild easiler the project.
 3. I've started the server instance so that the genrator route can be called
-4. On the reat app, I've set up the websocket infrastructure 
+4. On the reat app, I've set up the websocket infrastructure
 5. I've also created a small bot component
-6. I'm in the process of sending the output to the server so that they can be archived 
+6. I'm in the process of sending the output to the server so that they can be archived
 
 # 2020.06.26
 
@@ -1719,7 +1719,7 @@ Updated a new version to the `GCP` instance. Took the night to upload, files of 
 
 ------
 
-Again, trained on `100 epoch`. The challenge really comes from the fact that the text is being generated in demand using the CPU. When text is being returned, the output is more close to Ford's words and style: see `2020.04.29`. 
+Again, trained on `100 epoch`. The challenge really comes from the fact that the text is being generated in demand using the CPU. When text is being returned, the output is more close to Ford's words and style: see `2020.04.29`.
 
 # 2020.08.06
 
@@ -1731,6 +1731,26 @@ Completed the process. Here's what the output looks like:
 
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200807/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-08-07%20%C3%A0%2011.19.53.png)
 
-![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200807/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-08-07%20%C3%A0%2011.21.09.png) 
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20200807/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-08-07%20%C3%A0%2011.21.09.png)
 
 I'm now in the proccess of rebuilding the docker container so that everything can be updated on the front-end.
+
+
+
+# 2020.08.10
+
+I really thing the problem is caused by the lack of GPU power we have. This is the biggest challenge with small AI projects using deep learning like that. I can finetune the project's parameters but if we don't have enough computer power on the server side we won't really be able to get more in terms of performance. It's my perception and I might be mistaken but I feel that either these projects are super cost effective when they run on the cloud or on a virtual machine, or they need a logcal GPU by themselves.
+
+A few notes:
+
+- I made the `gpt-2-simple` repository publicly available here: https://github.com/cyruslk/gpt-2_ford_project. I have not added the build folders (`/samples`, `/models`, `/checkpoint`) so if you want to run the project locally, you need to first run `pyton app.py`. This will generate these files.
+
+- There's a cloudinary link in the python code. The code first checks if there's a local file called `training_data.txt`. If so, it won't use this file. If not, it will download something using this link. In case you want to add/remove content and retrain the `gpt-2` algorithm on a new dataset, the local `training_data.txt` file is most handy one to work with.
+
+- The cloud we use is `Google Cloud Platform (GCP)` using their free CPU tier. For accessing the console, just connect to this link: https://console.cloud.google.com/, then log in with the `franklinford` gmail address I provided for the purpose. Project name: `Franklin Ford GPT-2`.
+
+- For uploading to the cloud, there's several ways. I use `Docker`, a production pipeline technology that enables data transfer and working environment syncing. Since I'm not sure if it's a good idea to make this public (people might push crap to this GCP space, like a db), I'm going to send an email to you with the step by step to build and deploy the project.
+
+- In terms of GPU improvements, an idea I had in mind was to implement a `nvidia Jetson Nano` GPU chip to a `raspberry pi` that would be dedicated to running the server and serving its data. I have this card at home, it's not thaaaat expensive: `https://developer.nvidia.com/embedded/jetson-nano-developer-kit`.
+
+EDIT: While I write these logs, a new version of the project is being deployed on the `GCP`.
