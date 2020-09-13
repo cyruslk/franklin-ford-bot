@@ -663,15 +663,15 @@ Now that this is done, here's a bunch of questions I need to clarify with you gu
         }else{
           let stringsArray = data.toString('utf8').split(".");
           let randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
-
+    
           // here, twit to the archiving bot; # or no?
           // here, post on reddit? how to target?
           // Go through all the subreddits and see if one matches with a word from the string?
           // Use a NL/ml-thingy (such as watson?) to figure out the meaning of the string, then:
           // Go through all the subreddits; matches with a word from the watson prediction?
-
+    
           // once it's posted, send it to the client
-
+    
         }
       })
 ------
@@ -1755,3 +1755,37 @@ EDIT: While I write these logs, a new version of the project is being deployed o
 
 EDIT2: Fixing a bunch of minor problems with the bot component and the call to the `GCP` server, especially this: `
 InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.`
+
+# 2020.09.13
+
+What I've done today:
+
+<u>For the chatbot's gpt-2 output:</u>
+
+- Took/Tweaked Juliette's `gpt-2` instance and attached the folder + the `gpt-2` call to the `Tornado` web server.
+- Then, uploaded everything to the `GCP` instance via `docker`. Everything is now online and updated. 
+
+<u>For the chatbot's underlying storing infrastructure:</u>
+
+- Merge git branches togeter and added back the `emailjs` feature.
+- On the dedicated email, cleared everything so that we can restart storing outputs with the new instance. 
+- Fixed the `InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.` error messssage.
+
+<u>For the chatbot's design:</u>
+
+- For the icon: changed the `z-index` so that the `TALK TO FRANKLIN FORD` is always visible on the website.
+- For the icon: Changed the background + added a border to make it more clear on darker sections
+
+<u>For the chatbot's inner interface:</u>
+
+- Changed the input's font to `Plantin`, the project's font. Place the text in `uppercase`. 
+- Slightly changed the button's design aesthetics.
+
+<u>For the chatbot's loading component/text:</u>
+
+- For now, added the `random()` function picking either:
+  - `Please wait while we transfer your request by telegraph`
+  - `Connecting to the central bureau in New York by telephone`
+- When the `send` button is clicked, the typewritter effect starts.
+- Need to decide if I implement typewriting sounds;
+
