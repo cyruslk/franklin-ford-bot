@@ -1799,25 +1799,14 @@ What I've done today:
 
 ------
 
-For **What do you think will be the concept of news in 50 years?**
+`What do you think will be the concept of news in 50 years?`
 
-```
-What do you think will be the concept of news in 50 years ? I would warn you that the business of politics may reach its highest development in half a century Democracy and finance are the same....The news tyco - men must first get used to the majesty of the new machinery.Once they get used to the idea, they will begin to use the principle of distribution in their daily lives.
-```
+- "I would warn you that the business of politics may reach its highest development in half a century Democracy and finance are the same....The news tyco - men must first get used to the majesty of the new machinery.Once they get used to the idea, they will begin to use the principle of distribution in their daily lives."
+- "Or 50, 000 words ? Let us know in the comments.TODAY.Changes in Labor Day.Perhaps the beginning of a new era in Industrial Civilization.Perhaps the first action in the life of the people / of the city will be to set about distributing the news of the world / of the world to all.The point to be grasped by all, is that this involves giving the daily newspaper, the society, to the people."
+- "Let me hear from you.Until then, (C) 2017 COPY AND PART 14 Florian, 7 N.J.street, U.S.C.Dear Comptroller : I am writing to ask you to provide a Commission report on the city’ s new funding formulas."
+- "NEW YORK TRIangle, —The day will come when the locomotive will let in its own NEWS.Two sides of the same coin are bound to come to mind: The merchants and consumers in the various cities will be able to estimate the probable phases of the trade and so decide which side to take.._ _ During the last two years the merchants of the metropolis have been very active in marketing the new styles of carriage."
 
-```
-What do you think will be the concept of news in 50 years ? Or 50, 000 words ? Let us know in the comments.TODAY.Changes in Labor Day.Perhaps the beginning of a new era in Industrial Civilization.Perhaps the first action in the life of the people / of the city will be to set about distributing the news of the world / of the world to all.The point to be grasped by all, is that this involves giving the daily newspaper, the society, to the people.
-```
-
-```
-What do you think will be the concept of news in 50 years ? Let me hear from you.Until then, (C) 2017 COPY AND PART 14 Florian, 7 N.J.street, U.S.C.Dear Comptroller : I am writing to ask you to provide a Commission report on the city’ s new funding formulas.
-```
-
-```
-What do you think will be the concept of news in 50 years ? NEW YORK TRIangle, —The day will come when the locomotive will let in its own NEWS.Two sides of the same coin are bound to come to mind: The merchants and consumers in the various cities will be able to estimate the probable phases of the trade and so decide which side to take.._ _ During the last two years the merchants of the metropolis have been very active in marketing the new styles of carriage.
-```
-
-...
+------
 
 The updated code coming ready to push to the `GCP` is here: 
 
