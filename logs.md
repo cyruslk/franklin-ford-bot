@@ -1799,7 +1799,7 @@ What I've done today:
 
 ------
 
-`What do you think will be the concept of news in 50 years?`
+`What do you think will be the concept of news in 50 years?` -- 4 first outputs:
 
 - "I would warn you that the business of politics may reach its highest development in half a century Democracy and finance are the same....The news tyco - men must first get used to the majesty of the new machinery.Once they get used to the idea, they will begin to use the principle of distribution in their daily lives."
   
