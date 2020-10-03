@@ -1815,3 +1815,13 @@ What I've done today:
 The updated code ready to push to the `GCP` is here: 
 
 https://github.com/cyruslk/gpt-2_ford_project/blob/master/app.py
+
+
+
+# 2020.10.02
+
+To do list:
+
+- [ ] Fix the `still connected` websocket protocol issue
+- [ ] Add back the scrolling menu.
+- [ ] Code the anchor tag;
