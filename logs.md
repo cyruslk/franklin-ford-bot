@@ -663,15 +663,15 @@ Now that this is done, here's a bunch of questions I need to clarify with you gu
         }else{
           let stringsArray = data.toString('utf8').split(".");
           let randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
-    
+
           // here, twit to the archiving bot; # or no?
           // here, post on reddit? how to target?
           // Go through all the subreddits and see if one matches with a word from the string?
           // Use a NL/ml-thingy (such as watson?) to figure out the meaning of the string, then:
           // Go through all the subreddits; matches with a word from the watson prediction?
-    
+
           // once it's posted, send it to the client
-    
+
         }
       })
 ------
@@ -1763,12 +1763,12 @@ What I've done today:
 <u>For the chatbot's gpt-2 output:</u>
 
 - Took/Tweaked Juliette's `gpt-2` instance and attached the folder + the `gpt-2` call to the `Tornado` web server.
-- Then, uploaded everything to the `GCP` instance via `docker`. Everything is now online and updated. 
+- Then, uploaded everything to the `GCP` instance via `docker`. Everything is now online and updated.
 
 <u>For the chatbot's underlying storing infrastructure:</u>
 
 - Merge git branches togeter and added back the `emailjs` feature.
-- On the dedicated email, cleared everything so that we can restart storing outputs with the new instance. 
+- On the dedicated email, cleared everything so that we can restart storing outputs with the new instance.
 - Fixed the `InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.` error messssage. **(STILL NEED TO FIX THIS!)**
 
 <u>For the chatbot's design:</u>
@@ -1778,7 +1778,7 @@ What I've done today:
 
 <u>For the chatbot's inner interface:</u>
 
-- Changed the input's font to `Plantin`, the project's font. Place the text in `uppercase`. 
+- Changed the input's font to `Plantin`, the project's font. Place the text in `uppercase`.
 - Slightly changed the button's design aesthetics.
 
 <u>For the chatbot's loading component/text:</u>
@@ -1791,7 +1791,7 @@ What I've done today:
 
 # 2020.09.28
 
-- Improving the `gpt-2` part, 
+- Improving the `gpt-2` part,
   - Removing the ` nsamples=options.nsamples,` and ` batch_size=options.batch_size`.
   - Replacing the old `checkpoint` folder.
   - Added Juliette's `replace, split, join` function.
@@ -1802,17 +1802,17 @@ What I've done today:
 `What do you think will be the concept of news in 50 years?` -- 4 first outputs:
 
 - "I would warn you that the business of politics may reach its highest development in half a century Democracy and finance are the same....The news tyco - men must first get used to the majesty of the new machinery.Once they get used to the idea, they will begin to use the principle of distribution in their daily lives."
-  
+
 - "Or 50, 000 words ? Let us know in the comments.TODAY.Changes in Labor Day.Perhaps the beginning of a new era in Industrial Civilization.Perhaps the first action in the life of the people / of the city will be to set about distributing the news of the world / of the world to all.The point to be grasped by all, is that this involves giving the daily newspaper, the society, to the people."
-  
+
 - "Let me hear from you.Until then, (C) 2017 COPY AND PART 14 Florian, 7 N.J.street, U.S.C.Dear Comptroller : I am writing to ask you to provide a Commission report on the city’ s new funding formulas."
-  
+
 - "NEW YORK TRIangle, —The day will come when the locomotive will let in its own NEWS.Two sides of the same coin are bound to come to mind: The merchants and consumers in the various cities will be able to estimate the probable phases of the trade and so decide which side to take.._ _ During the last two years the merchants of the metropolis have been very active in marketing the new styles of carriage."
-  
+
 
 ------
 
-The updated code ready to push to the `GCP` is here: 
+The updated code ready to push to the `GCP` is here:
 
 https://github.com/cyruslk/gpt-2_ford_project/blob/master/app.py
 
@@ -1823,5 +1823,23 @@ https://github.com/cyruslk/gpt-2_ford_project/blob/master/app.py
 To do list:
 
 - [ ] Fix the `still connected` websocket protocol issue
-- [ ] Add back the scrolling menu.
-- [ ] Code the anchor tag;
+- [x] Add back the scrolling menu.
+- [x] Code the anchor tag;
+
+# 2020.10.03
+
+Worked on the chatbot aesthetic => back - right;
+
+Input => bottom;
+
+- [x] Press `enter` sends the question to the server;
+
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20201003/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-10-03%20%C3%A0%2000.04.17.png)
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20201003/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-10-03%20%C3%A0%2000.05.59.png)
+
+
+Note for the anchor tag: I've basically added an `ID` to each element of the `About` section. So it's not an anchor tag per say (anchor tags are for broader sections), it's a scroll to the div where you guys will add this specific content. It does not matter to be located in a specific order; however the Headline of that section needs to stay consistent over time so that the logic does not break.
+
+In other words, you guys need first to create this section. Then I'll take care of the rest based on the logic I've just implemented with the Anatomy of a bot section.
