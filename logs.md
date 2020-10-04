@@ -663,15 +663,15 @@ Now that this is done, here's a bunch of questions I need to clarify with you gu
         }else{
           let stringsArray = data.toString('utf8').split(".");
           let randomString = stringsArray[Math.floor(Math.random()*stringsArray.length)];
-
+    
           // here, twit to the archiving bot; # or no?
           // here, post on reddit? how to target?
           // Go through all the subreddits and see if one matches with a word from the string?
           // Use a NL/ml-thingy (such as watson?) to figure out the meaning of the string, then:
           // Go through all the subreddits; matches with a word from the watson prediction?
-
+    
           // once it's posted, send it to the client
-
+    
         }
       })
 ------
@@ -1839,7 +1839,6 @@ Input => bottom;
 
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20201003/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-10-03%20%C3%A0%2000.05.59.png)
 
+<u>Note for the anchor tag:</u> I've basically added an `ID` to each element of the `About` section. So it's not an anchor tag per say (anchor tags are for broader sections), it's a scroll to the div where you guys will add this specific content. It does not matter to be located in a specific order; however the Headline of that section needs to stay consistent over time so that the logic does not break.
 
-Note for the anchor tag: I've basically added an `ID` to each element of the `About` section. So it's not an anchor tag per say (anchor tags are for broader sections), it's a scroll to the div where you guys will add this specific content. It does not matter to be located in a specific order; however the Headline of that section needs to stay consistent over time so that the logic does not break.
-
-In other words, you guys need first to create this section. Then I'll take care of the rest based on the logic I've just implemented with the Anatomy of a bot section.
+In other words, you guys need first to create this section. Then I'll take care of the rest based on the logic I've just implemented with the `Anatomy of a bot` section.
