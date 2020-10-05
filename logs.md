@@ -1842,3 +1842,10 @@ Input => bottom;
 <u>Note for the anchor tag:</u> I've basically added an `ID` to each element of the `About` section. So it's not an anchor tag per say (anchor tags are for broader sections), it's a scroll to the div where you guys will add this specific content. It does not matter to be located in a specific order; however the Headline of that section needs to stay consistent over time so that the logic does not break.
 
 In other words, you guys need first to create this section. Then I'll take care of the rest based on the logic I've just implemented with the `Anatomy of a bot` section.
+
+# 2020.10.05
+
+- Restarted the virtual machine with the new instance.
+  - Going considerably quicker, which is good.
+- Now need to add the ` 'Buy your facts at Fords. Corporations investigated. Trade conditions reported`
+- Now need to Fix the `still connected` websocket protocol issue.
