@@ -1849,3 +1849,9 @@ In other words, you guys need first to create this section. Then I'll take care 
   - Going considerably quicker, which is good.
 - Now need to add the ` 'Buy your facts at Fords. Corporations investigated. Trade conditions reported`
 - Now need to Fix the `still connected` websocket protocol issue.
+
+# 2020.10.15
+
+- Worked on the bot's aesthetics;
+
+![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20201015/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-10-15%20%C3%A0%2019.37.35.png) 
