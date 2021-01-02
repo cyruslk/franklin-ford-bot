@@ -1855,3 +1855,76 @@ In other words, you guys need first to create this section. Then I'll take care 
 - Worked on the bot's aesthetics;
 
 ![](https://raw.githubusercontent.com/cyruslk/franklin-ford-bot/master/process_files/20201015/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202020-10-15%20%C3%A0%2019.37.35.png) 
+
+# 2021.01.02 
+
+Everything is now done on my end. I've installed a `TLS` certificate on the `GCP`; this was the final major problem to apply on the bot. We needed this fix since the Twitter App was pointing to links on the secure version of the website.
+
+- NOW, as you can see - the Google Cloud Platform's Free Trial is now done since January, 1st  -- as we can see here:
+
+  ```
+  Your free trial is over, but your Google Cloud Platform journey doesn't have to be. To restore your services, upgrade by 28 January 2021.
+  ```
+
+  I've therefore disabled the Billing Account, since it was connected to my payment coordinates. As you can see with the following PS, the billing is roughly <u>CAN$ 3.06 per day fixed, e.g: 90/95 per month.</u>
+
+  
+
+  - Maybe there's a way to get a discount by contacting the Google Support.
+    
+    
+
+- Here's a breakdown of the services that are being:
+  
+  
+
+  - **<u>Hosting the GPT-2 bot:</u> Google Cloud Platform(GCP)** - https://cloud.google.com/?hl=fr
+
+    Works as a hosting cloud from where the GPT-2 bot can be stored and operate. We need computing power so we had to go with this option that offers solutions for machine learning/deep learning. The plan we use on their service is the App Engine Flex.
+
+    
+
+  - **<u>Server side:</u>** **Nearly Free Speech** - https://www.nearlyfreespeech.net/
+
+    Used to host the project's client website, e.g: https://www.franklinford.org/ 
+    Price: CAN$ 0.05 / day
+
+  - **<u>Hosting the Twitter Bot:</u>** **Heroku** - https://www.heroku.com/home
+
+    Works as a hosting cloud from where the Twitter bot and the project's CMS is hosted.
+    Price: CAN$ 14/ month.
+
+    - If it's too pricey, we might see if there's an alternative. But unfortunately for accessing the data in all time and the ability to tweet at all time, we need to have what they call Hobby Dinos, and each one is CAN$7/month - https://www.heroku.com/pricing#containers
+      
+      
+
+  - **<u>Database:</u>** **MongoDB**, **Hosted on the Atlas Cloud** - https://www.mongodb.com/cloud/atlas/
+
+    NoSQL Datatase Type. This is where we host everything that relates to the website: it's tweets, the website's CMS entries, etc. For now, I host it on my account - might transfer it to an account that we can access with the project's gmail address but for now it's not a necessity.
+    Price: free.
+    
+    
+
+  - **<u>Content Manager System for texts:</u>** **Strapi** - https://strapi.io/
+
+    CMS to change the website's text content and descriptions. Accessible from Heroku and your credentials, e.g: https://franklin-ford-cms.herokuapp.com/admin/auth/login
+    Price: free.
+
+  - **<u>Content Manager System for spreadsheets</u>: Google Drive CMS** - https://www.drivecms.xyz/
+
+    Used to store and publish data that is specific to the bot's sources and data inputs from where it starts it's remediation.
+
+    Price: free.
+    
+    
+
+  - **<u>Website</u>: React.js** - https://reactjs.org/
+
+    JavaScript Framework for building UI.
+    Price: free.
+
+    
+
+  - **<u>Storing returned GPT-2 messages</u>: Email.js** - https://www.emailjs.com/
+
+    Solution to get what is being ouputed from the deep learning algo, e.g: these are sent back to the Gmail Address of the project.
